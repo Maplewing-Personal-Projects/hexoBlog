@@ -4,13 +4,106 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-10-14T02:56:08.555Z</updated>
+  <updated>2013-10-14T06:11:43.268Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#HTML：文字標音]]></title>
+    <link href="http://blog.knightzone.org/2013/10/13/2013-10-13-html-text-transcription/"/>
+    <id>http://blog.knightzone.org/2013/10/13/2013-10-13-html-text-transcription/</id>
+    <published>2013-10-14T05:20:00.000Z</published>
+    <updated>2013-10-14T06:09:43.000Z</updated>
+    <content type="html"><![CDATA[<p>本來是沒特別想寫這篇，不過想想這功能在最近已經被廣泛支援了，故就想說一定要好好來介紹一下！</p>
+<p>大家在打入中文、日文的時候，有時候應該會想加入標音吧！正好以前IE有個標籤叫做ruby標籤可以做到這樣的事情，而在HTML5終於把ruby標籤做為標準加入了！</p>
+<h2>標音</h2>
+<p>底下一樣先用一個範例來解釋：</p>
+<figure class="highlight lang-html"><figcaption><span>ruby01.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">title</span>&gt;</span>標音<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ふ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>まれた<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>花<span class="tag">&lt;<span class="title">rt</span>&gt;</span>はな<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span> <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+		被<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踐<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄐㄧㄢˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄊㄚˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>的花朵
+	<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/v34wkTDHS9mM83j3oOgw_ruby01.png" alt="ruby01.png"><br>上面的排版有點亂，不過為了不要讓文字中間出現空白，只好擠成一行了，底下列一下通用式用法的解說：</p>
+<figure class="highlight lang-html"><figcaption><span>rubyusage.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">ruby</span>&gt;</span>
+	[欲加上標音的字詞1] <span class="tag">&lt;<span class="title">rt</span>&gt;</span>[標音1]<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>
+  [欲加上標音的字詞2] <span class="tag">&lt;<span class="title">rt</span>&gt;</span>[標音2]<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>大體上就是如此，整個標音群組用ruby標籤包住，打上要標音的詞彙後，加上rt標籤去做標音，就可以達到標音的效果了！</p>
+<blockquote>
+<p>rb標籤：早期的寫法會把[欲加上標音的字詞]包在<code>&lt;rb&gt;...&lt;/rb&gt;</code>內，但是收錄進HTML5標準的時候，去除了rb標籤，所以目前的標準是要省略rb標籤的唷！</p>
+</blockquote>
+<h2>不支援標音之瀏覽器的表現方法</h2>
+<p>假設今天要讓不支援標音的瀏覽器上看起來也要至少正常一點，可以將要多餘顯示的文字用rp標籤包住。這樣的話，有支援標音的瀏覽器會忽略rp標籤裡的內容，而不支援標音的瀏覽器就會顯示rp標籤裡的內容。底下看個範例：</p>
+<figure class="highlight lang-html"><figcaption><span>ruby02.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">title</span>&gt;</span>標音<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ふ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>まれた<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>花<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>はな<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span> <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+		被<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踐<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄐㄧㄢˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄊㄚˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>的花朵
+	<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/imaga/6AhZ9VLCRHGdyaViPkKQ_ruby02.png" alt="ruby02.png"><br>左邊Google Chrome可以使用標音功能，故就直接顯示其標音，rp標籤裡之內容不管；而右邊Firefox不能使用標音功能，故就把rp標籤內的內容也一併顯示出來。</p>
+<blockquote>
+<p>與w3schools.com裡的內容不同：rp標籤我是放在rt標籤外才能讓有標音功能的瀏覽器顯示正常，但w3schools.com內的卻放在rt標籤內。</p>
+<p>Firefox支援Ruby否？根據w3schools.com的內容是說已經支援了，但我的Firefox還是沒有。如果你的Firefox沒有標音功能，可以到<a href="https://addons.mozilla.org/zh-tw/firefox/addon/html-ruby/" target="_blank">這裡(HTML Ruby)</a>下載套件安裝一下就支援了！</p>
+</blockquote>
+<h2>參考資料</h2>
+<ol>
+<li>w3schools.com &gt; HTML &lt;ruby&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ruby.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ruby.asp">http://www.w3schools.com/tags/tag_ruby.asp</a></a></li>
+<li>w3schools.com &gt; HTML &lt;rp&gt; Tag：<a href="http://www.w3schools.com/tags/tag_rp.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_rp.asp">http://www.w3schools.com/tags/tag_rp.asp</a></a></li>
+<li>Re: &lt;rb&gt; as part of HTML5 ruby? from Dean Lee on 2011-12-29 (public-html-ig-zh@w3.org from December 2011)：<a href="http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html" target="_blank"><a href="http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html">http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html</a></a></li>
+<li>日文歌詞標音編輯器：<a href="http://but.lolicom.org/tool/" target="_blank"><a href="http://but.lolicom.org/tool/">http://but.lolicom.org/tool/</a></a></li>
+</ol>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/HTML/" term="HTML"/>
+    <category scheme="http://blog.knightzone.org/categories/HTML/" term="HTML"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#HTML：無序、有序與定義清單]]></title>
     <link href="http://blog.knightzone.org/2013/10/12/2013-10-12-html-unordered-ordered-and-definition-lists/"/>
@@ -1584,33 +1677,6 @@ using namespace std;
 <p>待續……</p>
 <blockquote>
 <p>原始文章位址：<a href="http://blog.roodo.com/maplewing/archives/1898216.html" target="_blank">http://blog.roodo.com/maplewing/archives/1898216.html</a></p>
-</blockquote>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/小說創作/" term="小說創作"/>
-    <category scheme="http://blog.knightzone.org/categories/小說創作/" term="小說創作"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#小說創作：惡搞"翼"世界(2)]]></title>
-    <link href="http://blog.knightzone.org/2006/07/16/2006-07-16--novels-a-spoof-wing-world-2/"/>
-    <id>http://blog.knightzone.org/2006/07/16/2006-07-16--novels-a-spoof-wing-world-2/</id>
-    <published>2006-07-16T23:06:00.000Z</published>
-    <updated>2013-10-07T04:33:44.000Z</updated>
-    <content type="html"><![CDATA[<p>看來OGAME和行船的故事要繼續動工了，好像已經不知道延期多久了……</p>
-<hr>
-<p>暴風Furiata朝魔物揮劍一砍，沒想到魔物竟然被他一擊必殺！！</p>
-<p>「沒想到我的攻擊力還蠻強的嘛！先不說這些了，先把老闆抬到醫療所比較要緊！」說著，就在他要走到老闆身邊時，天花板突然亮了起來……</p>
-<p>「好刺眼！」暴風Furiata用手遮住自己的眼睛，直到亮光減弱後才慢慢放下來。在他能看到時，他看到一個天使在他面前。</p>
-<p>「多謝你把住在黑暗深淵的魔物給殺了，暴風Furiata。」天使說。</p>
-<p>「你怎麼知道我叫暴風Furiata？喔～！對了，你是天使。」暴風Furiata知道他問了一個奇怪問題後，趕緊收回。</p>
-<p>「我還沒自我介紹吧！我叫惡搞天使，是河水大神派來幫助你的。」天使自我介紹著。</p>
-<p>「為何大神要你來幫助我呢？」暴風Furiata心中又充滿疑惑。</p>
-<p>「因為河水大神非常喜歡有為的年輕人啊～！不先聊天了，我先來治療裝備店老闆好了。」只見惡搞天使面向了老闆，開始發揮魔咒：「一級治療術－痛痛飛走了！」從老闆身上飛出了很多紅光，但沒過多久就消失了。</p>
-<p>「好了，我們走吧！」惡搞天使把老闆放到裝備店房間內的床上，就對暴風Furiata說。</p>
-<p>「可是我還沒買裝備耶～～！」暴風Furiata跟天使講了他來這的大目的。</p>
-<p>「沒關係，我路上再給你就好啦！」說完，惡搞天使就拉著暴風Furiata離開裝備店。</p>
-<p>待續…….</p>
-<blockquote>
-<p>原始文章位址：<a href="http://blog.roodo.com/maplewing/archives/1894105.html" target="_blank">http://blog.roodo.com/maplewing/archives/1894105.html</a></p>
 </blockquote>
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/小說創作/" term="小說創作"/>
