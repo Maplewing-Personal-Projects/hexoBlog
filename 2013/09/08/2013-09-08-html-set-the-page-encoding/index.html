@@ -75,7 +75,7 @@
       
         <p>電腦裡面只能儲存0與1，並且透過二進位的方式用0與1儲存了數字，透過數字與文字的對應，電腦可以利用儲存數字的方式去儲存文字，並在顯示的時候透過對應表去找出該數字代表的文字為何，這樣的對應儲存模式就被稱為編碼。這世界上有很多語言，故編碼也有很多種，若使用的編碼不對，會導致網頁上出現我們有時候去瀏覽國外網站的時候常常會出現的亂碼現象，如下圖所示：<br><img src="/image/zHKS5sZoRK2oecYqNALa_html3-1.png" alt="html3-1.png"></p>
 <p>因此我們必須要確定我們製作出來的網站是用什麼編碼方式儲存的，並且要試著從網頁裡去設定其網頁編碼，讓瀏覽器可以用正確的編碼方式去瀏覽該網站。</p>
-<h2>常見編碼</h2>
+<h1>常見編碼</h1>
 <p>各國都有不同的編碼，底下試著列出一些常見的編碼：</p>
 <table>
 <thead>
@@ -105,10 +105,10 @@
 </table>
 <p>由上表可知，每個語言都有其不同的當地的編碼方式，那麼如果要顯示所有國家語言的網站該怎麼辦？</p>
 <p>不管你是否要做一個純粹單一語言的網站或是要做多語言的網站，我都會建議你使用Unicode萬國碼的 <strong>UTF-8</strong> 的編碼方式去儲存網站，這個編碼不僅支援多個國家的語言，有些繁體中文的罕見字其實用Big5是沒辦法表示的，但是用萬國碼卻是OK的！</p>
-<h2>如何儲存UTF-8格式的網頁</h2>
+<h1>如何儲存UTF-8格式的網頁</h1>
 <p>如果使用的是記事本來編輯網頁，可在儲存檔案的時候，點擊底下的編碼的選項，選擇UTF-8即可，如下圖所示：<br><img src="/image/KiIKvWqDQLSzRSWF14BJ_html3-2.png" alt="html3-2.png"></p>
 <p>如果是使用Notepad++來編輯網頁，可在上面工具列的［編碼］裡面選擇［轉換至UTF-8碼格式(檔首無BOM)］即可，如下圖所示：<br><img src="/image/9Ycmyz0iRtC7VjIzDqnH_html3-3.png" alt="html3-3.png"></p>
-<h2>用meta標籤來設定該網頁的編碼</h2>
+<h1>用meta標籤來設定該網頁的編碼</h1>
 <p>meta標籤在HTML文件中，是用來設定該文件的meta資料，除了可以用來設定編碼外，還可以設定很多其他跟網頁有關的資料，不過在這裡我只先提該如何設定網頁的編碼。</p>
 <p>你可以在head元素內加上<code>&lt;meta charset=&quot;編碼名稱&quot; /&gt;</code>即可設定網頁的編碼，如果你要設定其為UTF-8的編碼，可如底下範例所示：</p>
 <figure class="highlight lang-html"><figcaption><span>UTF-8.html</span></figcaption><table><tr><td class="gutter"><pre>1
@@ -126,7 +126,7 @@
 </pre></td></tr></table></figure>
 
 <p>在HTML4.01的時候，是使用<code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</code>這麼冗長的敘述，但是現在HTML5，你可以使用上述如此簡短的敘述即可。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>MOZILLA DEVELOPER NETWORK &gt; 應該避免的過時語法：<a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid" target="_blank"><a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid">https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid</a></a></li>
 <li>html5 - &lt;meta charset=&#39;utf-8&#39;&gt; vs &lt;meta http-equiv=&#39;Content-Type&#39;&gt; - Stack Overflow：<a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type" target="_blank"><a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type">http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type</a></a></li>
@@ -210,9 +210,9 @@
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
-    <li><a href="/categories/小說創作/">小說創作</a><small>5</small></li>
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>5</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -224,7 +224,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 

@@ -99,9 +99,9 @@
 </pre></td></tr></table></figure>
 
 <p><img src="/image/NXRkjm7lSPingeD2QxDC_html1-1.png" alt="html1-1.png"><br>底下我們開始對這個範例進行講解。</p>
-<h2>HTML版本宣告</h2>
+<h1>HTML版本宣告</h1>
 <p>每份HTML文件的第一行通常會放置該HTML是使用哪個版本的宣告，如今HTML5已漸漸成為主流，故我們會用<code>&lt;!DOCTYPE html&gt;</code>這行來進行版本宣告，若你有看過HTML4.01的版本宣告，你一定會知道以前的版本宣告有多麼冗長，它是長這樣的：<code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code>，目前您已經可以盡量使用HTML5的版本宣告，現代的瀏覽器都支援它。</p>
-<h2>標籤(tag)與元素(element)</h2>
+<h1>標籤(tag)與元素(element)</h1>
 <p>HTML文件是以一堆標籤形成的元素所組合而成的，標籤即是使用小於符號、標籤名稱與大於符號所組合而成的，而元素則是由開始標籤、標籤屬性以及標籤所包之內容與結束標籤所組合而成，底下是一個HTML元素的格式：</p>
 <figure class="highlight lang-html"><figcaption><span>format.html</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">標籤名</span> 屬性<span class="attribute">1</span>=<span class="value">'值'</span> 屬性<span class="attribute">2</span>=<span class="value">'值'</span> <span class="attribute">....</span>多個屬性以此類推&gt;</span> 元素內容 <span class="tag">&lt;/<span class="title">標籤名</span>&gt;</span>
@@ -114,7 +114,7 @@
 </pre></td></tr></table></figure>
 
 <p>即類似於將結束標籤開頭的斜線放置於開始標籤的尾部即可。</p>
-<h2>html、head、body標籤</h2>
+<h1>html、head、body標籤</h1>
 <p>每一份html文件的第一個最底部的標籤必定是html標籤，而html標籤的內容通常又會分成兩個標籤，一個是head標籤，另外一個是body標籤。</p>
 <figure class="highlight lang-html"><figcaption><span>structure.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -162,9 +162,9 @@
 </pre></td></tr></table></figure>
 
 <p><img src="/image/xXR4CuvHSUS9OvcCW4GD_html1-3.png" alt="html1-3.png"></p>
-<h2>註解</h2>
+<h1>註解</h1>
 <p>你可以利用<code>&lt;!-- 註解文字 --&gt;</code>放置註解，註解文字並不會顯示在網頁上，僅提供你在開發網頁的時候能夠方便了解該段程式碼的含意為何。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>HTML基本語法：<a href="http://kaihang.tripod.com/computer/html/html.html" target="_blank"><a href="http://kaihang.tripod.com/computer/html/html.html">http://kaihang.tripod.com/computer/html/html.html</a></a></li>
 <li>w3school.com &gt; HTML &lt;html&gt; tag：<a href="http://www.w3schools.com/tags/tag_html.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_html.asp">http://www.w3schools.com/tags/tag_html.asp</a></a></li>
@@ -207,7 +207,7 @@
       
         <p>這篇的出現頗神奇的，主要是因為剛好看到Javascript大全中提到duck-typing，突然想到其實C#也是可以玩玩duck-typing，結果就打算來寫這篇Orz…</p>
 <p>看到網路上似乎有人對於var和dynamic兩個的用法有點不了解，敝人就以自己沒用多久的經驗來告訴大家兩者的差別吧！</p>
-<h2>var: 編譯時期決定型別 (C# 3.0)</h2>
+<h1>var: 編譯時期決定型別 (C# 3.0)</h1>
 <p>var基本上來說，並沒有跳脫強型別的規範，也就是說，用var宣告出來的變數，依然還是屬於靜態型別的變數。var僅僅是讓你在宣告變數時，若可以明確判斷該變數為何種型別的話，就可以不必在變數宣告式寫上其型別，寫上var即可。</p>
 <figure class="highlight lang-cs"><figcaption><span>varExample.cs</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -235,7 +235,7 @@ s = <span class="number">1</span>; <span class="comment">//此處編譯時會出
 }
 </pre></td></tr></table></figure>
 
-<h2>dynamic：執行時期決定型別 (C# 4.0)</h2>
+<h1>dynamic：執行時期決定型別 (C# 4.0)</h1>
 <p>這個dynamic就是真正的動態變數，類似於Javascript、Python、Ruby…等等這些語言的變數，一個變數的型態決定於被指派的時候，底下是個範例：</p>
 <figure class="highlight lang-cs"><figcaption><span>dynamicExample.cs</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -263,7 +263,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 }
 </pre></td></tr></table></figure>
 
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>MSDN &gt; var (C# 參考)：<a href="http://msdn.microsoft.com/zh-tw/library/bb383973.aspx" target="_blank"><a href="http://msdn.microsoft.com/zh-tw/library/bb383973.aspx">http://msdn.microsoft.com/zh-tw/library/bb383973.aspx</a></a></li>
 <li>MSDN &gt; dynamic (C# 參考)：<a href="http://msdn.microsoft.com/zh-tw/library/dd264741.aspx" target="_blank"><a href="http://msdn.microsoft.com/zh-tw/library/dd264741.aspx">http://msdn.microsoft.com/zh-tw/library/dd264741.aspx</a></a></li>
@@ -306,7 +306,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
     <div class="entry">
       
         <p>之前在網站上搞了一個Logo用的CSS3動畫，然後現在這個部落格的標題也用了CSS3動畫，故現在想來好好地整理一下跟CSS3動畫相關的功能，底下就開始說明該如何建立CSS3動畫。</p>
-<h2>使用@keyframes建立動畫內容</h2>
+<h1>使用@keyframes建立動畫內容</h1>
 <p>首先先在CSS檔內建立@keyframes去制定動畫的內容，其Syntax在下方：</p>
 <figure class="highlight lang-css"><figcaption><span>keyframes.css</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -349,7 +349,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 </pre></td></tr></table></figure>
 
 <p>建立好@keyframes動畫內容後，接著就要在欲放置該動畫的CSS樣式表內加入animation屬性。</p>
-<h2>Animation屬性</h2>
+<h1>Animation屬性</h1>
 <p>Animation屬性的Syntax於下：</p>
 <figure class="highlight lang-css"><figcaption><span>animation.css</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>  <span class="tag">animation</span>: <span class="tag">name</span> <span class="tag">duration</span> <span class="tag">timing</span>-<span class="tag">function</span> <span class="tag">delay</span> <span class="tag">iteration</span>-<span class="tag">count</span> <span class="tag">direction</span>;
@@ -391,7 +391,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 <p><img src="/image/qvZxc31IRNudZBNFdMna_CSSAnimationExample.gif" alt="CSSAnimationExample.gif"></p>
 <p>大體上製作一個CSS Animation就是這樣的一個流程，你也可以搭配CSS3的transform屬性去作出更多移動、翻轉、放大縮小的效果，甚至是3D翻轉喔！！</p>
 <p>如果不想自己coding出動畫，想藉助一些工具來做動畫，可以參考使用<a href="http://css3maker.com/" target="_blank">CSS 3.0 Maker</a>唷！</p>
-<h2>-webkit-前綴字</h2>
+<h1>-webkit-前綴字</h1>
 <p>由於目前通用性的寫法在Chrome上還是不能用，請在CSS多複製一份@keyframes動畫與animation屬性，並在前面加上-webkit-前綴字，如下列範例所示：</p>
 <figure class="highlight lang-css"><figcaption><span>webkit.css</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -435,7 +435,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 <span class="rule">}</span></span>
 </pre></td></tr></table></figure>
 
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; CSS3 @keyframes Rule：<a href="http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp" target="_blank"><a href="http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp">http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp</a></a></li>
 <li>w3schools.com &gt; CSS3 animation Property：<a href="http://www.w3schools.com/cssref/css3_pr_animation.asp" target="_blank"><a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">http://www.w3schools.com/cssref/css3_pr_animation.asp</a></a></li>
@@ -478,7 +478,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
     <div class="entry">
       
         <p>其實在使用<a href="http://knightzone.logdown.com/posts/98927-javascriptcross-domain-ajax-using-yql" target="_blank">上篇</a>使用YQL來進行Cross Domain AJAX之前，我是先使用別人寫好的PHP網頁將要抓取之網站資訊轉成JSONP格式回來。</p>
-<h2>ba-simple-proxy.php</h2>
+<h1>ba-simple-proxy.php</h1>
 <p>此頁別人寫好的PHP連結在此：<a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html" target="_blank">ba-simple-proxy.php</a></p>
 <p>簡單來說，這PHP就是當作一個代理網頁，給它網址它就會抓取該網址所指的網頁內容，並用JSONP的格式回傳回來。</p>
 <p>使用前先將該頁PHP內的 $enable_jsop = false; 從false改為true，然後上傳到PHP伺服器，接著使用AJAX抓取資料的js部分寫上：</p>
@@ -491,7 +491,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 </pre></td></tr></table></figure>
 
 <p>這樣就可以進行Cross Domain AJAX了！</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>Cross Domain AJAX 抓網頁撈過界以及如何整合兩個部落格的標籤：<a href="http://user.frdm.info/ckhung/b/js/xdomain.php" target="_blank"><a href="http://user.frdm.info/ckhung/b/js/xdomain.php">http://user.frdm.info/ckhung/b/js/xdomain.php</a></a></li>
 <li>Design2U » Cross Domain Ajax 跨網域抓取資料(JSONP)：<a href="http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp" target="_blank"><a href="http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp">http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp</a></a></li>
@@ -533,7 +533,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
     <div class="entry">
       
         <p>在這次撰寫無名備份工具的途中，由於寫的是Web應用程式，我要抓取無名部落格上的資料就必須要使用到AJAX，但是基於安全性的問題，AJAX在回應非JSONP的情況下，僅支援同域名之間的抓取資料，那麼該怎樣才能跨越域名去抓取資料呢？</p>
-<h2>使用YQL</h2>
+<h1>使用YQL</h1>
 <p>查了一下發現有人是使用Yahoo所提供的一套API－YQL來進行跨域抓資料的動作，而正好有人也幫你把它包裝起來寫成一個jQuery的plugin，讓你引用該javascript碼後使用$.get就可以直接跨越域名去抓取資料。</p>
 <p>底下正是該plugin的github位址(使用此plugin，也必須引入<a href="http://jquery.com/" target="_blank">jQuery函式庫</a>)：<br><a href="https://github.com/padolsey/jQuery-Plugins/tree/master/cross-domain-ajax/" target="_blank"><a href="https://github.com/padolsey/jQuery-Plugins/tree/master/cross-domain-ajax/">https://github.com/padolsey/jQuery-Plugins/tree/master/cross-domain-ajax/</a></a></p>
 <p>引用以上的plugin後，在要做讀取資料的地方寫入底下的Code：</p>
@@ -546,7 +546,7 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 </pre></td></tr></table></figure>
 
 <p>大體上我就是這樣成功的將資料抓進來了！！</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>Cross Domain AJAX 抓網頁撈過界以及如何整合兩個部落格的標籤：<a href="http://user.frdm.info/ckhung/b/js/xdomain.php" target="_blank"><a href="http://user.frdm.info/ckhung/b/js/xdomain.php">http://user.frdm.info/ckhung/b/js/xdomain.php</a></a></li>
 <li>Cross-domain requests with jQuery：<a href="http://james.padolsey.com/javascript/cross-domain-requests-with-jquery/" target="_blank"><a href="http://james.padolsey.com/javascript/cross-domain-requests-with-jquery/">http://james.padolsey.com/javascript/cross-domain-requests-with-jquery/</a></a></li>
@@ -587,9 +587,9 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
     </header>
     <div class="entry">
       
-        <h2>解法指引</h2>
+        <h1>解法指引</h1>
 <p>先把鍵盤打成一個陣列，這樣比較好得解。</p>
-<h2>程式碼(C++：0.012)</h2>
+<h1>程式碼(C++：0.012)</h1>
 <figure class="highlight lang-C++"><figcaption><span>10082.cpp</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -679,9 +679,9 @@ using namespace std;
     </header>
     <div class="entry">
       
-        <h2>解法指引</h2>
+        <h1>解法指引</h1>
 <p>照著題目要求，更換雙引號即可。</p>
-<h2>程式碼(C++：0.016)</h2>
+<h1>程式碼(C++：0.016)</h1>
 <figure class="highlight lang-C++"><figcaption><span>272.cpp</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -767,30 +767,58 @@ using namespace std;
     <header>
       
         <div class="icon"></div>
-        <time datetime="2006-07-19T05:39:00.000Z"><a href="/2006/07/18/2006-07-18--novels-a-spoof-wing-world-5/">Jul 18 2006</a></time>
+        <time datetime="2010-10-04T05:06:00.000Z"><a href="/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/">Oct 3 2010</a></time>
       
       
   
-    <h1 class="title"><a href="/2006/07/18/2006-07-18--novels-a-spoof-wing-world-5/">#小說創作：惡搞&quot;翼&quot;世界(5)</a></h1>
+    <h1 class="title"><a href="/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/">#生活趣事：9/27~10/3－開始忙碌的大學生活</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近留言板一直被改寫，終於將1.3版搞出來了（網站也進入2.0的時代）。</p>
+        <p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/PlRATpGmSPaS6aYVYEHX_lani-0.png" alt="灆洢"><br>各位安安^^/<br>來跟各位談談這禮拜發生的事情吧！</p>
 <hr>
-<p>「你是說她不是人類！？」白色死神驚訝地說。</p>
-<p>「沒有錯，她應該是魔族的人形魔物。」惡搞天使回答。</p>
-<p>「可是，魔族不是早在很久以前就被消滅了呀！」白色死神說。</p>
-<p>「是沒錯，但總是會有些遺留下來的魔族啊～！」惡搞天使說。</p>
-<p>「不過，警備署的測驗會要我們去打魔族嗎？」白色死神擔心地問，因為魔族並非是人類能對付的角色。</p>
-<p>「這我就不知道了。總而言之，進去森林就對了。」惡搞天使拉著白色死神進入森林了。</p>
-<p>這個森林非常陰暗，雖然陰暗，但卻不像在地底下的陰暗，反而像是烏雲密佈的那種陰暗。</p>
-<p>「我們到了最裡面了，白色死神，看來那個小姿在那裡等你。」惡搞死神指著一位坐在地板上的女生說著。</p>
-<p>「歡迎來到地下森林－－－第一修練場。」小姿看到了兩人就立即站了起來。</p>
-<p>待續……</p>
+<h1>9/27(一)</h1>
+<p>今天計概考試，考了一節課，我也才在前一天晚上剛拿到計概考古題，感謝家緯學長＞_＜不過由於這考古題是系學會的東西，學長也不知道能不能發佈在班版上，所以我就對每一個人的MSN和Yahoo丟考古題～XD</p>
+<p>雖然大概還是有很多人會沒拿到吧Q_Q….接下來兩節英文，上完第一課了，下禮拜要上第二課，老師出了好多作業Orz……看來又要做不完了(汗</p>
+<p>中午找不到同學群Q_Q 後來繞了好久在學七舍餐廳才遇到浩庭，之後我們就在〔國防教育一〕的教室聊到上課XD 國防教育一的教官跟我們資工系的開始有點熟了XD 教官人超好的！</p>
+<p>晚上因為浩庭要去本部參加熱舞社迎新，我也一起到本部去，順便去看看吉他社的攤子，看著吉他代訂的攤子，超想買的啊＞口＜</p>
+<h1>9/28(二)</h1>
+<p>早上是基礎電子學，今天終於有實驗課了！雖然只是介紹用具，而且一堂課就下課了XD&quot;</p>
+<p>中午和聖別學長去邵爸爸的家吃東西加念聖經，今天吃的是白醬，這白醬做的超棒的！超好吃！XD</p>
+<p>讀完之後，就去本部上環境與健康，結果老師說為了讓上禮拜三因為中秋節放假的那班跟我們這班進度一樣，因此，今天才講10分鐘就下課了！XD超爽的！</p>
+<p>空出來的時間就跑去樸101使用英語自學教室，因為忘記帶本子，害我還得花10塊錢買Q_Q(原價12元)，不過那邊超棒的！有空中英語教室播在電視上的那些影片以及台詞，整個超讚！甚至還有辛普森家庭……等等影片可以看，讓我去了一次還想再去第二次啊啊啊啊啊啊啊！！！！！</p>
+<p>晚上去系桌，多了崇瑞跟雅翎～最後安偉也來了！系桌從我之前只有一個103級的人來，變成有四個103級的人了！XD而且練習時間：二、四，剛好我們四個人禮拜四都有事XD 禮拜二真是太讚了！偏偏其他系的系桌也想跟我們搶禮拜二，讓隊長很傷腦筋呢…Q_Q</p>
+<h1>9/29(三)</h1>
+<p>早上10:00，到本部去使用樸101的英語自學教室設備，用完後終於到吉他社的攤位去訂吉他且加入吉他社了＞_＜！之後接著映竹的電話，說他已經做剛剛的校車前去分部了，所以我就趕緊走+跑到分部去，路途還到光南買了派和到路邊攤買了西瓜汁。到了分部的系辦後，跟映竹拿書，做服務學習。我們這組是清潔2F，2F沒有很大，很快就掃完了～</p>
+<p>接著就是程式設計（一）的課，跟維琳約好要坐在她旁邊給她問問題～XD</p>
+<p>晚上去看吉他社的迎新演唱會，超讚的啦！雖然麥克風和吉他的聲音一直弄很久，不過每個上台的學長姐都唱得很不錯呀！＞_＜</p>
+<h1>9/30(四)</h1>
+<p>今天滿滿一整天的課Orz…</p>
+<p>體育課教籃球，首先當然又從歷史開始說起XD~再來開始教傳球，胸前傳球、彈地傳球、背後傳球以及過頂傳球。</p>
+<p>背後傳球最難Orz…不過最後有點感覺了XD</p>
+<p>在練習完後，老師讓我們打3on3，不能運球，只能傳球跟投球，但是偏偏我今天怎麼投球都不進，甚至還籃外大空心…= =&quot;</p>
+<p>真慘烈Orz…</p>
+<p>接著下來是計概，禮拜一考的計概拿滿分，超開心的＞<em>＜~我的計概有進步的趨勢呀～！以前比賽計概每次都是我的難科，我終於能扭轉這個劣勢了嗎？＞</em>＜~~</p>
+<p>下午是微積分，老師講了很多節，最後還勾了作業，以後作業就要用電子信箱的模式公布了～請各位盡請期待！</p>
+<p>晚上跟安偉和浩庭到本部，去吃麵包店的麵包當晚餐，本來還打算一起去樸101一趟，但是路上被傳教，因此就沒時間了～就先帶浩庭到地餐(他們熱舞社練舞的地方)，我再和安偉去漫畫社D組(繪圖組)學習，今天教的是構圖，如果凸顯主角跟重點。講完之後，練習的題目是〔明星〕，對於不會畫人的我，這題目真的很難Orz…真沒辦法呀Q_Q…</p>
+<h1>10/1(五)</h1>
+<p>今天也是很累的一整天的課呀Q<em>Q…早上國文，上莊子，了解道家這項武功(誤)接著是物理與生活，多了一位國華系的學生，來自波蘭，好特別＞</em>＜而且他中文講得超好！還說要留在台灣！XD</p>
+<p>下午是第一堂程式設計（一），教授講Dev-C++的除錯功能時一直犯錯，教授超可愛＞////＜…(謎：不要犯罪啊！！)接著是基礎電子學，然後就是回家了！</p>
+<p>回家前，先和沈ψω先生以及浩庭到光南買東西，接著浩庭到我家來繼續破TorchLight，雖然感覺還很漫長就是了(汗)…</p>
+<h1>10/2(六)</h1>
+<p>今天早上，用MSN開了計概分組的討論視窗，拼命丟跟Unix/Linux/Mac OS有關的資料XD</p>
+<p>下午和惡搞天使以及河水去北車的漢堡王吃飯，之後來我家玩，然後我們討論了一下12/31號的跨年方式，打算去唱歌！看來我們得早點訂位才行了=w=…今天還一起看了很多Russel Peters的搞笑影片，真的都超好笑的呀！XD</p>
+<h1>10/3(日)</h1>
+<p>今天早上去師大本部人發系的辦公室繼續我的家教，看到瀚元的數學還是老樣子XD“”我就努力地繼續加強他XD</p>
+<p>下午在我家教奸商JAVA教到晚上，送他回去後，就去跟豪豪就吃牛排，吃完回到家，趕作業呀Q_Q</p>
+<p>基礎電子學的實驗預報總算是弄好了！繼續搞英文作業Q_Q……</p>
+<hr>
+<p>就到這裡了～各位晚安^^/</p>
+<p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/F7l8EmD9Tbqryo7mWd39_lani-2.png" alt="灆洢"></p>
 <blockquote>
-<p>原始文章位址：<a href="http://blog.roodo.com/maplewing/archives/1902905.html" target="_blank">http://blog.roodo.com/maplewing/archives/1902905.html</a></p>
+<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/486、http://maplewing.blogspot.tw/2010/10/927103.html" target="_blank">http://www.knightzone.org/wordpress/archives/486、http://maplewing.blogspot.tw/2010/10/927103.html</a></p>
 </blockquote>
 
       
@@ -800,7 +828,7 @@ using namespace std;
         
         
         <div class="alignright">
-          <a href="http://blog.knightzone.org/2006/07/18/2006-07-18--novels-a-spoof-wing-world-5/#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://blog.knightzone.org/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/#disqus_thread" class="comment-link">Comments</a>
         </div>
         
       
@@ -817,28 +845,68 @@ using namespace std;
     <header>
       
         <div class="icon"></div>
-        <time datetime="2006-07-18T07:32:00.000Z"><a href="/2006/07/18/2006-07-18--novels-a-spoof-wing-world-4/">Jul 18 2006</a></time>
+        <time datetime="2008-11-17T04:55:00.000Z"><a href="/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/">Nov 16 2008</a></time>
       
       
   
-    <h1 class="title"><a href="/2006/07/18/2006-07-18--novels-a-spoof-wing-world-4/">#小說創作：惡搞&quot;翼&quot;世界(4)</a></h1>
+    <h1 class="title"><a href="/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/">#小說創作：學園探險社(2) – 101 The Blocks Problem</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>因為我真的忍受不住，只好寫了第四章……</p>
+        <p>今天是一年一度的「社團友誼促進競賽」。</p>
+<p>簡單來說，這個由學生會舉辦的競賽的目的就是為了要促進各社團間的交流。比賽項目每次都不一定，雖然可能會遇到某社團佔優勢的狀況，不過各個社團還是全部都會各派一位代表來參加這個比賽，畢竟這比賽的目的並不是為了獲勝嘛！不過第一名卻還是能有一百萬這個蠻驚人的金額。</p>
+<p>「所以，我們打算派你代表社團。」美由小姐如此的對我說道。</p>
+<p>「等一等，為什麼這種麻煩事情都要找我做？」我馬上問道。</p>
+<p>「話不用我多說吧！去就對了。」看她情緒好像快要爆發似的，我還是乖乖閉嘴好了。</p>
+<p>「真麻煩呀……」當然是用她聽不到的音量小聲的說。</p>
+<p>「話說回來，最近都沒什麼看到社長大人了，怎麼了嗎？」</p>
+<p>「他去探索了南方未知領域，至少要好幾個禮拜才會回來。」</p>
+<p>「原來如此。」</p>
+<p>看來似乎沒什麼好說了，我趕緊離開社辦前往比賽場地。</p>
 <hr>
-<p>「好痛啊～～～～！」雖然是掉下去，但後來卻變成從斜坡溜下來，照理講應該不會痛，但是在直線下降到斜坡的那一刻，白色死神撞到了，所以就痛啦～～！</p>
-<p>「一級治療術－痛痛飛走了！」惡搞天使這麼一用，白色死神的傷就好了。</p>
-<p>「多謝了。不過這裡是哪？」仔細看了一下旁邊，卻發覺這裡並非是地下室，反而是陰森的森林。</p>
-<p>「這裡是埋藏在楓翼城底下許久的迷宮－－地下的森林。」此時，一位從森林裡走出來的女生這麼說。</p>
-<p>「請問你是……？」白色死神問她。</p>
-<p>「我是地下森林的看守人－小姿。」說完，她瞪了一下兩人，就又走進森林了。</p>
-<p>「好奇怪的人喔～～！對吧！惡搞天使。」白色死神對惡搞天使這麼說，但是惡搞天使卻對他說：「你若真的認為她是人的話，就表示你還不會判斷魔氣。」</p>
-<p>(待續……)</p>
+<p>如往常一般，比賽的場地在學生會大樓前廣場。</p>
+<p>「早呀～好久都沒看到你了。」一位與我同是高二的男生來跟我打招呼。</p>
+<p>「早呀！」</p>
+<p>這位男生的名字叫騰久，一年級時跟我同班，不過等升上二年級就沒了，他是「生存物體研究社」的成員，也是這次他們社團的代表。</p>
+<p>「今次還是如往常一樣，來賭吧！」</p>
+<p>這是我與他比賽的慣例，賭自己的成績一定比對方高，賭的金額大概都是伍佰塊，有的時候他贏，有的時候我贏，機率一半一半吧！</p>
+<p>「OK！」我這樣回應。</p>
+<p>此時台上站著一位女生，是比我大一歲的學姊，也是學生會會長－宮香。</p>
+<p>「我們這次要比的是『搬移盒子』，這個遊戲的目的就是要照著評審的規定搬移盒子，並且要比對方快，評審會先說總共有幾堆，每一堆剛開始只有一個與其堆編號相同編號的盒子，編號從零號開始數起。共有四種搬移的方法：第一種為move a onto b，即是將a號盒子搬到b號盒子，而a,b上面原本的盒子就得回歸與它編號相同的那一堆上。第二種為move a over b，即是將a號盒子搬到b號盒子所在的那堆的最上面，而a號盒子上面的盒子全部得要回歸與它編號相同的那一堆上。第三種為pile a onto b，即是將a號盒子包含堆在它上面的盒子一起搬到b號盒子上，而b號盒子上的盒子都得回歸與它編號相同的那一堆上。第四種pile a over b，即時將a號盒子包含堆在它上面的盒子一起搬到b號盒子所在的那堆的最上面。差不多是如此，請各位就比賽位置預備。」</p>
+<p>在會長講完一長串的規則後，每個人都開始尋找自己的比賽場地。等差不多了後，比賽就在會長的宣布後開始。</p>
+<hr>
+<p>就這樣，我輕而易舉的進了決賽，不知道是不是因為我是探險社的，所以動作比其他人快了好幾倍，就連自己也嚇了一跳。不過最令我驚訝的是，決賽的對手就是騰久。</p>
+<p>「真沒想到你會進決賽呢。」</p>
+<p>「你說這句話真是太傷人了，你知不知道你正在傷害一顆純真少年的心呀！」有夠噁心的回應，不過這不是重點。</p>
+<p>「看你剛剛明明都沒有在動，為什麼能進入決賽呢？」</p>
+<p>「哼哼，我其實是有在動的，動的是我的腦。」</p>
+<p>「腦？」</p>
+<p>「沒錯，我先在腦中跑出了結果，之後再直接結果排出來就好了。」</p>
+<p>「原來如此，不過這應該很辛苦才對，真厲害呀。」</p>
+<p>「不用太誇我，我自己也知道。」真的不該誇他，現在他擺著一副驕傲的姿態真讓我不爽。</p>
+<p>「你們談好了嗎？我們就開始了喔！」身為決賽的裁判－宮香會長如此說道。</p>
+<p>「抱歉，可以開始了。」我回應道。</p>
+<p>「好，我規定的堆數是十堆，動作就寫在這張紙上。」宮香拿著兩張紙分發給我們。</p>
+<p>上面寫著：<br>　　move 9 onto 1<br>　　move 8 over 1<br>　　move 7 over 1<br>　　move 6 over 1<br>　　pile 8 over 6<br>　　pile 8 over 5<br>　　move 2 over 1<br>　　move 4 over 9 </p>
+<p>我很快速的開始排起來，而騰久一點動靜也沒有。等我快要完成的時候……</p>
+<p>「我完成了。」</p>
+<p>「什麼！？」我吃驚地說。</p>
+<p>就在我專注於盒子的時候，不知是什麼哪個時刻騰久就已經開始排了起來。我還是趕緊地也將它完成了。</p>
+<p>「我也完成了。」雖然講這句話已經遲了對方一點時間，但我還是不放棄一絲希望。</p>
+<p>「騰久，看來你排錯了。」</p>
+<p>「！？」</p>
+<p>就是因為發現我和他的答案不一樣，所以我才會覺得有一絲希望。</p>
+<p>「沒錯，騰久同學。你真的拼錯了，正確答案是……」</p>
+<p>宮香會長說著，便指向背後的螢幕，上面是這樣寫著的：<br>　　0: 0<br>　　1: 1 9 2 4<br>　　2:<br>　　3: 3<br>　　4:<br>　　5: 5 8 7 6<br>　　6:<br>　　7:<br>　　8:<br>　　9: </p>
+<p>但是騰久的是如此：<br>　　0: 0<br>　　1:<br>　　2:<br>　　3: 3<br>　　4: 4 1 9 2<br>　　5: 5 8 7 6<br>　　6:<br>　　7:<br>　　8:<br>　　9: </p>
+<p>看來他看錯了最後一道命令吧！</p>
+<p>「可惡，我看錯了最後一道命令。」騰久氣餒的說，但馬上又恢復精神笑著對我說：「下次絕對不會再輸給你，等著吧！」</p>
+<p>「恭喜，今次獲勝的社團是：『學園探險社』。」</p>
+<p>就在騰久說完，宮香已經上了台宣布了結果。聽到她的宣布，我也趕緊上了台接受頒獎。不僅從騰久那邊拿到了伍佰塊，還拿到了一百萬元，真開心。不過我想一百萬元會被副社拿去吧。</p>
 <blockquote>
-<p>原始文章位址：<a href="http://blog.roodo.com/maplewing/archives/1898981.html" target="_blank">http://blog.roodo.com/maplewing/archives/1898981.html</a></p>
+<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/1500" target="_blank">http://www.knightzone.org/wordpress/archives/1500</a></p>
 </blockquote>
 
       
@@ -848,7 +916,7 @@ using namespace std;
         
         
         <div class="alignright">
-          <a href="http://blog.knightzone.org/2006/07/18/2006-07-18--novels-a-spoof-wing-world-4/#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://blog.knightzone.org/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/#disqus_thread" class="comment-link">Comments</a>
         </div>
         
       
@@ -865,31 +933,43 @@ using namespace std;
     <header>
       
         <div class="icon"></div>
-        <time datetime="2006-07-18T04:41:00.000Z"><a href="/2006/07/17/2006-07-17--novels-a-spoof-wing-world-3/">Jul 17 2006</a></time>
+        <time datetime="2008-11-16T06:59:00.000Z"><a href="/2008/11/15/2008-11-15--novels-garden-adventures-1-100-the-3n-1-problem/">Nov 15 2008</a></time>
       
       
   
-    <h1 class="title"><a href="/2006/07/17/2006-07-17--novels-a-spoof-wing-world-3/">#小說創作：惡搞&quot;翼&quot;世界(3)</a></h1>
+    <h1 class="title"><a href="/2008/11/15/2008-11-15--novels-garden-adventures-1-100-the-3n-1-problem/">#小說創作：學園探險社(1) – 100 The 3n+1 problem</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>今天生日我就把網站更新了，︿︿。</p>
+        <p>我就讀的，是一所面積非常廣闊的學校。不僅只有一般學校所擁有的教室和操場，學校裡面還有湖、山……等等一般學校不會有的東西。真的是非常的獨特呀！若要把學校分區的話，可以分為宿舍區、授業區、學生會區、社團區、未知領域五區，每一區就如同其名，現在在這裡介紹也沒什麼用，之後相信各位就會比較清楚了。而由於學校真的非常的廣闊，所以我們移動的方式就是坐電車，<br>大概只有社團區的一些地方和未知領域沒有辦法坐電車抵達，其餘的地方幾乎皆有設站，相當方便。好了，話不多說了，開始吧！</p>
 <hr>
-<p>暴風Furiata和惡搞天使來到了楓翼城警備署門前。</p>
-<p>「你帶我來這裡要幹嘛呀？」暴風Furiata問惡搞天使。</p>
-<p>「我希望你能夠幫助世人呀～～！」惡搞天使回答。</p>
-<p>「好吧！不過據說我到了這個年紀得改名，這是真的嗎？」暴風Furiata又問。</p>
-<p>「是的。我差點又忘了。請問你要改成何名？」惡搞天使開始要為暴風Furiata改名了。</p>
-<p>「我要改叫白色死神，沒意見吧！」暴風……不不，應該說白色死神回答了惡搞天使。</p>
-<p>「可以啊！好，我們進去吧！」惡搞天使已經在路上變成人形，所以不用怕別人會驚訝了。兩人就這樣走了進去。</p>
-<p>「你們想成為警備署人員呀！」那位長官說。</p>
-<p>「不，只有我旁邊這位白色死神要，我不用。」惡搞天使回答。</p>
-<p>「好，不過想成為警備署人員得先測驗喔！」只見那位長官拉了牆壁上的開關，惡搞天使和白色死神就從地板突然冒出的洞上掉下去了。</p>
-<p>待續……</p>
+<p>「這次你的任務是要去『伊加恩山』做調查，沒問題吧？」我眼前的女子如此說道。</p>
+<p>我現在所在的地方正是我們「學園探險社」的社辦，顧名思義，我們社團就是常常要調查一些學園裡面的事情與探索學園的未知領域。</p>
+<p>「但是您沒有告訴我要做什麼的調查，怎麼可能沒問題呀！！副社長－美由小姐。」</p>
+<p>沒錯，站在我眼前的這名女子，就是我們的副社長－寧美由，據說我們學校學生會現在所用的那塊區域，正是她所打造出來的，真的是很厲害的一名女子。</p>
+<p>「最後幹嘛突然要加上名字啊！那我說一下好了。是這樣的，伊加恩山有個湖，據說丟錢進去會有錢冒出來，你就是要去調查這個的原因啦！」說話真粗魯。</p>
+<p>「好，我知道了，要記得給我報酬喔！」就這樣，前往伊加恩山去了。</p>
+<hr>
+<p>「就是這個湖了吧！」</p>
+<p>已經抵達伊加恩山的我，此時站在一座看不到邊際的湖旁。確認應該是這湖後，順勢丟了一元銅板進去，但沒有什麼發生。</p>
+<p>「耶？」難道不是這個湖嗎？</p>
+<p>懷著疑問又丟了一個十元進去，此時突然有二十元飛了出來。</p>
+<p>「賺到了！！」真沒想到學園裡居然有這種地方可以洗錢，這真是太好了，之後依序又丟了一張一百元和一張兩百元。</p>
+<p>「耶？怎麼只有一百二十五元。」這次居然虧了，真的是莫名其妙。</p>
+<p>「那是因為你心存貪念啊！」</p>
+<p>我轉頭過去看到了聲音的來源。</p>
+<p>是一名還蠻帥氣的男生，從外表看來年齡大概二十幾歲。</p>
+<p>「所以說，這個湖只有在第一次丟才會賺錢的意思了喔？」我這樣問他。</p>
+<p>「剛剛只是開個玩笑而已，並不是如此，其實這個湖有個很特殊的地方。」說完，那男人丟了一元和三十元進去，飛出了一百一十二元出來。</p>
+<p>「這是以前有個人，他研究了數的關係，凡是一個數為奇數，就將他乘上三再加一，若為偶數，就將他除以二，一直到這個數變為一為止，而這過程當中出現了幾個數，就被稱為此數的循環長度。」</p>
+<p>「而那男人卻發現要一個一個計算太累，他設計了這個湖，他可以得到丟下去的兩數之間的擁有最高長度的不知某數的長度，而如此，這個湖也被變成了洗錢的好去處，而這座山也以這個有名的問題的名稱－3n+1來命名。」</p>
+<p>「原來如此。」所以才叫伊加恩山呀……</p>
+<p>「希望你不要把這地方公布出去，不然大概會通貨膨脹吧～」那男子笑著說。</p>
+<p>就這樣，我以「並無此事實」的結果呈報了上去，而副社長似乎也不覺得怎樣的收走了。</p>
 <blockquote>
-<p>原始文章位址：<a href="http://blog.roodo.com/maplewing/archives/1898216.html" target="_blank">http://blog.roodo.com/maplewing/archives/1898216.html</a></p>
+<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/1498" target="_blank">http://www.knightzone.org/wordpress/archives/1498</a></p>
 </blockquote>
 
       
@@ -899,7 +979,7 @@ using namespace std;
         
         
         <div class="alignright">
-          <a href="http://blog.knightzone.org/2006/07/17/2006-07-17--novels-a-spoof-wing-world-3/#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://blog.knightzone.org/2008/11/15/2008-11-15--novels-garden-adventures-1-100-the-3n-1-problem/#disqus_thread" class="comment-link">Comments</a>
         </div>
         
       
@@ -950,9 +1030,9 @@ using namespace std;
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
-    <li><a href="/categories/小說創作/">小說創作</a><small>5</small></li>
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>5</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -964,7 +1044,7 @@ using namespace std;
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 

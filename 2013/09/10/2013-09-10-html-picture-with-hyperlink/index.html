@@ -142,7 +142,7 @@ pictureHyperlinkExample.html1
 </pre></td></tr></table></figure>
 
 <p><img src="/image/GyeO6tYCTP6KqSzrKSCi_html4-1.png" alt="html4-1.png"></p>
-<h2>img標籤：放置圖片</h2>
+<h1>img標籤：放置圖片</h1>
 <p>如果要在網頁中放置圖片，可使用img標籤，它具有兩個屬性必須設定，一個為src屬性，是放你的圖片的路徑；另外一個則是alt屬性，是放你的圖片的說明文字，也有可能會被用於圖片連結不到時的替代文字。</p>
 <figure class="highlight lang-html"><figcaption><span>img.html</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"圖片所在路徑"</span> <span class="attribute">alt</span>=<span class="value">"說明文字"</span> /&gt;</span>
@@ -153,7 +153,7 @@ pictureHyperlinkExample.html1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"圖片所在路徑"</span> <span class="attribute">alt</span>=<span class="value">"說明文字"</span> <span class="attribute">width</span>=<span class="value">"圖片寬度"</span> <span class="attribute">height</span>=<span class="value">"圖片高度"</span>/&gt;</span>
 </pre></td></tr></table></figure>
 
-<h2>a標籤：放置超連結</h2>
+<h1>a標籤：放置超連結</h1>
 <p>若要放置超連結，可使用a標籤，它有href屬性可以設定該連結要往那兒去，當使用者點擊時瀏覽器會跳至該頁面。</p>
 <figure class="highlight lang-html"><figcaption><span>a.html</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
@@ -178,17 +178,17 @@ pictureHyperlinkExample.html1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑#id名稱"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
 </pre></td></tr></table></figure>
 
-<h2>相對路徑與絕對路徑</h2>
+<h1>相對路徑與絕對路徑</h1>
 <p>以上不論是img標籤的src屬性或是a標籤的href屬性皆是放置一個檔案的路徑位置，路徑分成兩種：一種是相對路徑，另外一種則是絕對路徑。</p>
-<h3>相對路徑</h3>
+<h2>相對路徑</h2>
 <p>相對路徑是指從你所在的位置該如何走到欲連結到的檔案的位置的路徑表示，底下用幾張我以前的ppt來解說。</p>
 <p>假設該網頁名稱為second6.html，若要連結到與網頁在同資料夾的圖片，則直接打上該名字即可。<br><img src="/image/wpLKVi59SlecwcHkgmR2_html4-2.png" alt="html4-2.png"></p>
 <p>若要連結到位於跟網頁同資料夾的picture資料夾內的圖片，則打上picture，後面再加上斜線分隔，再打上圖片名稱。如果資料夾非常多層則是一樣的道理，可以寫成<code>同層資料夾/內層資料夾1/內層資料夾2/...以此類推/圖片名稱</code>。<br><img src="/image/hxoYB90RyVoypWLiGwRQ_html4-3.png" alt="html4-3.png"></p>
 <p>若要連結的圖片在網頁所在的資料夾的上一層，則使用..去表示。<br><img src="/image/kQiNSVBnTKm0EWe0YSSr_html4-4.png" alt="html4-4.png"></p>
-<h3>絕對路徑</h3>
+<h2>絕對路徑</h2>
 <p>絕對路徑通常是為了連結外部的資料，不在本網站內的資料去使用，因為不是本站的資料，所以無法使用相對路徑去連結到，只能使用絕對路徑去連結。若使用相對路徑，則網頁搬到不同的地方會連結到的位置會不同，端看該網頁的位置在何處；但若使用絕對路徑，則網頁不管搬到不同的地方則連結到的地方會是相同的。若你的資料會跟你的網站一起搬動，建議使用相對路徑；若不會，則使用絕對路徑。</p>
 <p>若是使用絕對路徑，則開頭會先寫明協定名稱，接著是IP位置、Domain Name或是電腦內的絕對路徑，例如要連結到Google就寫<code>&lt;a href=&quot;http://www.google.com&gt;Google連結&lt;/a&gt;</code>，如果要瀏覽網頁者連到他自己電腦的圖片則使用<code>&lt;img src=&quot;file:///C:/myphoto.jpeg&quot; /&gt;</code>(當然我不建議連到本機端這種用法)。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML &lt;a&gt; Tag：<a href="http://www.w3schools.com/tags/tag_a.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_a.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;img&gt; Tag：<a href="http://www.w3schools.com/tags/tag_img.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_img.asp">http://www.w3schools.com/tags/tag_img.asp</a></a></li>
@@ -272,9 +272,9 @@ pictureHyperlinkExample.html1
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
-    <li><a href="/categories/小說創作/">小說創作</a><small>5</small></li>
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>5</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -286,7 +286,7 @@ pictureHyperlinkExample.html1
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 

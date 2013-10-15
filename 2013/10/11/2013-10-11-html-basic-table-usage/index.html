@@ -77,10 +77,10 @@
     <div class="entry">
       
         <p>請原諒我很久沒繼續寫HTML教學文了，<br>一直很想寫，但因為生病的關係停了一陣子，<br>真的是很不好意思。</p>
-<h2>行和列、欄和列、Row &amp; Column</h2>
+<h1>行和列、欄和列、Row &amp; Column</h1>
 <p>首先要先能夠分別［行和列］、［欄和列］、［Row &amp; Column］，這樣在表格的教學文中才不會出現問題，首先先看底下的圖來進行分辨：<br><img src="/image/hrFU4NcsTd2XnSS7psvg_slide-22-638.jpg" alt="Row &amp; Column"></p>
 <p>或許各位會記不起來行和列的分別，所以我利用以前在赫哲補習班學到的方法來告訴大家，透過行與列的第一個筆畫即可分別，<code>行</code>的第一個筆畫偏上下，而<code>列</code>的第一個筆畫為左右，故可藉此來分別，不過中國大陸的行和列是與我們相反的，還請各位多多注意。</p>
-<h2>基本表格結構</h2>
+<h1>基本表格結構</h1>
 <p>底下先讓我們看一個基礎的範例：</p>
 <figure class="highlight lang-html"><figcaption><span>BasicTableExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -150,7 +150,7 @@
 <p>看到程式碼這麼長，大家應該都昏了吧！我來慢慢解釋給各位聽吧！</p>
 <p>首先，<code>&lt;table&gt;...&lt;/table&gt;</code>包的是整個表格的內容，而table標籤本身有個屬性叫做border，在以前的標準，其值為框線的粗細大小；現時的標準，只有0與1這個值可以填，表明表格是否要有框線，若沒使用border，則預設為無框線。</p>
 <p>再來有四組的<code>&lt;tr&gt;...&lt;/tr&gt;</code>，每組tr標籤個別表示的是表格裡的一列，在每組tr標籤中，有<code>&lt;td&gt;...&lt;/td&gt;</code>與<code>&lt;th&gt;...&lt;/th&gt;</code>兩種標籤，分別都表示一列裡面的一格資料，只不過th標籤表示的是標題資料，td標籤表示的是一般資料。而th標籤由於是表示標題資料，故有預設的粗體、文字置中樣式會自動套上去。這樣大概就是整個表格的架構了！</p>
-<h2>合併格</h2>
+<h1>合併格</h1>
 <p>接著我們來合併格子吧！底下一樣給個範例：</p>
 <figure class="highlight lang-html"><figcaption><span>BasicTableExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -232,7 +232,7 @@
 <p>我們可以在td標籤與th標籤插入colspan與rowspan屬性去給予要合併的格數。</p>
 <p>在範例中，<code>Sonic</code>該格使用了<code>rowspan=&quot;2&quot;</code>，也就是指<code>Sonic</code>該格要佔兩個列(row)，所佔的位置為該格與下一列的對應位置的該格，這也使下一個tr內少了一個td標籤。同理，而<code>E-123 Omega</code>該格使用了<code>colspan=&quot;2&quot;</code>，也就是指<code>E-123 Omega</code>該格要佔兩個行(column)，所佔的位置為該格與向右一格的格子，故其所在的tr標籤少了一個td標籤，這也就是合併格子的用法。</p>
 <p>這樣講完了基本的表格用法，等之後再來提提更進階的表格結構吧！(雖然這個之後應該會非常久就是了XD!!)</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML Tables：<a href="http://www.w3schools.com/html/html_tables.asp" target="_blank"><a href="http://www.w3schools.com/html/html_tables.asp">http://www.w3schools.com/html/html_tables.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;table&gt; Tag：<a href="http://www.w3schools.com/tags/tag_table.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_table.asp">http://www.w3schools.com/tags/tag_table.asp</a></a></li>
@@ -316,9 +316,9 @@
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
-    <li><a href="/categories/小說創作/">小說創作</a><small>5</small></li>
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>5</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -330,7 +330,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 

@@ -74,7 +74,7 @@
       
         <p>本來是沒特別想寫這篇，不過想想這功能在最近已經被廣泛支援了，故就想說一定要好好來介紹一下！</p>
 <p>大家在打入中文、日文的時候，有時候應該會想加入標音吧！正好以前IE有個標籤叫做ruby標籤可以做到這樣的事情，而在HTML5終於把ruby標籤做為標準加入了！</p>
-<h2>標音</h2>
+<h1>標音</h1>
 <p>底下一樣先用一個範例來解釋：</p>
 <figure class="highlight lang-html"><figcaption><span>ruby01.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -117,7 +117,7 @@
 <blockquote>
 <p>rb標籤：早期的寫法會把[欲加上標音的字詞]包在<code>&lt;rb&gt;...&lt;/rb&gt;</code>內，但是收錄進HTML5標準的時候，去除了rb標籤，所以目前的標準是要省略rb標籤的唷！</p>
 </blockquote>
-<h2>不支援標音之瀏覽器的表現方法</h2>
+<h1>不支援標音之瀏覽器的表現方法</h1>
 <p>假設今天要讓不支援標音的瀏覽器上看起來也要至少正常一點，可以將要多餘顯示的文字用rp標籤包住。這樣的話，有支援標音的瀏覽器會忽略rp標籤裡的內容，而不支援標音的瀏覽器就會顯示rp標籤裡的內容。底下看個範例：</p>
 <figure class="highlight lang-html"><figcaption><span>ruby02.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -150,7 +150,7 @@
 <li>Firefox支援Ruby否？根據w3schools.com的內容是說已經支援了，但我的Firefox還是沒有。如果你的Firefox沒有標音功能，可以到<a href="https://addons.mozilla.org/zh-tw/firefox/addon/html-ruby/" target="_blank">這裡(HTML Ruby)</a>下載套件安裝一下就支援了！</li>
 </ol>
 </blockquote>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML &lt;ruby&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ruby.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ruby.asp">http://www.w3schools.com/tags/tag_ruby.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;rp&gt; Tag：<a href="http://www.w3schools.com/tags/tag_rp.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_rp.asp">http://www.w3schools.com/tags/tag_rp.asp</a></a></li>
@@ -193,7 +193,7 @@
     <div class="entry">
       
         <p>清單在網頁中是很常使用到的東西，故多少還是要了解一下。在HTML中有三種不太一樣的清單，分別是無序清單、有序清單與定義清單，無序清單與有序清單的用法差不多，但與定義清單的用法差距比較大，底下來個別解釋其使用的方法。</p>
-<h2>無序清單</h2>
+<h1>無序清單</h1>
 <figure class="highlight lang-html"><figcaption><span>unordered-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -232,7 +232,7 @@
 
 <p><img src="/image/oei6c5rDR30zTXQ2OKNb_list01.png" alt="list01.png"></p>
 <p>無序清單使用<code>&lt;ul&gt;...&lt;/ul&gt;</code>將整個清單包起來，每一項使用<code>&lt;li&gt;...&lt;li&gt;</code>即可，效果就跟用Word按的項目符號及編號做出來的差不多。</p>
-<h2>有序清單</h2>
+<h1>有序清單</h1>
 <figure class="highlight lang-html"><figcaption><span>ordered-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -273,7 +273,7 @@
 <p>有序清單的使用與無序清單差不多，僅僅只是將ul(unordered list)標籤換成了ol(ordered list)標籤，效果就從原本的項目符號換成了數字編號。</p>
 <p>如果要改變起始的編號，可使用<code>start</code>屬性，例如起始值要改成10，就寫<code>&lt;ol start=&quot;10&quot;&gt;</code>。</p>
 <p>HTML5提供了新的屬性，可讓ol反向計算數值，利用<code>reversed</code>屬性即可，僅要寫<code>&lt;ol reversed&gt;</code>即可反向。(HTML5的功能性屬性，大多都是有寫就有效果，不用給值，沒寫就沒有效果)</p>
-<h2>定義清單</h2>
+<h1>定義清單</h1>
 <figure class="highlight lang-html"><figcaption><span>description-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -308,7 +308,7 @@
 
 <p><img src="/image/Pli6ycbqRBCM3nYpi7Sk_list03.png" alt="list03.png"></p>
 <p>與前述兩種清單不同的地方在於，整個清單用<code>&lt;dl&gt;...&lt;/dl&gt;</code>包住，每一項從原本僅有一個li標籤，換成dt和dd各一個標籤，dt表示的是欲解釋的項目，dd表示的是欲解釋的內容，因為是解釋的內容，所以dd標籤在排版上會做自動縮排。</p>
-<h2>巢狀清單用法</h2>
+<h1>巢狀清單用法</h1>
 <p>若要在清單內的某一項再利用清單解釋，可用以下的做法：</p>
 <figure class="highlight lang-html"><figcaption><span>nested-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -368,7 +368,7 @@
 
 <p><img src="/image/e9DpeeMqRWyGsKo6NtQZ_list04.png" alt="list04.png"></p>
 <p>上面對於每一項li標籤內又在加入了另外一個清單去做描述，而清單內的清單瀏覽器會自動在排版上去做縮排，這是很方便可以做多層巢狀清單的用法，各位也可以自己試試看如果換成用ol和dl又會發生什麼事情。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML &lt;ul&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ul.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ul.asp">http://www.w3schools.com/tags/tag_ul.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;ol&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ol.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ol.asp">http://www.w3schools.com/tags/tag_ol.asp</a></a></li>
@@ -411,10 +411,10 @@
     <div class="entry">
       
         <p>請原諒我很久沒繼續寫HTML教學文了，<br>一直很想寫，但因為生病的關係停了一陣子，<br>真的是很不好意思。</p>
-<h2>行和列、欄和列、Row &amp; Column</h2>
+<h1>行和列、欄和列、Row &amp; Column</h1>
 <p>首先要先能夠分別［行和列］、［欄和列］、［Row &amp; Column］，這樣在表格的教學文中才不會出現問題，首先先看底下的圖來進行分辨：<br><img src="/image/hrFU4NcsTd2XnSS7psvg_slide-22-638.jpg" alt="Row &amp; Column"></p>
 <p>或許各位會記不起來行和列的分別，所以我利用以前在赫哲補習班學到的方法來告訴大家，透過行與列的第一個筆畫即可分別，<code>行</code>的第一個筆畫偏上下，而<code>列</code>的第一個筆畫為左右，故可藉此來分別，不過中國大陸的行和列是與我們相反的，還請各位多多注意。</p>
-<h2>基本表格結構</h2>
+<h1>基本表格結構</h1>
 <p>底下先讓我們看一個基礎的範例：</p>
 <figure class="highlight lang-html"><figcaption><span>BasicTableExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -484,7 +484,7 @@
 <p>看到程式碼這麼長，大家應該都昏了吧！我來慢慢解釋給各位聽吧！</p>
 <p>首先，<code>&lt;table&gt;...&lt;/table&gt;</code>包的是整個表格的內容，而table標籤本身有個屬性叫做border，在以前的標準，其值為框線的粗細大小；現時的標準，只有0與1這個值可以填，表明表格是否要有框線，若沒使用border，則預設為無框線。</p>
 <p>再來有四組的<code>&lt;tr&gt;...&lt;/tr&gt;</code>，每組tr標籤個別表示的是表格裡的一列，在每組tr標籤中，有<code>&lt;td&gt;...&lt;/td&gt;</code>與<code>&lt;th&gt;...&lt;/th&gt;</code>兩種標籤，分別都表示一列裡面的一格資料，只不過th標籤表示的是標題資料，td標籤表示的是一般資料。而th標籤由於是表示標題資料，故有預設的粗體、文字置中樣式會自動套上去。這樣大概就是整個表格的架構了！</p>
-<h2>合併格</h2>
+<h1>合併格</h1>
 <p>接著我們來合併格子吧！底下一樣給個範例：</p>
 <figure class="highlight lang-html"><figcaption><span>BasicTableExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -566,7 +566,7 @@
 <p>我們可以在td標籤與th標籤插入colspan與rowspan屬性去給予要合併的格數。</p>
 <p>在範例中，<code>Sonic</code>該格使用了<code>rowspan=&quot;2&quot;</code>，也就是指<code>Sonic</code>該格要佔兩個列(row)，所佔的位置為該格與下一列的對應位置的該格，這也使下一個tr內少了一個td標籤。同理，而<code>E-123 Omega</code>該格使用了<code>colspan=&quot;2&quot;</code>，也就是指<code>E-123 Omega</code>該格要佔兩個行(column)，所佔的位置為該格與向右一格的格子，故其所在的tr標籤少了一個td標籤，這也就是合併格子的用法。</p>
 <p>這樣講完了基本的表格用法，等之後再來提提更進階的表格結構吧！(雖然這個之後應該會非常久就是了XD!!)</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML Tables：<a href="http://www.w3schools.com/html/html_tables.asp" target="_blank"><a href="http://www.w3schools.com/html/html_tables.asp">http://www.w3schools.com/html/html_tables.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;table&gt; Tag：<a href="http://www.w3schools.com/tags/tag_table.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_table.asp">http://www.w3schools.com/tags/tag_table.asp</a></a></li>
@@ -608,7 +608,7 @@
     <div class="entry">
       
         <p>常用Javascript的人都知道，［this這個關鍵字在一個函式內究竟指向誰］的這個問題很令人頭大，本人在這裡整理了一下Javascript中this的指向的五種不同情況，其中前三種屬於基本的情況，而後兩種情況可基於前三種情況的方式來進行思考。</p>
-<h2>1.this指向於調用該函式之物件</h2>
+<h1>1.this指向於調用該函式之物件</h1>
 <p>如果你有學過C/C++，你可能會記得一個物件內的成員函式裡的this指的即是該成員函式所在之物件，但在Javascript裡則有那麼些許不同，Javascript裡的this看的是究竟是誰調用該函式，而不是看該函式被定義在哪個物件內，這個大原則抓到了，基本上就已經可以探知this的奧秘了。底下寫一下這種情況的公式與範例：</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>物件.函式(); <span class="comment">//函式內的this指向該物件</span>
@@ -642,7 +642,7 @@ obj.innerobj = {
 obj.innerobj.f(); <span class="comment">//由於調用f函式時，點前面物件為obj.innerobj，故f內的this指向obj.innerobj，則輸出為30。</span>
 </pre></td></tr></table></figure>
 
-<h2>2.this指向全域物件(瀏覽器：window物件、node.js：GLOBAL物件)</h2>
+<h1>2.this指向全域物件(瀏覽器：window物件、node.js：GLOBAL物件)</h1>
 <p>如果調用函式的前方並未有物件，則函式內this就指向全域物件。在瀏覽器內全域物件為window物件，而在node.js中全域物件則為GLOBAL物件。底下一樣寫一下這種情況的公式與範例：</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>函式(); <span class="comment">//函式內的this指向全域物件</span>
@@ -665,8 +665,8 @@ f(); <span class="comment">//由於調用f函式時，前方並未有[物件.]�
 <blockquote>
 <p>例外：在使用node.js時，若使用<code>node file.js</code>這樣的方式執行js檔，並不會讓宣告的全域變數掛在全域物件上(意指會利用function將code整個包起來執行)，故輸出應為undefined。</p>
 </blockquote>
-<h3>前兩種情況常見誤導範例</h3>
-<h4>範例一、物件之成員函式內有函式(感謝<a href="http://0w0.logdown.com/posts/41667-about-me" target="_blank">NSLin</a>在實務讀書會上的範例Code)</h4>
+<h2>前兩種情況常見誤導範例</h2>
+<h3>範例一、物件之成員函式內有函式(感謝<a href="http://0w0.logdown.com/posts/41667-about-me" target="_blank">NSLin</a>在實務讀書會上的範例Code)</h3>
 <figure class="highlight lang-js"><figcaption><span>example1.js</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -719,7 +719,7 @@ obj.f();  <span class="comment">// (1)</span>
 obj.f();
 </pre></td></tr></table></figure>
 
-<h4>範例二、借用函式</h4>
+<h3>範例二、借用函式</h3>
 <figure class="highlight lang-js"><figcaption><span>example2.js</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -757,7 +757,7 @@ obj2.f(); <span class="comment">// (3)</span>
 </pre></td></tr></table></figure>
 
 <p>範例中三次調用之函式的this所指向的物件為何，不知道各位能不能看得出來。雖然用的是同一個函式，但是因為調用的不同，故this所指向的物件就不同。(1)obj.f()的f所指向的是obj，這比較沒有問題，輸出的會是20；而(2)fOut()裡的this，則是因為調用時前方無物件，則this所指的是全域物件，輸出的會是10；最後(3)obj2.f()則是obj2去呼叫f，故f內的this指向的是obj2，輸出的會是30。</p>
-<h2>3.this指向利用call或apply所指派給this的物件</h2>
+<h1>3.this指向利用call或apply所指派給this的物件</h1>
 <p>有個方法可以更動前兩種敘述所讓this指派的值，就是利用call與apply。call與apply都是呼叫該函式並讓該函式的this指向給予call或apply的第一個參數。至於call和apply的差別則是在於其後面給予被調用之函式的參數放入的方法不同，一個是直接攤平放在第二個以後的參數；一個是直接放入一個裡面放要給予之參數的陣列。底下一樣看一下公式和範例：</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -787,7 +787,7 @@ obj2.f(); <span class="comment">// (3)</span>
 obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2，故輸出為30</span>
 </pre></td></tr></table></figure>
 
-<h2>4.this指向new所產生之新物件</h2>
+<h1>4.this指向new所產生之新物件</h1>
 <p>若將函式當作建構式(constructor)來用，則內部的this則指向於new所產生之新物件。</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="keyword">new</span> 建構式(); <span class="comment">//建構式內之this指向new所產生之新物件</span>
@@ -815,7 +815,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 })();
 </pre></td></tr></table></figure>
 
-<h2>5.callback函式內的this會指向於調用放入該callback的函式之this所指向之物件</h2>
+<h1>5.callback函式內的this會指向於調用放入該callback的函式之this所指向之物件</h1>
 <p>先想想在jQuery中，我們若要讓#button這個元素被click的時候，內容改為“Clicked”這樣的字串，該如何寫呢？</p>
 <figure class="highlight lang-js"><figcaption><span>clicked.js</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -853,7 +853,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 }
 </pre></td></tr></table></figure>
 
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>Javascript的this用法：<a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank"><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html">http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html</a></a></li>
 <li>[图解] 你不知道的 JavaScript - “this”：<a href="http://www.cnblogs.com/ruxpinsp1/archive/2008/04/20/1162463.html" target="_blank"><a href="http://www.cnblogs.com/ruxpinsp1/archive/2008/04/20/1162463.html">http://www.cnblogs.com/ruxpinsp1/archive/2008/04/20/1162463.html</a></a></li>
@@ -1049,7 +1049,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </pre></td></tr></table></figure>
 
 <p><img src="/image/GyeO6tYCTP6KqSzrKSCi_html4-1.png" alt="html4-1.png"></p>
-<h2>img標籤：放置圖片</h2>
+<h1>img標籤：放置圖片</h1>
 <p>如果要在網頁中放置圖片，可使用img標籤，它具有兩個屬性必須設定，一個為src屬性，是放你的圖片的路徑；另外一個則是alt屬性，是放你的圖片的說明文字，也有可能會被用於圖片連結不到時的替代文字。</p>
 <figure class="highlight lang-html"><figcaption><span>img.html</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"圖片所在路徑"</span> <span class="attribute">alt</span>=<span class="value">"說明文字"</span> /&gt;</span>
@@ -1060,7 +1060,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"圖片所在路徑"</span> <span class="attribute">alt</span>=<span class="value">"說明文字"</span> <span class="attribute">width</span>=<span class="value">"圖片寬度"</span> <span class="attribute">height</span>=<span class="value">"圖片高度"</span>/&gt;</span>
 </pre></td></tr></table></figure>
 
-<h2>a標籤：放置超連結</h2>
+<h1>a標籤：放置超連結</h1>
 <p>若要放置超連結，可使用a標籤，它有href屬性可以設定該連結要往那兒去，當使用者點擊時瀏覽器會跳至該頁面。</p>
 <figure class="highlight lang-html"><figcaption><span>a.html</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
@@ -1085,17 +1085,17 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑#id名稱"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
 </pre></td></tr></table></figure>
 
-<h2>相對路徑與絕對路徑</h2>
+<h1>相對路徑與絕對路徑</h1>
 <p>以上不論是img標籤的src屬性或是a標籤的href屬性皆是放置一個檔案的路徑位置，路徑分成兩種：一種是相對路徑，另外一種則是絕對路徑。</p>
-<h3>相對路徑</h3>
+<h2>相對路徑</h2>
 <p>相對路徑是指從你所在的位置該如何走到欲連結到的檔案的位置的路徑表示，底下用幾張我以前的ppt來解說。</p>
 <p>假設該網頁名稱為second6.html，若要連結到與網頁在同資料夾的圖片，則直接打上該名字即可。<br><img src="/image/wpLKVi59SlecwcHkgmR2_html4-2.png" alt="html4-2.png"></p>
 <p>若要連結到位於跟網頁同資料夾的picture資料夾內的圖片，則打上picture，後面再加上斜線分隔，再打上圖片名稱。如果資料夾非常多層則是一樣的道理，可以寫成<code>同層資料夾/內層資料夾1/內層資料夾2/...以此類推/圖片名稱</code>。<br><img src="/image/hxoYB90RyVoypWLiGwRQ_html4-3.png" alt="html4-3.png"></p>
 <p>若要連結的圖片在網頁所在的資料夾的上一層，則使用..去表示。<br><img src="/image/kQiNSVBnTKm0EWe0YSSr_html4-4.png" alt="html4-4.png"></p>
-<h3>絕對路徑</h3>
+<h2>絕對路徑</h2>
 <p>絕對路徑通常是為了連結外部的資料，不在本網站內的資料去使用，因為不是本站的資料，所以無法使用相對路徑去連結到，只能使用絕對路徑去連結。若使用相對路徑，則網頁搬到不同的地方會連結到的位置會不同，端看該網頁的位置在何處；但若使用絕對路徑，則網頁不管搬到不同的地方則連結到的地方會是相同的。若你的資料會跟你的網站一起搬動，建議使用相對路徑；若不會，則使用絕對路徑。</p>
 <p>若是使用絕對路徑，則開頭會先寫明協定名稱，接著是IP位置、Domain Name或是電腦內的絕對路徑，例如要連結到Google就寫<code>&lt;a href=&quot;http://www.google.com&gt;Google連結&lt;/a&gt;</code>，如果要瀏覽網頁者連到他自己電腦的圖片則使用<code>&lt;img src=&quot;file:///C:/myphoto.jpeg&quot; /&gt;</code>(當然我不建議連到本機端這種用法)。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML &lt;a&gt; Tag：<a href="http://www.w3schools.com/tags/tag_a.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_a.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;img&gt; Tag：<a href="http://www.w3schools.com/tags/tag_img.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_img.asp">http://www.w3schools.com/tags/tag_img.asp</a></a></li>
@@ -1137,7 +1137,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
     <div class="entry">
       
         <p>基於昨天瑪莉羊問我該怎麼將課表的Excel檔轉成圖片，又剛好我要把成績單的Excel檔也要轉成圖片，所以我就查了一下開怎麼做，底下列出如何將試算表轉成圖片。</p>
-<h2>轉換步驟</h2>
+<h1>轉換步驟</h1>
 <ol>
 <li><p>首先先開啟Excel檔案，並將要轉成圖片的範圍框起來。<br><img src="/image/shNDc1b2SKCrx6rY6ut4_excel1.png" alt="excel1.png"></p>
 </li>
@@ -1146,7 +1146,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 <li><p>最後在小畫家(或是其他繪圖軟體)裡面按下Ctrl+V貼上後儲存成圖片即可。<br><img src="/image/qRo1YIK2TUajq4ycFdBc_excel3.png" alt="excel3.png"></p>
 </li>
 </ol>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>How to Save an Excel Spreadsheet As an Image or Picture | eHow：<a href="http://www.ehow.com/how_5968604_save-excel-spreadsheet-image-picture.html" target="_blank"><a href="http://www.ehow.com/how_5968604_save-excel-spreadsheet-image-picture.html">http://www.ehow.com/how_5968604_save-excel-spreadsheet-image-picture.html</a></a></li>
 <li>Excel: Save a worksheet as an image file | CyberText Newsletter：<a href="http://cybertext.wordpress.com/2011/06/29/excel-save-a-worksheet-as-an-image-file/" target="_blank"><a href="http://cybertext.wordpress.com/2011/06/29/excel-save-a-worksheet-as-an-image-file/">http://cybertext.wordpress.com/2011/06/29/excel-save-a-worksheet-as-an-image-file/</a></a></li>
@@ -1188,7 +1188,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
       
         <p>電腦裡面只能儲存0與1，並且透過二進位的方式用0與1儲存了數字，透過數字與文字的對應，電腦可以利用儲存數字的方式去儲存文字，並在顯示的時候透過對應表去找出該數字代表的文字為何，這樣的對應儲存模式就被稱為編碼。這世界上有很多語言，故編碼也有很多種，若使用的編碼不對，會導致網頁上出現我們有時候去瀏覽國外網站的時候常常會出現的亂碼現象，如下圖所示：<br><img src="/image/zHKS5sZoRK2oecYqNALa_html3-1.png" alt="html3-1.png"></p>
 <p>因此我們必須要確定我們製作出來的網站是用什麼編碼方式儲存的，並且要試著從網頁裡去設定其網頁編碼，讓瀏覽器可以用正確的編碼方式去瀏覽該網站。</p>
-<h2>常見編碼</h2>
+<h1>常見編碼</h1>
 <p>各國都有不同的編碼，底下試著列出一些常見的編碼：</p>
 <table>
 <thead>
@@ -1218,10 +1218,10 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </table>
 <p>由上表可知，每個語言都有其不同的當地的編碼方式，那麼如果要顯示所有國家語言的網站該怎麼辦？</p>
 <p>不管你是否要做一個純粹單一語言的網站或是要做多語言的網站，我都會建議你使用Unicode萬國碼的 <strong>UTF-8</strong> 的編碼方式去儲存網站，這個編碼不僅支援多個國家的語言，有些繁體中文的罕見字其實用Big5是沒辦法表示的，但是用萬國碼卻是OK的！</p>
-<h2>如何儲存UTF-8格式的網頁</h2>
+<h1>如何儲存UTF-8格式的網頁</h1>
 <p>如果使用的是記事本來編輯網頁，可在儲存檔案的時候，點擊底下的編碼的選項，選擇UTF-8即可，如下圖所示：<br><img src="/image/KiIKvWqDQLSzRSWF14BJ_html3-2.png" alt="html3-2.png"></p>
 <p>如果是使用Notepad++來編輯網頁，可在上面工具列的［編碼］裡面選擇［轉換至UTF-8碼格式(檔首無BOM)］即可，如下圖所示：<br><img src="/image/9Ycmyz0iRtC7VjIzDqnH_html3-3.png" alt="html3-3.png"></p>
-<h2>用meta標籤來設定該網頁的編碼</h2>
+<h1>用meta標籤來設定該網頁的編碼</h1>
 <p>meta標籤在HTML文件中，是用來設定該文件的meta資料，除了可以用來設定編碼外，還可以設定很多其他跟網頁有關的資料，不過在這裡我只先提該如何設定網頁的編碼。</p>
 <p>你可以在head元素內加上<code>&lt;meta charset=&quot;編碼名稱&quot; /&gt;</code>即可設定網頁的編碼，如果你要設定其為UTF-8的編碼，可如底下範例所示：</p>
 <figure class="highlight lang-html"><figcaption><span>UTF-8.html</span></figcaption><table><tr><td class="gutter"><pre>1
@@ -1239,7 +1239,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </pre></td></tr></table></figure>
 
 <p>在HTML4.01的時候，是使用<code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</code>這麼冗長的敘述，但是現在HTML5，你可以使用上述如此簡短的敘述即可。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>MOZILLA DEVELOPER NETWORK &gt; 應該避免的過時語法：<a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid" target="_blank"><a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid">https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid</a></a></li>
 <li>html5 - &lt;meta charset=&#39;utf-8&#39;&gt; vs &lt;meta http-equiv=&#39;Content-Type&#39;&gt; - Stack Overflow：<a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type" target="_blank"><a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type">http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type</a></a></li>
@@ -1320,7 +1320,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </pre></td></tr></table></figure>
 
 <p><img src="/image/laHLnesBSPOkJMnJa0Dp_html2-1.png" alt="html2-1.png"></p>
-<h2>標題表示用標籤</h2>
+<h1>標題表示用標籤</h1>
 <p>使用h1~h6標籤分別可以表示從大到小的1級到6級的標題，當一篇文章出現標題的時候，可以使用此標籤來表示標題的部分。底下是h1~h6各個標籤範例：</p>
 <figure class="highlight lang-html"><figcaption><span>header1to6.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -1345,17 +1345,17 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 </pre></td></tr></table></figure>
 
 <p><img src="/image/REVdse98QKmT7WBtIids_html2-2.png" alt="html2-2.png"></p>
-<h2>水平線標籤</h2>
+<h1>水平線標籤</h1>
 <p>若要使用水平線來分隔文章，可以使用hr標籤來表示，hr為一個無包內容的標籤，可以寫作<code>&lt;hr /&gt;</code>。</p>
-<h2>段落與換行標籤</h2>
+<h1>段落與換行標籤</h1>
 <p>若文章中要表示段落，可將段落使用p標籤包起來，此時段落上下會與其他段落產生分隔的效果；若僅只要使用簡單的單行換行可使用br標籤，br亦為一個無包內容的標籤，可以寫作<code>&lt;br /&gt;</code>。</p>
-<h2>強調標籤</h2>
+<h1>強調標籤</h1>
 <p>若文章中有需要強調的地方，可使用em標籤做斜體強調、strong標籤去做粗體強調，若要兩者一起使用，則可巢狀式的將一個標籤包起另外一個標籤（就像範例所寫的<code>&lt;em&gt;&lt;strong&gt;強調部分&lt;/strong&gt;&lt;/em&gt;</code>）。如果以前有用過HTML的人可能會知道有另外兩個標籤與之效果相同，分別是i(斜體)與b(粗體)標籤。在HTML5開始強調用標籤來表示文章語意的做法後，會建議使用em、strong兩個標籤來取代i與b標籤。</p>
-<h2>block元素與inline元素</h2>
+<h1>block元素與inline元素</h1>
 <p>大部分的HTML元素都會定義它為block元素或是inline元素。當使用該標籤會造成該元素與上下元素自動有所分隔，則該標籤所產生的元素為block元素；相對地，若並不會造成與上下元素之間的分隔的話，則為inline元素。本範例中，像是h系列的元素和p元素就屬於block元素；而em元素和strong元素則屬於inline元素。</p>
-<h2>已被廢棄使用的樣式用標籤</h2>
+<h1>已被廢棄使用的樣式用標籤</h1>
 <p>在HTML5當中，已不建議使用center標籤(置中)與font標籤(改變文字樣式，像是文字大小、文字顏色等)來去做樣式變化，目前HTML語法強調是被使用在文件語意上，而樣式美觀的部分就全權交給CSS語法去做處理，故若要置中或是改變文字樣式的部分請使用CSS樣式去做。(其實不只center、font標籤，其他像是align屬性(該元素對齊用)、bgcolor屬性(背景顏色屬性)……等等與樣式有關係的標籤或是屬性都已不建議使用HTML語法做更改，請盡量都使用CSS語法去撰寫)</p>
-<h2>pre標籤：直接顯示與原語法相同內容</h2>
+<h1>pre標籤：直接顯示與原語法相同內容</h1>
 <p>如果有時從別的地方直接複製一篇長篇的文章，要在該文章換行或段落的地方加上<code>&lt;br /&gt;</code>或是<code>&lt;p&gt;...&lt;/p&gt;</code>實在有點麻煩，這時候只要直接先貼上該文章，然後前後加上<code>&lt;pre&gt;...文章...&lt;/pre&gt;</code>即可，這就是pre標籤的用途。</p>
 <figure class="highlight lang-html"><figcaption><span>pre.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -1440,9 +1440,9 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
-    <li><a href="/categories/小說創作/">小說創作</a><small>5</small></li>
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>5</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -1454,7 +1454,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 

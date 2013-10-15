@@ -78,7 +78,7 @@
       
         <p>本來是沒特別想寫這篇，不過想想這功能在最近已經被廣泛支援了，故就想說一定要好好來介紹一下！</p>
 <p>大家在打入中文、日文的時候，有時候應該會想加入標音吧！正好以前IE有個標籤叫做ruby標籤可以做到這樣的事情，而在HTML5終於把ruby標籤做為標準加入了！</p>
-<h2>標音</h2>
+<h1>標音</h1>
 <p>底下一樣先用一個範例來解釋：</p>
 <figure class="highlight lang-html"><figcaption><span>ruby01.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -121,7 +121,7 @@
 <blockquote>
 <p>rb標籤：早期的寫法會把[欲加上標音的字詞]包在<code>&lt;rb&gt;...&lt;/rb&gt;</code>內，但是收錄進HTML5標準的時候，去除了rb標籤，所以目前的標準是要省略rb標籤的唷！</p>
 </blockquote>
-<h2>不支援標音之瀏覽器的表現方法</h2>
+<h1>不支援標音之瀏覽器的表現方法</h1>
 <p>假設今天要讓不支援標音的瀏覽器上看起來也要至少正常一點，可以將要多餘顯示的文字用rp標籤包住。這樣的話，有支援標音的瀏覽器會忽略rp標籤裡的內容，而不支援標音的瀏覽器就會顯示rp標籤裡的內容。底下看個範例：</p>
 <figure class="highlight lang-html"><figcaption><span>ruby02.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -154,7 +154,7 @@
 <li>Firefox支援Ruby否？根據w3schools.com的內容是說已經支援了，但我的Firefox還是沒有。如果你的Firefox沒有標音功能，可以到<a href="https://addons.mozilla.org/zh-tw/firefox/addon/html-ruby/" target="_blank">這裡(HTML Ruby)</a>下載套件安裝一下就支援了！</li>
 </ol>
 </blockquote>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML &lt;ruby&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ruby.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ruby.asp">http://www.w3schools.com/tags/tag_ruby.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;rp&gt; Tag：<a href="http://www.w3schools.com/tags/tag_rp.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_rp.asp">http://www.w3schools.com/tags/tag_rp.asp</a></a></li>
@@ -197,7 +197,7 @@
     <div class="entry">
       
         <p>清單在網頁中是很常使用到的東西，故多少還是要了解一下。在HTML中有三種不太一樣的清單，分別是無序清單、有序清單與定義清單，無序清單與有序清單的用法差不多，但與定義清單的用法差距比較大，底下來個別解釋其使用的方法。</p>
-<h2>無序清單</h2>
+<h1>無序清單</h1>
 <figure class="highlight lang-html"><figcaption><span>unordered-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -236,7 +236,7 @@
 
 <p><img src="/image/oei6c5rDR30zTXQ2OKNb_list01.png" alt="list01.png"></p>
 <p>無序清單使用<code>&lt;ul&gt;...&lt;/ul&gt;</code>將整個清單包起來，每一項使用<code>&lt;li&gt;...&lt;li&gt;</code>即可，效果就跟用Word按的項目符號及編號做出來的差不多。</p>
-<h2>有序清單</h2>
+<h1>有序清單</h1>
 <figure class="highlight lang-html"><figcaption><span>ordered-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -277,7 +277,7 @@
 <p>有序清單的使用與無序清單差不多，僅僅只是將ul(unordered list)標籤換成了ol(ordered list)標籤，效果就從原本的項目符號換成了數字編號。</p>
 <p>如果要改變起始的編號，可使用<code>start</code>屬性，例如起始值要改成10，就寫<code>&lt;ol start=&quot;10&quot;&gt;</code>。</p>
 <p>HTML5提供了新的屬性，可讓ol反向計算數值，利用<code>reversed</code>屬性即可，僅要寫<code>&lt;ol reversed&gt;</code>即可反向。(HTML5的功能性屬性，大多都是有寫就有效果，不用給值，沒寫就沒有效果)</p>
-<h2>定義清單</h2>
+<h1>定義清單</h1>
 <figure class="highlight lang-html"><figcaption><span>description-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -312,7 +312,7 @@
 
 <p><img src="/image/Pli6ycbqRBCM3nYpi7Sk_list03.png" alt="list03.png"></p>
 <p>與前述兩種清單不同的地方在於，整個清單用<code>&lt;dl&gt;...&lt;/dl&gt;</code>包住，每一項從原本僅有一個li標籤，換成dt和dd各一個標籤，dt表示的是欲解釋的項目，dd表示的是欲解釋的內容，因為是解釋的內容，所以dd標籤在排版上會做自動縮排。</p>
-<h2>巢狀清單用法</h2>
+<h1>巢狀清單用法</h1>
 <p>若要在清單內的某一項再利用清單解釋，可用以下的做法：</p>
 <figure class="highlight lang-html"><figcaption><span>nested-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -372,7 +372,7 @@
 
 <p><img src="/image/e9DpeeMqRWyGsKo6NtQZ_list04.png" alt="list04.png"></p>
 <p>上面對於每一項li標籤內又在加入了另外一個清單去做描述，而清單內的清單瀏覽器會自動在排版上去做縮排，這是很方便可以做多層巢狀清單的用法，各位也可以自己試試看如果換成用ol和dl又會發生什麼事情。</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML &lt;ul&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ul.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ul.asp">http://www.w3schools.com/tags/tag_ul.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;ol&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ol.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ol.asp">http://www.w3schools.com/tags/tag_ol.asp</a></a></li>
@@ -415,10 +415,10 @@
     <div class="entry">
       
         <p>請原諒我很久沒繼續寫HTML教學文了，<br>一直很想寫，但因為生病的關係停了一陣子，<br>真的是很不好意思。</p>
-<h2>行和列、欄和列、Row &amp; Column</h2>
+<h1>行和列、欄和列、Row &amp; Column</h1>
 <p>首先要先能夠分別［行和列］、［欄和列］、［Row &amp; Column］，這樣在表格的教學文中才不會出現問題，首先先看底下的圖來進行分辨：<br><img src="/image/hrFU4NcsTd2XnSS7psvg_slide-22-638.jpg" alt="Row &amp; Column"></p>
 <p>或許各位會記不起來行和列的分別，所以我利用以前在赫哲補習班學到的方法來告訴大家，透過行與列的第一個筆畫即可分別，<code>行</code>的第一個筆畫偏上下，而<code>列</code>的第一個筆畫為左右，故可藉此來分別，不過中國大陸的行和列是與我們相反的，還請各位多多注意。</p>
-<h2>基本表格結構</h2>
+<h1>基本表格結構</h1>
 <p>底下先讓我們看一個基礎的範例：</p>
 <figure class="highlight lang-html"><figcaption><span>BasicTableExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -488,7 +488,7 @@
 <p>看到程式碼這麼長，大家應該都昏了吧！我來慢慢解釋給各位聽吧！</p>
 <p>首先，<code>&lt;table&gt;...&lt;/table&gt;</code>包的是整個表格的內容，而table標籤本身有個屬性叫做border，在以前的標準，其值為框線的粗細大小；現時的標準，只有0與1這個值可以填，表明表格是否要有框線，若沒使用border，則預設為無框線。</p>
 <p>再來有四組的<code>&lt;tr&gt;...&lt;/tr&gt;</code>，每組tr標籤個別表示的是表格裡的一列，在每組tr標籤中，有<code>&lt;td&gt;...&lt;/td&gt;</code>與<code>&lt;th&gt;...&lt;/th&gt;</code>兩種標籤，分別都表示一列裡面的一格資料，只不過th標籤表示的是標題資料，td標籤表示的是一般資料。而th標籤由於是表示標題資料，故有預設的粗體、文字置中樣式會自動套上去。這樣大概就是整個表格的架構了！</p>
-<h2>合併格</h2>
+<h1>合併格</h1>
 <p>接著我們來合併格子吧！底下一樣給個範例：</p>
 <figure class="highlight lang-html"><figcaption><span>BasicTableExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -570,7 +570,7 @@
 <p>我們可以在td標籤與th標籤插入colspan與rowspan屬性去給予要合併的格數。</p>
 <p>在範例中，<code>Sonic</code>該格使用了<code>rowspan=&quot;2&quot;</code>，也就是指<code>Sonic</code>該格要佔兩個列(row)，所佔的位置為該格與下一列的對應位置的該格，這也使下一個tr內少了一個td標籤。同理，而<code>E-123 Omega</code>該格使用了<code>colspan=&quot;2&quot;</code>，也就是指<code>E-123 Omega</code>該格要佔兩個行(column)，所佔的位置為該格與向右一格的格子，故其所在的tr標籤少了一個td標籤，這也就是合併格子的用法。</p>
 <p>這樣講完了基本的表格用法，等之後再來提提更進階的表格結構吧！(雖然這個之後應該會非常久就是了XD!!)</p>
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>w3schools.com &gt; HTML Tables：<a href="http://www.w3schools.com/html/html_tables.asp" target="_blank"><a href="http://www.w3schools.com/html/html_tables.asp">http://www.w3schools.com/html/html_tables.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;table&gt; Tag：<a href="http://www.w3schools.com/tags/tag_table.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_table.asp">http://www.w3schools.com/tags/tag_table.asp</a></a></li>
@@ -612,7 +612,7 @@
     <div class="entry">
       
         <p>常用Javascript的人都知道，［this這個關鍵字在一個函式內究竟指向誰］的這個問題很令人頭大，本人在這裡整理了一下Javascript中this的指向的五種不同情況，其中前三種屬於基本的情況，而後兩種情況可基於前三種情況的方式來進行思考。</p>
-<h2>1.this指向於調用該函式之物件</h2>
+<h1>1.this指向於調用該函式之物件</h1>
 <p>如果你有學過C/C++，你可能會記得一個物件內的成員函式裡的this指的即是該成員函式所在之物件，但在Javascript裡則有那麼些許不同，Javascript裡的this看的是究竟是誰調用該函式，而不是看該函式被定義在哪個物件內，這個大原則抓到了，基本上就已經可以探知this的奧秘了。底下寫一下這種情況的公式與範例：</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>物件.函式(); <span class="comment">//函式內的this指向該物件</span>
@@ -646,7 +646,7 @@ obj.innerobj = {
 obj.innerobj.f(); <span class="comment">//由於調用f函式時，點前面物件為obj.innerobj，故f內的this指向obj.innerobj，則輸出為30。</span>
 </pre></td></tr></table></figure>
 
-<h2>2.this指向全域物件(瀏覽器：window物件、node.js：GLOBAL物件)</h2>
+<h1>2.this指向全域物件(瀏覽器：window物件、node.js：GLOBAL物件)</h1>
 <p>如果調用函式的前方並未有物件，則函式內this就指向全域物件。在瀏覽器內全域物件為window物件，而在node.js中全域物件則為GLOBAL物件。底下一樣寫一下這種情況的公式與範例：</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>函式(); <span class="comment">//函式內的this指向全域物件</span>
@@ -669,8 +669,8 @@ f(); <span class="comment">//由於調用f函式時，前方並未有[物件.]�
 <blockquote>
 <p>例外：在使用node.js時，若使用<code>node file.js</code>這樣的方式執行js檔，並不會讓宣告的全域變數掛在全域物件上(意指會利用function將code整個包起來執行)，故輸出應為undefined。</p>
 </blockquote>
-<h3>前兩種情況常見誤導範例</h3>
-<h4>範例一、物件之成員函式內有函式(感謝<a href="http://0w0.logdown.com/posts/41667-about-me" target="_blank">NSLin</a>在實務讀書會上的範例Code)</h4>
+<h2>前兩種情況常見誤導範例</h2>
+<h3>範例一、物件之成員函式內有函式(感謝<a href="http://0w0.logdown.com/posts/41667-about-me" target="_blank">NSLin</a>在實務讀書會上的範例Code)</h3>
 <figure class="highlight lang-js"><figcaption><span>example1.js</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -723,7 +723,7 @@ obj.f();  <span class="comment">// (1)</span>
 obj.f();
 </pre></td></tr></table></figure>
 
-<h4>範例二、借用函式</h4>
+<h3>範例二、借用函式</h3>
 <figure class="highlight lang-js"><figcaption><span>example2.js</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
@@ -761,7 +761,7 @@ obj2.f(); <span class="comment">// (3)</span>
 </pre></td></tr></table></figure>
 
 <p>範例中三次調用之函式的this所指向的物件為何，不知道各位能不能看得出來。雖然用的是同一個函式，但是因為調用的不同，故this所指向的物件就不同。(1)obj.f()的f所指向的是obj，這比較沒有問題，輸出的會是20；而(2)fOut()裡的this，則是因為調用時前方無物件，則this所指的是全域物件，輸出的會是10；最後(3)obj2.f()則是obj2去呼叫f，故f內的this指向的是obj2，輸出的會是30。</p>
-<h2>3.this指向利用call或apply所指派給this的物件</h2>
+<h1>3.this指向利用call或apply所指派給this的物件</h1>
 <p>有個方法可以更動前兩種敘述所讓this指派的值，就是利用call與apply。call與apply都是呼叫該函式並讓該函式的this指向給予call或apply的第一個參數。至於call和apply的差別則是在於其後面給予被調用之函式的參數放入的方法不同，一個是直接攤平放在第二個以後的參數；一個是直接放入一個裡面放要給予之參數的陣列。底下一樣看一下公式和範例：</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -791,7 +791,7 @@ obj2.f(); <span class="comment">// (3)</span>
 obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2，故輸出為30</span>
 </pre></td></tr></table></figure>
 
-<h2>4.this指向new所產生之新物件</h2>
+<h1>4.this指向new所產生之新物件</h1>
 <p>若將函式當作建構式(constructor)來用，則內部的this則指向於new所產生之新物件。</p>
 <figure class="highlight lang-js"><figcaption><span>公式</span></figcaption><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="keyword">new</span> 建構式(); <span class="comment">//建構式內之this指向new所產生之新物件</span>
@@ -819,7 +819,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 })();
 </pre></td></tr></table></figure>
 
-<h2>5.callback函式內的this會指向於調用放入該callback的函式之this所指向之物件</h2>
+<h1>5.callback函式內的this會指向於調用放入該callback的函式之this所指向之物件</h1>
 <p>先想想在jQuery中，我們若要讓#button這個元素被click的時候，內容改為“Clicked”這樣的字串，該如何寫呢？</p>
 <figure class="highlight lang-js"><figcaption><span>clicked.js</span></figcaption><table><tr><td class="gutter"><pre>1
 2
@@ -857,7 +857,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 }
 </pre></td></tr></table></figure>
 
-<h2>參考資料</h2>
+<h1>參考資料</h1>
 <ol>
 <li>Javascript的this用法：<a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank"><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html">http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html</a></a></li>
 <li>[图解] 你不知道的 JavaScript - “this”：<a href="http://www.cnblogs.com/ruxpinsp1/archive/2008/04/20/1162463.html" target="_blank"><a href="http://www.cnblogs.com/ruxpinsp1/archive/2008/04/20/1162463.html">http://www.cnblogs.com/ruxpinsp1/archive/2008/04/20/1162463.html</a></a></li>
@@ -1027,9 +1027,9 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
-    <li><a href="/categories/小說創作/">小說創作</a><small>5</small></li>
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>5</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -1041,7 +1041,7 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
