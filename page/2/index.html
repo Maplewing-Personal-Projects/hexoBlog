@@ -62,145 +62,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-09-07T17:07:00.000Z"><a href="/2013/09/07/2013-09-07-html-text-structure/">Sep 7 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/07/2013-09-07-html-text-structure/">#HTML：基本內文文章結構</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>HTML文件裡面的內容大概如你在報紙上看到的一篇篇文章，一樣會具備標題、副標題、段落等等格式，我們就先給一個範例來表現一篇文章的HTML文件吧！</p>
-<figure class="highlight lang-html"><figcaption><span>article.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>文章範例<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>主要標題<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">h2</span>&gt;</span>副標題<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">hr</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>第一個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">em</span>&gt;</span>斜體強調<span class="tag">&lt;/<span class="title">em</span>&gt;</span>，<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">strong</span>&gt;</span>粗體強調<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>，<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>粗斜體強調<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/laHLnesBSPOkJMnJa0Dp_html2-1.png" alt="html2-1.png"></p>
-<h1>標題表示用標籤</h1>
-<p>使用h1~h6標籤分別可以表示從大到小的1級到6級的標題，當一篇文章出現標題的時候，可以使用此標籤來表示標題的部分。底下是h1~h6各個標籤範例：</p>
-<figure class="highlight lang-html"><figcaption><span>header1to6.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre>...
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>一級標題<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h2</span>&gt;</span>二級標題<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h3</span>&gt;</span>三級標題<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h4</span>&gt;</span>四級標題<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h5</span>&gt;</span>五級標題<span class="tag">&lt;/<span class="title">h5</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h6</span>&gt;</span>六級標題<span class="tag">&lt;/<span class="title">h6</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-...
-</pre></td></tr></table></figure>
-
-<p><img src="/image/REVdse98QKmT7WBtIids_html2-2.png" alt="html2-2.png"></p>
-<h1>水平線標籤</h1>
-<p>若要使用水平線來分隔文章，可以使用hr標籤來表示，hr為一個無包內容的標籤，可以寫作<code>&lt;hr /&gt;</code>。</p>
-<h1>段落與換行標籤</h1>
-<p>若文章中要表示段落，可將段落使用p標籤包起來，此時段落上下會與其他段落產生分隔的效果；若僅只要使用簡單的單行換行可使用br標籤，br亦為一個無包內容的標籤，可以寫作<code>&lt;br /&gt;</code>。</p>
-<h1>強調標籤</h1>
-<p>若文章中有需要強調的地方，可使用em標籤做斜體強調、strong標籤去做粗體強調，若要兩者一起使用，則可巢狀式的將一個標籤包起另外一個標籤（就像範例所寫的<code>&lt;em&gt;&lt;strong&gt;強調部分&lt;/strong&gt;&lt;/em&gt;</code>）。如果以前有用過HTML的人可能會知道有另外兩個標籤與之效果相同，分別是i(斜體)與b(粗體)標籤。在HTML5開始強調用標籤來表示文章語意的做法後，會建議使用em、strong兩個標籤來取代i與b標籤。</p>
-<h1>block元素與inline元素</h1>
-<p>大部分的HTML元素都會定義它為block元素或是inline元素。當使用該標籤會造成該元素與上下元素自動有所分隔，則該標籤所產生的元素為block元素；相對地，若並不會造成與上下元素之間的分隔的話，則為inline元素。本範例中，像是h系列的元素和p元素就屬於block元素；而em元素和strong元素則屬於inline元素。</p>
-<h1>已被廢棄使用的樣式用標籤</h1>
-<p>在HTML5當中，已不建議使用center標籤(置中)與font標籤(改變文字樣式，像是文字大小、文字顏色等)來去做樣式變化，目前HTML語法強調是被使用在文件語意上，而樣式美觀的部分就全權交給CSS語法去做處理，故若要置中或是改變文字樣式的部分請使用CSS樣式去做。(其實不只center、font標籤，其他像是align屬性(該元素對齊用)、bgcolor屬性(背景顏色屬性)……等等與樣式有關係的標籤或是屬性都已不建議使用HTML語法做更改，請盡量都使用CSS語法去撰寫)</p>
-<h1>pre標籤：直接顯示與原語法相同內容</h1>
-<p>如果有時從別的地方直接複製一篇長篇的文章，要在該文章換行或段落的地方加上<code>&lt;br /&gt;</code>或是<code>&lt;p&gt;...&lt;/p&gt;</code>實在有點麻煩，這時候只要直接先貼上該文章，然後前後加上<code>&lt;pre&gt;...文章...&lt;/pre&gt;</code>即可，這就是pre標籤的用途。</p>
-<figure class="highlight lang-html"><figcaption><span>pre.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre>...
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">pre</span>&gt;</span>
-這是一篇很長的文章，
-害我懶的用br和p標籤，
-真是抱歉！
-  <span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-...
-</pre></td></tr></table></figure>
-
-<p><img src="/image/Dt8qrPkeSymD78W0DmB9_html2-3.png" alt="html2-3.png"></p>
-<h2>參考資料</h2>
-<ol>
-<li>html教學 &gt; 第03章。常用標籤：<a href="http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp" target="_blank"><a href="http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp">http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp</a></a></li>
-<li>w3schools.com &gt; HTML &lt;div&gt; and &lt;span&gt;：<a href="http://www.w3schools.com/html/html_blocks.asp" target="_blank"><a href="http://www.w3schools.com/html/html_blocks.asp">http://www.w3schools.com/html/html_blocks.asp</a></a></li>
-<li>w3schools.com &gt; HTML &lt;pre&gt; tag：<a href="http://www.w3schools.com/tags/tag_pre.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_pre.asp">http://www.w3schools.com/tags/tag_pre.asp</a></a></li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2013/09/07/2013-09-07-html-text-structure/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2013-09-06T22:33:00.000Z"><a href="/2013/09/06/2013-09-06-html-basic-grammatical-structures/">Sep 6 2013</a></time>
       
       
@@ -1015,6 +876,48 @@ using namespace std;
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2009-02-25T06:47:00.000Z"><a href="/2009/02/24/2009-02-24--life-interesting-090224-first-race-meeting/">Feb 24 2009</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2009/02/24/2009-02-24--life-interesting-090224-first-race-meeting/">#生活趣事：[09.02.24]－第一次比賽會議</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>今天早上體育課，跑了八圈操場，好累Orz。7分49秒…還不錯XD</p>
+<p>今天數學終於幹掉了1-4的課本和習作了XD，雙曲線真的比較難一點Orz</p>
+<p>放學召集了所有人來進行分工會議，決定好後，就和諾頓和阿虛去御食坊吃晚餐。之後諾頓就去補「高偉」了=P，我和阿虛就到北科大的地下體育館量場地，剛開始場地有人在辦茶會，一直等到7:30才終於能夠進去。量了一下，大概是27(m)x27(m)。還蠻大的呢XD。這裡是漫畫社成發的靜態展的地方，還蠻期待他們的成發，但只可惜有補習…Orz</p>
+<p>不過據說會舉辦兩天耶=P！真棒，我大概有可能去了XD</p>
+<blockquote>
+<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9698588" target="_blank">http://www.wretch.cc/blog/fafnar123/9698588</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2009/02/24/2009-02-24--life-interesting-090224-first-race-meeting/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
 
 <nav id="pagination">
   
@@ -1095,7 +998,7 @@ using namespace std;
       </li>
     
       <li>
-        <a href="/2013/10/07/2013-10-07--life-interesting-race-against-time-at-the-same-time-push-the-finish-to-validate-the-data-sent-star-interviews-and-practice-reading-the-microsoft-community-speech/">#生活趣事：[13.10.07]－與時間競賽同時做完推甄資料寄送、微軟社群之星面試以及實務讀書會演講</a>
+        <a href="/2013/10/07/2013-10-07--life-interesting-race-against-time/">#生活趣事：[13.10.07]－與時間競賽同時做完推甄資料寄送、微軟社群之星面試以及實務讀書會演講</a>
       </li>
     
   </ul>
