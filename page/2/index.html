@@ -62,6 +62,145 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-09-07T17:07:00.000Z"><a href="/2013/09/07/2013-09-07-html-text-structure/">Sep 7 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/07/2013-09-07-html-text-structure/">#HTML：基本內文文章結構</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>HTML文件裡面的內容大概如你在報紙上看到的一篇篇文章，一樣會具備標題、副標題、段落等等格式，我們就先給一個範例來表現一篇文章的HTML文件吧！</p>
+<figure class="highlight lang-html"><figcaption><span>article.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>文章範例<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>主要標題<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">h2</span>&gt;</span>副標題<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">hr</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>第一個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">em</span>&gt;</span>斜體強調<span class="tag">&lt;/<span class="title">em</span>&gt;</span>，<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">strong</span>&gt;</span>粗體強調<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>，<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>粗斜體強調<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/laHLnesBSPOkJMnJa0Dp_html2-1.png" alt="html2-1.png"></p>
+<h1>標題表示用標籤</h1>
+<p>使用h1~h6標籤分別可以表示從大到小的1級到6級的標題，當一篇文章出現標題的時候，可以使用此標籤來表示標題的部分。底下是h1~h6各個標籤範例：</p>
+<figure class="highlight lang-html"><figcaption><span>header1to6.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre>...
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>一級標題<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h2</span>&gt;</span>二級標題<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h3</span>&gt;</span>三級標題<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h4</span>&gt;</span>四級標題<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h5</span>&gt;</span>五級標題<span class="tag">&lt;/<span class="title">h5</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h6</span>&gt;</span>六級標題<span class="tag">&lt;/<span class="title">h6</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+...
+</pre></td></tr></table></figure>
+
+<p><img src="/image/REVdse98QKmT7WBtIids_html2-2.png" alt="html2-2.png"></p>
+<h1>水平線標籤</h1>
+<p>若要使用水平線來分隔文章，可以使用hr標籤來表示，hr為一個無包內容的標籤，可以寫作<code>&lt;hr /&gt;</code>。</p>
+<h1>段落與換行標籤</h1>
+<p>若文章中要表示段落，可將段落使用p標籤包起來，此時段落上下會與其他段落產生分隔的效果；若僅只要使用簡單的單行換行可使用br標籤，br亦為一個無包內容的標籤，可以寫作<code>&lt;br /&gt;</code>。</p>
+<h1>強調標籤</h1>
+<p>若文章中有需要強調的地方，可使用em標籤做斜體強調、strong標籤去做粗體強調，若要兩者一起使用，則可巢狀式的將一個標籤包起另外一個標籤（就像範例所寫的<code>&lt;em&gt;&lt;strong&gt;強調部分&lt;/strong&gt;&lt;/em&gt;</code>）。如果以前有用過HTML的人可能會知道有另外兩個標籤與之效果相同，分別是i(斜體)與b(粗體)標籤。在HTML5開始強調用標籤來表示文章語意的做法後，會建議使用em、strong兩個標籤來取代i與b標籤。</p>
+<h1>block元素與inline元素</h1>
+<p>大部分的HTML元素都會定義它為block元素或是inline元素。當使用該標籤會造成該元素與上下元素自動有所分隔，則該標籤所產生的元素為block元素；相對地，若並不會造成與上下元素之間的分隔的話，則為inline元素。本範例中，像是h系列的元素和p元素就屬於block元素；而em元素和strong元素則屬於inline元素。</p>
+<h1>已被廢棄使用的樣式用標籤</h1>
+<p>在HTML5當中，已不建議使用center標籤(置中)與font標籤(改變文字樣式，像是文字大小、文字顏色等)來去做樣式變化，目前HTML語法強調是被使用在文件語意上，而樣式美觀的部分就全權交給CSS語法去做處理，故若要置中或是改變文字樣式的部分請使用CSS樣式去做。(其實不只center、font標籤，其他像是align屬性(該元素對齊用)、bgcolor屬性(背景顏色屬性)……等等與樣式有關係的標籤或是屬性都已不建議使用HTML語法做更改，請盡量都使用CSS語法去撰寫)</p>
+<h1>pre標籤：直接顯示與原語法相同內容</h1>
+<p>如果有時從別的地方直接複製一篇長篇的文章，要在該文章換行或段落的地方加上<code>&lt;br /&gt;</code>或是<code>&lt;p&gt;...&lt;/p&gt;</code>實在有點麻煩，這時候只要直接先貼上該文章，然後前後加上<code>&lt;pre&gt;...文章...&lt;/pre&gt;</code>即可，這就是pre標籤的用途。</p>
+<figure class="highlight lang-html"><figcaption><span>pre.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre>...
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">pre</span>&gt;</span>
+這是一篇很長的文章，
+害我懶的用br和p標籤，
+真是抱歉！
+  <span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+...
+</pre></td></tr></table></figure>
+
+<p><img src="/image/Dt8qrPkeSymD78W0DmB9_html2-3.png" alt="html2-3.png"></p>
+<h2>參考資料</h2>
+<ol>
+<li>html教學 &gt; 第03章。常用標籤：<a href="http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp" target="_blank"><a href="http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp">http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp</a></a></li>
+<li>w3schools.com &gt; HTML &lt;div&gt; and &lt;span&gt;：<a href="http://www.w3schools.com/html/html_blocks.asp" target="_blank"><a href="http://www.w3schools.com/html/html_blocks.asp">http://www.w3schools.com/html/html_blocks.asp</a></a></li>
+<li>w3schools.com &gt; HTML &lt;pre&gt; tag：<a href="http://www.w3schools.com/tags/tag_pre.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_pre.asp">http://www.w3schools.com/tags/tag_pre.asp</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/09/07/2013-09-07-html-text-structure/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-09-06T22:33:00.000Z"><a href="/2013/09/06/2013-09-06-html-basic-grammatical-structures/">Sep 6 2013</a></time>
       
       
@@ -767,7 +906,7 @@ using namespace std;
       
       
   
-    <h1 class="title"><a href="/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/">#生活趣事：9/27~10/3－開始忙碌的大學生活</a></h1>
+    <h1 class="title"><a href="/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/">#生活趣事：[10.09.27~10.10.03]－開始忙碌的大學生活</a></h1>
   
 
     </header>
@@ -814,7 +953,7 @@ using namespace std;
 <p>就到這裡了～各位晚安^^/</p>
 <p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/F7l8EmD9Tbqryo7mWd39_lani-2.png" alt="灆洢"></p>
 <blockquote>
-<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/486、http://maplewing.blogspot.tw/2010/10/927103.html" target="_blank">http://www.knightzone.org/wordpress/archives/486、http://maplewing.blogspot.tw/2010/10/927103.html</a></p>
+<p>原始文章位址：<br>1. <a href="http://www.knightzone.org/wordpress/archives/486" target="_blank">http://www.knightzone.org/wordpress/archives/486</a><br>2. <a href="http://maplewing.blogspot.tw/2010/10/927103.html" target="_blank">http://maplewing.blogspot.tw/2010/10/927103.html</a></p>
 </blockquote>
 
       
@@ -841,68 +980,21 @@ using namespace std;
     <header>
       
         <div class="icon"></div>
-        <time datetime="2008-11-17T04:55:00.000Z"><a href="/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/">Nov 16 2008</a></time>
+        <time datetime="2009-02-26T05:48:00.000Z"><a href="/2009/02/25/2009-02-25--life-interesting-090225-exam-day/">Feb 25 2009</a></time>
       
       
   
-    <h1 class="title"><a href="/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/">#小說創作：學園探險社(2) – 101 The Blocks Problem</a></h1>
+    <h1 class="title"><a href="/2009/02/25/2009-02-25--life-interesting-090225-exam-day/">#生活趣事：[09.02.25]－考幹日</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>今天是一年一度的「社團友誼促進競賽」。</p>
-<p>簡單來說，這個由學生會舉辦的競賽的目的就是為了要促進各社團間的交流。比賽項目每次都不一定，雖然可能會遇到某社團佔優勢的狀況，不過各個社團還是全部都會各派一位代表來參加這個比賽，畢竟這比賽的目的並不是為了獲勝嘛！不過第一名卻還是能有一百萬這個蠻驚人的金額。</p>
-<p>「所以，我們打算派你代表社團。」美由小姐如此的對我說道。</p>
-<p>「等一等，為什麼這種麻煩事情都要找我做？」我馬上問道。</p>
-<p>「話不用我多說吧！去就對了。」看她情緒好像快要爆發似的，我還是乖乖閉嘴好了。</p>
-<p>「真麻煩呀……」當然是用她聽不到的音量小聲的說。</p>
-<p>「話說回來，最近都沒什麼看到社長大人了，怎麼了嗎？」</p>
-<p>「他去探索了南方未知領域，至少要好幾個禮拜才會回來。」</p>
-<p>「原來如此。」</p>
-<p>看來似乎沒什麼好說了，我趕緊離開社辦前往比賽場地。</p>
-<hr>
-<p>如往常一般，比賽的場地在學生會大樓前廣場。</p>
-<p>「早呀～好久都沒看到你了。」一位與我同是高二的男生來跟我打招呼。</p>
-<p>「早呀！」</p>
-<p>這位男生的名字叫騰久，一年級時跟我同班，不過等升上二年級就沒了，他是「生存物體研究社」的成員，也是這次他們社團的代表。</p>
-<p>「今次還是如往常一樣，來賭吧！」</p>
-<p>這是我與他比賽的慣例，賭自己的成績一定比對方高，賭的金額大概都是伍佰塊，有的時候他贏，有的時候我贏，機率一半一半吧！</p>
-<p>「OK！」我這樣回應。</p>
-<p>此時台上站著一位女生，是比我大一歲的學姊，也是學生會會長－宮香。</p>
-<p>「我們這次要比的是『搬移盒子』，這個遊戲的目的就是要照著評審的規定搬移盒子，並且要比對方快，評審會先說總共有幾堆，每一堆剛開始只有一個與其堆編號相同編號的盒子，編號從零號開始數起。共有四種搬移的方法：第一種為move a onto b，即是將a號盒子搬到b號盒子，而a,b上面原本的盒子就得回歸與它編號相同的那一堆上。第二種為move a over b，即是將a號盒子搬到b號盒子所在的那堆的最上面，而a號盒子上面的盒子全部得要回歸與它編號相同的那一堆上。第三種為pile a onto b，即是將a號盒子包含堆在它上面的盒子一起搬到b號盒子上，而b號盒子上的盒子都得回歸與它編號相同的那一堆上。第四種pile a over b，即時將a號盒子包含堆在它上面的盒子一起搬到b號盒子所在的那堆的最上面。差不多是如此，請各位就比賽位置預備。」</p>
-<p>在會長講完一長串的規則後，每個人都開始尋找自己的比賽場地。等差不多了後，比賽就在會長的宣布後開始。</p>
-<hr>
-<p>就這樣，我輕而易舉的進了決賽，不知道是不是因為我是探險社的，所以動作比其他人快了好幾倍，就連自己也嚇了一跳。不過最令我驚訝的是，決賽的對手就是騰久。</p>
-<p>「真沒想到你會進決賽呢。」</p>
-<p>「你說這句話真是太傷人了，你知不知道你正在傷害一顆純真少年的心呀！」有夠噁心的回應，不過這不是重點。</p>
-<p>「看你剛剛明明都沒有在動，為什麼能進入決賽呢？」</p>
-<p>「哼哼，我其實是有在動的，動的是我的腦。」</p>
-<p>「腦？」</p>
-<p>「沒錯，我先在腦中跑出了結果，之後再直接結果排出來就好了。」</p>
-<p>「原來如此，不過這應該很辛苦才對，真厲害呀。」</p>
-<p>「不用太誇我，我自己也知道。」真的不該誇他，現在他擺著一副驕傲的姿態真讓我不爽。</p>
-<p>「你們談好了嗎？我們就開始了喔！」身為決賽的裁判－宮香會長如此說道。</p>
-<p>「抱歉，可以開始了。」我回應道。</p>
-<p>「好，我規定的堆數是十堆，動作就寫在這張紙上。」宮香拿著兩張紙分發給我們。</p>
-<p>上面寫著：<br>　　move 9 onto 1<br>　　move 8 over 1<br>　　move 7 over 1<br>　　move 6 over 1<br>　　pile 8 over 6<br>　　pile 8 over 5<br>　　move 2 over 1<br>　　move 4 over 9 </p>
-<p>我很快速的開始排起來，而騰久一點動靜也沒有。等我快要完成的時候……</p>
-<p>「我完成了。」</p>
-<p>「什麼！？」我吃驚地說。</p>
-<p>就在我專注於盒子的時候，不知是什麼哪個時刻騰久就已經開始排了起來。我還是趕緊地也將它完成了。</p>
-<p>「我也完成了。」雖然講這句話已經遲了對方一點時間，但我還是不放棄一絲希望。</p>
-<p>「騰久，看來你排錯了。」</p>
-<p>「！？」</p>
-<p>就是因為發現我和他的答案不一樣，所以我才會覺得有一絲希望。</p>
-<p>「沒錯，騰久同學。你真的拼錯了，正確答案是……」</p>
-<p>宮香會長說著，便指向背後的螢幕，上面是這樣寫著的：<br>　　0: 0<br>　　1: 1 9 2 4<br>　　2:<br>　　3: 3<br>　　4:<br>　　5: 5 8 7 6<br>　　6:<br>　　7:<br>　　8:<br>　　9: </p>
-<p>但是騰久的是如此：<br>　　0: 0<br>　　1:<br>　　2:<br>　　3: 3<br>　　4: 4 1 9 2<br>　　5: 5 8 7 6<br>　　6:<br>　　7:<br>　　8:<br>　　9: </p>
-<p>看來他看錯了最後一道命令吧！</p>
-<p>「可惡，我看錯了最後一道命令。」騰久氣餒的說，但馬上又恢復精神笑著對我說：「下次絕對不會再輸給你，等著吧！」</p>
-<p>「恭喜，今次獲勝的社團是：『學園探險社』。」</p>
-<p>就在騰久說完，宮香已經上了台宣布了結果。聽到她的宣布，我也趕緊上了台接受頒獎。不僅從騰久那邊拿到了伍佰塊，還拿到了一百萬元，真開心。不過我想一百萬元會被副社拿去吧。</p>
+        <p>一年就這樣過去了，又到了考幹的時節了=D，不禁又想起去年的考幹狀況了XD，有點懷念…</p>
+<p>中午到圖書館，開第一次與地科老師討論的專題網頁比賽會議，發覺時間真的超趕Orz，我還有好多東西要弄呢Orz</p>
+<p>今天社課開始考幹，為期一個禮拜的考幹期，考完之後就要開始討論幹部選擇事宜了=P，加油了=D</p>
 <blockquote>
-<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/1500" target="_blank">http://www.knightzone.org/wordpress/archives/1500</a></p>
+<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9699530" target="_blank">http://www.wretch.cc/blog/fafnar123/9699530</a></p>
 </blockquote>
 
       
@@ -912,70 +1004,7 @@ using namespace std;
         
         
         <div class="alignright">
-          <a href="http://blog.knightzone.org/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2008-11-16T06:59:00.000Z"><a href="/2008/11/15/2008-11-15--novels-garden-adventures-1-100-the-3n-1-problem/">Nov 15 2008</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2008/11/15/2008-11-15--novels-garden-adventures-1-100-the-3n-1-problem/">#小說創作：學園探險社(1) – 100 The 3n+1 problem</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>我就讀的，是一所面積非常廣闊的學校。不僅只有一般學校所擁有的教室和操場，學校裡面還有湖、山……等等一般學校不會有的東西。真的是非常的獨特呀！若要把學校分區的話，可以分為宿舍區、授業區、學生會區、社團區、未知領域五區，每一區就如同其名，現在在這裡介紹也沒什麼用，之後相信各位就會比較清楚了。而由於學校真的非常的廣闊，所以我們移動的方式就是坐電車，<br>大概只有社團區的一些地方和未知領域沒有辦法坐電車抵達，其餘的地方幾乎皆有設站，相當方便。好了，話不多說了，開始吧！</p>
-<hr>
-<p>「這次你的任務是要去『伊加恩山』做調查，沒問題吧？」我眼前的女子如此說道。</p>
-<p>我現在所在的地方正是我們「學園探險社」的社辦，顧名思義，我們社團就是常常要調查一些學園裡面的事情與探索學園的未知領域。</p>
-<p>「但是您沒有告訴我要做什麼的調查，怎麼可能沒問題呀！！副社長－美由小姐。」</p>
-<p>沒錯，站在我眼前的這名女子，就是我們的副社長－寧美由，據說我們學校學生會現在所用的那塊區域，正是她所打造出來的，真的是很厲害的一名女子。</p>
-<p>「最後幹嘛突然要加上名字啊！那我說一下好了。是這樣的，伊加恩山有個湖，據說丟錢進去會有錢冒出來，你就是要去調查這個的原因啦！」說話真粗魯。</p>
-<p>「好，我知道了，要記得給我報酬喔！」就這樣，前往伊加恩山去了。</p>
-<hr>
-<p>「就是這個湖了吧！」</p>
-<p>已經抵達伊加恩山的我，此時站在一座看不到邊際的湖旁。確認應該是這湖後，順勢丟了一元銅板進去，但沒有什麼發生。</p>
-<p>「耶？」難道不是這個湖嗎？</p>
-<p>懷著疑問又丟了一個十元進去，此時突然有二十元飛了出來。</p>
-<p>「賺到了！！」真沒想到學園裡居然有這種地方可以洗錢，這真是太好了，之後依序又丟了一張一百元和一張兩百元。</p>
-<p>「耶？怎麼只有一百二十五元。」這次居然虧了，真的是莫名其妙。</p>
-<p>「那是因為你心存貪念啊！」</p>
-<p>我轉頭過去看到了聲音的來源。</p>
-<p>是一名還蠻帥氣的男生，從外表看來年齡大概二十幾歲。</p>
-<p>「所以說，這個湖只有在第一次丟才會賺錢的意思了喔？」我這樣問他。</p>
-<p>「剛剛只是開個玩笑而已，並不是如此，其實這個湖有個很特殊的地方。」說完，那男人丟了一元和三十元進去，飛出了一百一十二元出來。</p>
-<p>「這是以前有個人，他研究了數的關係，凡是一個數為奇數，就將他乘上三再加一，若為偶數，就將他除以二，一直到這個數變為一為止，而這過程當中出現了幾個數，就被稱為此數的循環長度。」</p>
-<p>「而那男人卻發現要一個一個計算太累，他設計了這個湖，他可以得到丟下去的兩數之間的擁有最高長度的不知某數的長度，而如此，這個湖也被變成了洗錢的好去處，而這座山也以這個有名的問題的名稱－3n+1來命名。」</p>
-<p>「原來如此。」所以才叫伊加恩山呀……</p>
-<p>「希望你不要把這地方公布出去，不然大概會通貨膨脹吧～」那男子笑著說。</p>
-<p>就這樣，我以「並無此事實」的結果呈報了上去，而副社長似乎也不覺得怎樣的收走了。</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/1498" target="_blank">http://www.knightzone.org/wordpress/archives/1498</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2008/11/15/2008-11-15--novels-garden-adventures-1-100-the-3n-1-problem/#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://blog.knightzone.org/2009/02/25/2009-02-25--life-interesting-090225-exam-day/#disqus_thread" class="comment-link">Comments</a>
         </div>
         
       
@@ -1027,7 +1056,7 @@ using namespace std;
   
     <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
   
-    <li><a href="/categories/生活趣事/">生活趣事</a><small>6</small></li>
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>14</small></li>
   
     <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
   
@@ -1039,7 +1068,7 @@ using namespace std;
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 18.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 16.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 16.00px;">HTML</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 18.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -1066,7 +1095,7 @@ using namespace std;
       </li>
     
       <li>
-        <a href="/2013/10/07/2013-10-07--life-interesting-race-against-time/">#生活趣事：與時間競賽同時做完推甄資料寄送、微軟社群之星面試以及實務讀書會演講</a>
+        <a href="/2013/10/07/2013-10-07--life-interesting-race-against-time-at-the-same-time-push-the-finish-to-validate-the-data-sent-star-interviews-and-practice-reading-the-microsoft-community-speech/">#生活趣事：[13.10.07]－與時間競賽同時做完推甄資料寄送、微軟社群之星面試以及實務讀書會演講</a>
       </li>
     
   </ul>
