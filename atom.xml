@@ -4,13 +4,31 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-10-21T15:41:12.092Z</updated>
+  <updated>2013-10-23T07:10:51.650Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#生活趣事：[13.10.22]微軟校園巡迴講座之嘉義一日遊]]></title>
+    <link href="http://blog.knightzone.org/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/"/>
+    <id>http://blog.knightzone.org/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/</id>
+    <published>2013-10-23T06:17:00.000Z</published>
+    <updated>2013-10-23T07:08:56.000Z</updated>
+    <content type="html"><![CDATA[<p>由於翊筑的請託，我接下了禮拜二在嘉義的兩場微軟校園巡迴講座的工作，一場在吳鳳科大，一場在南華大學，兩場分別是當機動組兼負責人以及技術講師。由於原本這禮拜我只有禮拜三的師大場而已，應著這樣出去玩的機會，南華場將成為我第一場演講的場次，心裡不免有點緊張，原本想說第一場在自己學校裡演講應該不會出什麼包，但沒想到現在卻變成是在別的學校，真的是讓我有點擔心。</p>
+<p>前一天晚上，我將鬧鐘設在了5:30、5:40、5:50、6:00、6:30，以避免我會沒聽到鬧鐘而睡遲了，設完鬧鐘準備完東西，我就早早就寢了。隔日早上醒來後，洗了個澡就背著大包小包的道具前往了台北車站，買了高鐵票搭上了7:30前往嘉義的高鐵。</p>
+<p>到了嘉義大概已經9點左右了，在高鐵站的一樓買了個摩斯漢堡當早餐，就坐上了計程車前往吳鳳科大，路上司機還以為我是吳鳳科大的學生，跟我聊天，他還說他台北住20年了，他很熟台北。他愷愷而談地講了很多台北的路名之分布與今昔之地標後，我個人就認為司機真的是蠻厲害的，說熟台北真的不是隨口說說的而已。</p>
+<p>到了吳鳳科大門口，就與Rick和Annping會合，中途換了MSP的衣服，之後到了教室準備準備就開始了早上的演講。由於我是機動組的，所以就拿著Rick的相機到處狂拍，感覺好似有點妨礙到他們演講了呢，真不好意思！XD</p>
+<p>中午品妤開車來接我們，先送了Annping去民雄車站坐火車後，我們就往一家叫做噴水雞肉飯的餐廳去，這家的雞片飯真的爆好吃！！推薦大家可以去吃，真的很棒！！（這麼好吃的雞肉飯，要是下次吃不到該怎麼辦Q_Q）</p>
+<p>吃完飯後，就往南華大學去。到了以後，品妤就先帶著我和Rick在南華大學繞繞，讓我印象最深刻的大概就是教授們住的小木屋吧！真的超特別，居然是蓋小木屋，而不只是蓋個普通的民房給教授們住，這小木屋給人的感覺會讓人有一種來到度假村的錯覺。繞完後，我們就到了教室外等，一直等到了3點進了教室開始演講。</p>
+<p>演講過程說順利也算順利，說不順利倒是真的有出了一點狀況。記得在進教室前，我說：演講最怕遇到的狀況有PowerPoint當掉、Visual Studio當掉……等等，結果這句話就這樣一語成讖，在我用Visual Studio去示範開發Windows 8 App的時候，Visual Studio當掉了，一時也真的是慌了，幸好趕緊叫出工作管理員把它強制關掉，又再度重開Visual Studio，早知道進去前就不要說這種不吉利的話了Q_Q…</p>
+<p>結束完後，我們在校門口拍了照、打了卡，就離開南華大學前往了民雄火車站，並各自分道揚鑣回家去了。在火車上，我閒來無事就拿出了《Javascript：優良部分》來看，結果看著看著就在火車上將它看完了，這大概也是我第一次看完O&#39;relly的書吧！XD&quot;</p>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/生活趣事/" term="生活趣事"/>
+    <category scheme="http://blog.knightzone.org/categories/生活趣事/" term="生活趣事"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#HTML：文字標音]]></title>
     <link href="http://blog.knightzone.org/2013/10/13/2013-10-13-html-text-transcription/"/>
@@ -1674,23 +1692,6 @@ using namespace std;
 <p>今天社課開始考幹，為期一個禮拜的考幹期，考完之後就要開始討論幹部選擇事宜了=P，加油了=D</p>
 <blockquote>
 <p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9699530" target="_blank">http://www.wretch.cc/blog/fafnar123/9699530</a></p>
-</blockquote>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/生活趣事/" term="生活趣事"/>
-    <category scheme="http://blog.knightzone.org/categories/生活趣事/" term="生活趣事"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#生活趣事：[09.02.24]－第一次比賽會議]]></title>
-    <link href="http://blog.knightzone.org/2009/02/24/2009-02-24--life-interesting-090224-first-race-meeting/"/>
-    <id>http://blog.knightzone.org/2009/02/24/2009-02-24--life-interesting-090224-first-race-meeting/</id>
-    <published>2009-02-25T06:47:00.000Z</published>
-    <updated>2013-10-20T18:29:34.000Z</updated>
-    <content type="html"><![CDATA[<p>今天早上體育課，跑了八圈操場，好累Orz。7分49秒…還不錯XD</p>
-<p>今天數學終於幹掉了1-4的課本和習作了XD，雙曲線真的比較難一點Orz</p>
-<p>放學召集了所有人來進行分工會議，決定好後，就和諾頓和阿虛去御食坊吃晚餐。之後諾頓就去補「高偉」了=P，我和阿虛就到北科大的地下體育館量場地，剛開始場地有人在辦茶會，一直等到7:30才終於能夠進去。量了一下，大概是27(m)x27(m)。還蠻大的呢XD。這裡是漫畫社成發的靜態展的地方，還蠻期待他們的成發，但只可惜有補習…Orz</p>
-<p>不過據說會舉辦兩天耶=P！真棒，我大概有可能去了XD</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9698588" target="_blank">http://www.wretch.cc/blog/fafnar123/9698588</a></p>
 </blockquote>
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/生活趣事/" term="生活趣事"/>
