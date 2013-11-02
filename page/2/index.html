@@ -62,6 +62,100 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-09-08T23:46:00.000Z"><a href="/2013/09/08/2013-09-08-html-set-the-page-encoding/">Sep 8 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/08/2013-09-08-html-set-the-page-encoding/">#HTML：設定網頁編碼</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>電腦裡面只能儲存0與1，並且透過二進位的方式用0與1儲存了數字，透過數字與文字的對應，電腦可以利用儲存數字的方式去儲存文字，並在顯示的時候透過對應表去找出該數字代表的文字為何，這樣的對應儲存模式就被稱為編碼。這世界上有很多語言，故編碼也有很多種，若使用的編碼不對，會導致網頁上出現我們有時候去瀏覽國外網站的時候常常會出現的亂碼現象，如下圖所示：<br><img src="/image/zHKS5sZoRK2oecYqNALa_html3-1.png" alt="html3-1.png"></p>
+<p>因此我們必須要確定我們製作出來的網站是用什麼編碼方式儲存的，並且要試著從網頁裡去設定其網頁編碼，讓瀏覽器可以用正確的編碼方式去瀏覽該網站。</p>
+<h1>常見編碼</h1>
+<p>各國都有不同的編碼，底下試著列出一些常見的編碼：</p>
+<table>
+<thead>
+<tr>
+<th>語言</th>
+<th>常見編碼名稱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 繁體中文</td>
+<td>Big5</td>
+</tr>
+<tr>
+<td> 簡體中文</td>
+<td>GBK </td>
+</tr>
+<tr>
+<td>   日文</td>
+<td>Shift-JIS</td>
+</tr>
+<tr>
+<td>   韓文</td>
+<td>EUC-KR</td>
+</tr>
+</tbody>
+</table>
+<p>由上表可知，每個語言都有其不同的當地的編碼方式，那麼如果要顯示所有國家語言的網站該怎麼辦？</p>
+<p>不管你是否要做一個純粹單一語言的網站或是要做多語言的網站，我都會建議你使用Unicode萬國碼的 <strong>UTF-8</strong> 的編碼方式去儲存網站，這個編碼不僅支援多個國家的語言，有些繁體中文的罕見字其實用Big5是沒辦法表示的，但是用萬國碼卻是OK的！</p>
+<h1>如何儲存UTF-8格式的網頁</h1>
+<p>如果使用的是記事本來編輯網頁，可在儲存檔案的時候，點擊底下的編碼的選項，選擇UTF-8即可，如下圖所示：<br><img src="/image/KiIKvWqDQLSzRSWF14BJ_html3-2.png" alt="html3-2.png"></p>
+<p>如果是使用Notepad++來編輯網頁，可在上面工具列的［編碼］裡面選擇［轉換至UTF-8碼格式(檔首無BOM)］即可，如下圖所示：<br><img src="/image/9Ycmyz0iRtC7VjIzDqnH_html3-3.png" alt="html3-3.png"></p>
+<h1>用meta標籤來設定該網頁的編碼</h1>
+<p>meta標籤在HTML文件中，是用來設定該文件的meta資料，除了可以用來設定編碼外，還可以設定很多其他跟網頁有關的資料，不過在這裡我只先提該如何設定網頁的編碼。</p>
+<p>你可以在head元素內加上<code>&lt;meta charset=&quot;編碼名稱&quot; /&gt;</code>即可設定網頁的編碼，如果你要設定其為UTF-8的編碼，可如底下範例所示：</p>
+<figure class="highlight lang-html"><figcaption><span>UTF-8.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>...
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">title</span>&gt;</span>標題<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+...
+</pre></td></tr></table></figure>
+
+<p>在HTML4.01的時候，是使用<code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</code>這麼冗長的敘述，但是現在HTML5，你可以使用上述如此簡短的敘述即可。</p>
+<h1>參考資料</h1>
+<ol>
+<li>MOZILLA DEVELOPER NETWORK &gt; 應該避免的過時語法：<a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid" target="_blank"><a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid">https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid</a></a></li>
+<li>html5 - &lt;meta charset=&#39;utf-8&#39;&gt; vs &lt;meta http-equiv=&#39;Content-Type&#39;&gt; - Stack Overflow：<a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type" target="_blank"><a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type">http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type</a></a></li>
+<li>w3schools.com &gt; HTML &lt;meta&gt; Tag：<a href="http://www.w3schools.com/tags/tag_meta.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_meta.asp">http://www.w3schools.com/tags/tag_meta.asp</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/09/08/2013-09-08-html-set-the-page-encoding/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-09-07T17:07:00.000Z"><a href="/2013/09/07/2013-09-07-html-text-structure/">Sep 7 2013</a></time>
       
       
@@ -912,7 +1006,7 @@ using namespace std;
     </header>
     <div class="entry">
       
-        <p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/PlRATpGmSPaS6aYVYEHX_lani-0.png" alt="灆洢"><br>各位安安^^/<br>來跟各位談談這禮拜發生的事情吧！</p>
+        <p><img src="/image/PlRATpGmSPaS6aYVYEHX_lani-0.png" alt="灆洢"><br>各位安安^^/<br>來跟各位談談這禮拜發生的事情吧！</p>
 <hr>
 <h1>9/27(一)</h1>
 <p>今天計概考試，考了一節課，我也才在前一天晚上剛拿到計概考古題，感謝家緯學長＞_＜不過由於這考古題是系學會的東西，學長也不知道能不能發佈在班版上，所以我就對每一個人的MSN和Yahoo丟考古題～XD</p>
@@ -951,7 +1045,7 @@ using namespace std;
 <p>基礎電子學的實驗預報總算是弄好了！繼續搞英文作業Q_Q……</p>
 <hr>
 <p>就到這裡了～各位晚安^^/</p>
-<p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/F7l8EmD9Tbqryo7mWd39_lani-2.png" alt="灆洢"></p>
+<p><img src="/image/F7l8EmD9Tbqryo7mWd39_lani-2.png" alt="灆洢"></p>
 <blockquote>
 <p>原始文章位址：<br>1. <a href="http://www.knightzone.org/wordpress/archives/486" target="_blank">http://www.knightzone.org/wordpress/archives/486</a><br>2. <a href="http://maplewing.blogspot.tw/2010/10/927103.html" target="_blank">http://maplewing.blogspot.tw/2010/10/927103.html</a></p>
 </blockquote>
@@ -964,47 +1058,6 @@ using namespace std;
         
         <div class="alignright">
           <a href="http://blog.knightzone.org/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2009-02-26T05:48:00.000Z"><a href="/2009/02/25/2009-02-25--life-interesting-090225-exam-day/">Feb 25 2009</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2009/02/25/2009-02-25--life-interesting-090225-exam-day/">#生活趣事：[09.02.25]－考幹日</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>一年就這樣過去了，又到了考幹的時節了=D，不禁又想起去年的考幹狀況了XD，有點懷念…</p>
-<p>中午到圖書館，開第一次與地科老師討論的專題網頁比賽會議，發覺時間真的超趕Orz，我還有好多東西要弄呢Orz</p>
-<p>今天社課開始考幹，為期一個禮拜的考幹期，考完之後就要開始討論幹部選擇事宜了=P，加油了=D</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9699530" target="_blank">http://www.wretch.cc/blog/fafnar123/9699530</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2009/02/25/2009-02-25--life-interesting-090225-exam-day/#disqus_thread" class="comment-link">Comments</a>
         </div>
         
       
@@ -1038,6 +1091,8 @@ using namespace std;
   <h3 class="title">Categories</h3>
   <ul class="entry">
   
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>1</small></li>
+  
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
     <li><a href="/categories/CSS/">CSS</a><small>1</small></li>
@@ -1051,6 +1106,8 @@ using namespace std;
     <li><a href="/categories/Javascript/">Javascript</a><small>3</small></li>
   
     <li><a href="/categories/UVa/">UVa</a><small>2</small></li>
+  
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>1</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -1068,7 +1125,7 @@ using namespace std;
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 12.50px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 17.50px;">HTML</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.50px;">UVa</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.50px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 10.00px;">APP</a><a href="/tags/Ajax/" style="font-size: 12.50px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 17.50px;">HTML</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.50px;">UVa</a><a href="/tags/Windows Phone/" style="font-size: 10.00px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.50px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -1077,6 +1134,10 @@ using namespace std;
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/01/2013-11-01-app-portable-single-cards/">#APP：[隨身單字卡]於Windows Phone Store上架</a>
+      </li>
     
       <li>
         <a href="/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/">#生活趣事：[13.10.22]微軟校園巡迴講座之嘉義一日遊</a>
@@ -1092,10 +1153,6 @@ using namespace std;
     
       <li>
         <a href="/2013/10/11/2013-10-11-html-basic-table-usage/">#HTML：基本表格用法</a>
-      </li>
-    
-      <li>
-        <a href="/2013/10/09/2013-10-09-javascriptthis-usage-in-order/">#Javascript：this用法整理</a>
       </li>
     
   </ul>

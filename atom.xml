@@ -4,13 +4,43 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-10-23T07:10:51.650Z</updated>
+  <updated>2013-11-02T05:16:44.519Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#APP：[隨身單字卡]於Windows Phone Store上架]]></title>
+    <link href="http://blog.knightzone.org/2013/11/01/2013-11-01-app-portable-single-cards/"/>
+    <id>http://blog.knightzone.org/2013/11/01/2013-11-01-app-portable-single-cards/</id>
+    <published>2013-11-02T04:52:00.000Z</published>
+    <updated>2013-11-02T05:13:20.000Z</updated>
+    <content type="html"><![CDATA[<p>各位大家好，敝人在昨日總算是在Windows Phone Store上架了人生第一支APP－［隨身單字卡］，稍微來簡介一下其功能吧！</p>
+<p>APP連結：<a href="http://www.windowsphone.com/zh-tw/store/app/%E9%9A%A8%E8%BA%AB%E5%96%AE%E5%AD%97%E5%8D%A1/b83bc17f-53a3-49d5-bae0-b41ef5a57cf7" target="_blank"><a href="http://www.windowsphone.com/zh-tw/store/app/%E9%9A%A8%E8%BA%AB%E5%96%AE%E5%AD%97%E5%8D%A1/b83bc17f-53a3-49d5-bae0-b41ef5a57cf7">http://www.windowsphone.com/zh-tw/store/app/%E9%9A%A8%E8%BA%AB%E5%96%AE%E5%AD%97%E5%8D%A1/b83bc17f-53a3-49d5-bae0-b41ef5a57cf7</a></a></p>
+<p><img src="/image/Pk5cIPwcQ1WEca9kaVux_APP01.png" alt="APP01.png"></p>
+<p>首頁剛點入，會看到目前單字卡所有的分類項目。<br><img src="/image/eEev4ZHRG6IlWQmVO8wU_vocabulary01.png" alt="vocabulary01.png"></p>
+<p>可以透過上方的新增分類按鈕增加分類。<br><img src="/image/88PvqMeWQZevJYGoE8TQ_vocabulary02.png" alt="vocabulary02.png"></p>
+<p>點入分類內可以看到該分類有哪些單字，透過單字總表可以確認那些單字還不懂其意義。<br><img src="/image/MHwTjnmWQvieRFDOKM91_vocabulary03.png" alt="vocabulary03.png"></p>
+<p>點分類上方的新增單字可在分類內增加單字。<br><img src="/image/JXTHIvXRYCMzjLmAnlAA_vocabulary04.png" alt="vocabulary04.png"></p>
+<p>如果有已經不要的分類或是單字，可以透過刪除功能將之刪除。<br><img src="/image/BYalW9iyRpuLMdhKYhnQ_vocabulary05.png" alt="vocabulary05.png"></p>
+<p>如果有不懂的單字，可以點入單字內，即可看到單字卡上的解釋。<br><img src="/image/np8PNX7QeePImDxyNa7w_vocabulary06.png" alt="vocabulary06.png"></p>
+<p>功能理論上應該還會再做更新，如果有什麼問題或是希望有什麼功能也歡迎跟我說！XD</p>
+<ul>
+<li>版本號：1.0</li>
+<li>製作：新罪楓翼☆灆洢騎士</li>
+<li>網站：<a href="http://www.knightzone.org" target="_blank">http://www.knightzone.org</a></li>
+<li>原始碼：<a href="https://github.com/sinmaplewing/Knightzone-Portable-Vocabulary-Card" target="_blank">https://github.com/sinmaplewing/Knightzone-Portable-Vocabulary-Card</a></li>
+<li>授權：CC BY-SA 3.0 TW</li>
+<li>圖示使用：Metro Studio</li>
+</ul>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/tags/APP/" term="APP"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/APP/" term="APP"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#生活趣事：[13.10.22]微軟校園巡迴講座之嘉義一日遊]]></title>
     <link href="http://blog.knightzone.org/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/"/>
@@ -1633,8 +1663,8 @@ using namespace std;
     <link href="http://blog.knightzone.org/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/"/>
     <id>http://blog.knightzone.org/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/</id>
     <published>2010-10-04T05:06:00.000Z</published>
-    <updated>2013-10-20T17:00:06.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/PlRATpGmSPaS6aYVYEHX_lani-0.png" alt="灆洢"><br>各位安安^^/<br>來跟各位談談這禮拜發生的事情吧！</p>
+    <updated>2013-11-02T05:11:26.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/image/PlRATpGmSPaS6aYVYEHX_lani-0.png" alt="灆洢"><br>各位安安^^/<br>來跟各位談談這禮拜發生的事情吧！</p>
 <hr>
 <h1>9/27(一)</h1>
 <p>今天計概考試，考了一節課，我也才在前一天晚上剛拿到計概考古題，感謝家緯學長＞_＜不過由於這考古題是系學會的東西，學長也不知道能不能發佈在班版上，所以我就對每一個人的MSN和Yahoo丟考古題～XD</p>
@@ -1673,25 +1703,9 @@ using namespace std;
 <p>基礎電子學的實驗預報總算是弄好了！繼續搞英文作業Q_Q……</p>
 <hr>
 <p>就到這裡了～各位晚安^^/</p>
-<p><img src="http://user-image.logdown.io/user/412/blog/4012/post/147140/F7l8EmD9Tbqryo7mWd39_lani-2.png" alt="灆洢"></p>
+<p><img src="/image/F7l8EmD9Tbqryo7mWd39_lani-2.png" alt="灆洢"></p>
 <blockquote>
 <p>原始文章位址：<br>1. <a href="http://www.knightzone.org/wordpress/archives/486" target="_blank">http://www.knightzone.org/wordpress/archives/486</a><br>2. <a href="http://maplewing.blogspot.tw/2010/10/927103.html" target="_blank">http://maplewing.blogspot.tw/2010/10/927103.html</a></p>
-</blockquote>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/生活趣事/" term="生活趣事"/>
-    <category scheme="http://blog.knightzone.org/categories/生活趣事/" term="生活趣事"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#生活趣事：[09.02.25]－考幹日]]></title>
-    <link href="http://blog.knightzone.org/2009/02/25/2009-02-25--life-interesting-090225-exam-day/"/>
-    <id>http://blog.knightzone.org/2009/02/25/2009-02-25--life-interesting-090225-exam-day/</id>
-    <published>2009-02-26T05:48:00.000Z</published>
-    <updated>2013-10-20T18:32:12.000Z</updated>
-    <content type="html"><![CDATA[<p>一年就這樣過去了，又到了考幹的時節了=D，不禁又想起去年的考幹狀況了XD，有點懷念…</p>
-<p>中午到圖書館，開第一次與地科老師討論的專題網頁比賽會議，發覺時間真的超趕Orz，我還有好多東西要弄呢Orz</p>
-<p>今天社課開始考幹，為期一個禮拜的考幹期，考完之後就要開始討論幹部選擇事宜了=P，加油了=D</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9699530" target="_blank">http://www.wretch.cc/blog/fafnar123/9699530</a></p>
 </blockquote>
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/生活趣事/" term="生活趣事"/>
