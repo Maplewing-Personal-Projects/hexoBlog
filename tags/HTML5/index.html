@@ -1,0 +1,699 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML5 | 新罪楓翼☆灆洢騎士</title>
+  <meta name="author" content="灆洢騎士">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="新罪楓翼☆灆洢騎士"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="新罪楓翼☆灆洢騎士" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44630031-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">新罪楓翼☆灆洢騎士</a></h1>
+  <h2><a href="/">SINMAPLEWING☆LANYIKNIGHT</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title tag">HTML5</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-11-07T13:29:00.000Z"><a href="/2013/11/07/2013-11-07-html-html5-language-branch/">Nov 7 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/07/2013-11-07-html-html5-language-branch/">#HTML(HTML5)：字詞分行</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在HTML裡面，如果打了太長的一連串的英文字，瀏覽器會把它當作一個詞彙，並且不會在空間狹小的時候做分行(除非中間有-,?……等等之類的分隔符，會在分隔符處分行)。不過我們平常打中文沒有這個問題，中文一個一個字，中間就算沒空白也會以字為單位去做分行。但是就算打英文文章，好似也很少遇過會有一個單字長到完全裝不下的情形。其實是真有這情況會需要，那就是網址，網址中間通常都不會有分隔符，而偏偏又得連在一起，就會導致以下的結果：<br><img src="/image/Q4lMh3n3RjW9KIscrUj6_wbr.png" alt="wbr.png"></p>
+<p>那該怎麼做去解決這個問題呢？就利用wbr標籤吧！</p>
+<h1>wbr：字詞方行</h1>
+<figure class="highlight lang-html"><figcaption><span>wbr.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>...
+   http://this<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>.is<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>.a<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>.really<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>.long<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>.example<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>.com/With<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>/deeper<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>/level<span class="tag">&lt;<span class="title">wbr</span> /&gt;</span>/pages
+...
+</pre></td></tr></table></figure>
+
+<p>以上是個例子，我們在我們認定可以斷行的地方去加上wbr標籤，瀏覽器就會在裝該文字的容器塞不下的時候選擇適當的wbr標籤去斷行。若文字能夠完美得塞進容器內那就不會進行斷行。</p>
+<p>可完美放入的時候：<br><img src="/image/WoMQeK0HQzGXKDkt9f1T_wbr1.png" alt="wbr1.png"></p>
+<p>無法完美放入的時候：<br><img src="/image/How9ZxzRRIuIgUxdehRL_wbr2.png" alt="wbr2.png"></p>
+<p>(此範例對於網址的分段方法是依照DevDocs上所言<a href="http://styleguide.yahoo.com/" target="_blank">The Yahoo Style Guide</a>的分行方法。)</p>
+<h1>參考資料</h1>
+<ol>
+<li>DevDocs：<a href="http://devdocs.io/html/" target="_blank"><a href="http://devdocs.io/html/">http://devdocs.io/html/</a></a></li>
+<li>w3schools.com &gt; HTML &lt;wbr&gt; Tag：<a href="http://www.w3schools.com/tags/tag_wbr.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_wbr.asp">http://www.w3schools.com/tags/tag_wbr.asp</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/07/2013-11-07-html-html5-language-branch/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-11-04T15:46:00.000Z"><a href="/2013/11/04/2013-11-04-html-embedded-multimedia/">Nov 4 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/04/2013-11-04-html-embedded-multimedia/">#HTML(HTML5)：多媒體嵌入</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>今天終於要來提HTML5的新功能之一－放置多媒體的部分，底下一樣就用範例來解說。</p>
+<h1>embed：外部嵌入播放器播放音樂與影片</h1>
+<figure class="highlight lang-html"><figcaption><span>media.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">title</span>&gt;</span>多媒體<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">"Sonic Generations [OST] - Rooftop Run (Modern).mp3"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">"[灆洢]Sonic Generations - Sky Sanctuary Act2 - 0225.13-087-Rank S.mp4"</span> /&gt;</span>
+	<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/6pi7sAHOS5O6khuZnIg2_media01.png" alt="media01.png"></p>
+<p>這個embed標籤從很早以前就有了，不過直至HTML5才將之納為標準。</p>
+<p>embed主要是用外部的播放程式鑲嵌在網頁上來播放音樂或影片，利用src屬性去放置音樂或影片的連結。如果該瀏覽器找不到可播放此音樂或影片的播放程式，那麼就沒辦法播放了。</p>
+<p>不過在HTML5的標準裡，已經支援讓瀏覽器去播放音樂或影片了！底下就來看看直接讓瀏覽器播放音樂或影片的標籤吧！</p>
+<h1>audio：播放音樂</h1>
+<figure class="highlight lang-html"><figcaption><span>media02.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">title</span>&gt;</span>多媒體<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">p</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"Sonic Generations [OST] - Rooftop Run (Modern).mp3"</span> <span class="attribute">controls</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span>
+			對不起，您的瀏覽器不支援HTML5。
+			<span class="tag">&lt;/<span class="title">audio</span>&gt;</span>
+		<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/rZPCxGf5Rc6oS3eonNvJ_media02.png" alt="media02.png"></p>
+<p>audio標籤用於放置音樂，屬性有很多，在此列舉常用的controls、autoplay、loop，這些屬性跟以前看到的屬性有點不同，以前的屬性都要代值，但是HTML5中很多標籤是具有布林屬性：有出現就有功能，沒出現就沒功能。controls表示是否要出現控制面板，autoplay表示是否要自動播放，loop表示是否要循環。</p>
+<p>audio裡面的內容可放置文字，來讓不支援HTML5的瀏覽器可以顯示。</p>
+<h1>video：播放影片</h1>
+<figure class="highlight lang-html"><figcaption><span>media03.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">title</span>&gt;</span>多媒體<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">p</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"[灆洢]Sonic Generations - Sky Sanctuary Act2 - 0225.13-087-Rank S.mp4"</span> <span class="attribute">controls</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span>
+			對不起，您的瀏覽器不支援HTML5。
+			<span class="tag">&lt;/<span class="title">video</span>&gt;</span>
+		<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/3cG7rTKT5aJyVOHdSwEk_media03.png" alt="media03.png"></p>
+<p>video標籤用於放置音樂，屬性跟audio一樣有很多，範例中一樣列舉常用的controls、autoplay、loop，這些屬性跟audio的同名屬性類似，就不多提了。</p>
+<p>video裡面的內容一樣可放置文字，來讓不支援HTML5的瀏覽器可以顯示。</p>
+<h1>瀏覽器支援音樂、影片列表</h1>
+<p>由於audio與video是使用瀏覽器自身來播放音樂與影片，故就要來稍微注意一下每個瀏覽器支援的音樂與影片格式有哪些了，底下是列表：</p>
+<h2>音樂格式支援</h2>
+<table>
+<thead>
+<tr>
+<th>Browser</th>
+<th>mp3</th>
+<th>wav</th>
+<th>ogg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet Explorer</td>
+<td><strong>YES</strong></td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td><strong>YES</strong></td>
+<td><strong>YES</strong></td>
+<td><strong>YES</strong></td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td><strong>YES</strong></td>
+<td><strong>YES</strong></td>
+<td><strong>YES</strong></td>
+</tr>
+<tr>
+<td>Safari</td>
+<td><strong>YES</strong></td>
+<td><strong>YES</strong></td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>NO</td>
+<td><strong>YES</strong></td>
+<td><strong>YES</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>影片格式支援</h2>
+<table>
+<thead>
+<tr>
+<th>Browser</th>
+<th>MP4</th>
+<th>WebM</th>
+<th>Ogg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet Explorer</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+<p>看完上面的表，不知道各位有沒有發現，上面沒有一種格式可以在每個瀏覽器上皆可執行，那該怎麼辦呢？這時候就要來使用source標籤了！</p>
+<h1>source：設定音樂與影片的來源</h1>
+<figure class="highlight lang-html"><figcaption><span>media04.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">title</span>&gt;</span>多媒體<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span>
+      	<span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span>
+  			<span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mpeg"</span>&gt;</span>
+        對不起，您的瀏覽器不支援HTML5。
+			<span class="tag">&lt;/<span class="title">audio</span>&gt;</span>
+		<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">p</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">video</span> <span class="attribute">controls</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span>
+      	<span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"movie.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span>&gt;</span>
+  			<span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"movie.ogg"</span> <span class="attribute">type</span>=<span class="value">"video/ogg"</span>&gt;</span>
+				對不起，您的瀏覽器不支援HTML5。
+			<span class="tag">&lt;/<span class="title">video</span>&gt;</span>
+		<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+	<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>將audio或video內的src屬性拿掉，換成在audio或video內容內加入來source標籤，每個source標籤就代表一個音樂或是影片的來源，瀏覽器在讀的時候會照順序找尋可播放的來源，若找到有可以播放的來源時，就會播放。</p>
+<p>最後給各位一個不錯的支援多瀏覽器的方法如下：</p>
+<figure class="highlight lang-html"><figcaption><span>media05.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre>...
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mpeg"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">audio</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">video</span> <span class="attribute">controls</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"movie.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"movie.ogg"</span> <span class="attribute">type</span>=<span class="value">"video/ogg"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">"movie.mp4"</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">video</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+...
+</pre></td></tr></table></figure>
+
+<p>除了原本加source的版本外，在給不支援HTML5的瀏覽器就用embed來取代，這樣就又可以支援更多的瀏覽器了！</p>
+<h1>參考資料</h1>
+<ol>
+<li>DevDocs：<a href="http://devdocs.io/html/" target="_blank"><a href="http://devdocs.io/html/">http://devdocs.io/html/</a></a></li>
+<li>w3schools.com &gt; HTML5 Audio：<a href="http://www.w3schools.com/html/html5_audio.asp" target="_blank"><a href="http://www.w3schools.com/html/html5_audio.asp">http://www.w3schools.com/html/html5_audio.asp</a></a></li>
+<li>w3schools.com &gt; HTML5 Video：<a href="http://www.w3schools.com/html/html5_video.asp" target="_blank"><a href="http://www.w3schools.com/html/html5_video.asp">http://www.w3schools.com/html/html5_video.asp</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/04/2013-11-04-html-embedded-multimedia/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-10-13T14:20:00.000Z"><a href="/2013/10/13/2013-10-13-html-text-transcription/">Oct 13 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/10/13/2013-10-13-html-text-transcription/">#HTML(HTML5)：文字標音</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>本來是沒特別想寫這篇，不過想想這功能在最近已經被廣泛支援了，故就想說一定要好好來介紹一下！</p>
+<p>大家在打入中文、日文的時候，有時候應該會想加入標音吧！正好以前IE有個標籤叫做ruby標籤可以做到這樣的事情，而在HTML5終於把ruby標籤做為標準加入了！</p>
+<h1>標音</h1>
+<p>底下一樣先用一個範例來解釋：</p>
+<figure class="highlight lang-html"><figcaption><span>ruby01.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>標音<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ふ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>まれた<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>花<span class="tag">&lt;<span class="title">rt</span>&gt;</span>はな<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span> <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+    被<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踐<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄐㄧㄢˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄊㄚˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>的花朵
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/v34wkTDHS9mM83j3oOgw_ruby01.png" alt="ruby01.png"><br>上面的排版有點亂，不過為了不要讓文字中間出現空白，只好擠成一行了，底下列一下通用式用法的解說：</p>
+<figure class="highlight lang-html"><figcaption><span>rubyusage.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">ruby</span>&gt;</span>
+  [欲加上標音的字詞1] <span class="tag">&lt;<span class="title">rt</span>&gt;</span>[標音1]<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>
+  [欲加上標音的字詞2] <span class="tag">&lt;<span class="title">rt</span>&gt;</span>[標音2]<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>大體上就是如此，整個標音群組用ruby標籤包住，打上要標音的詞彙後，加上rt標籤去做標音，就可以達到標音的效果了！</p>
+<blockquote>
+<p>rb標籤：早期的寫法會把[欲加上標音的字詞]包在<code>&lt;rb&gt;...&lt;/rb&gt;</code>內，但是收錄進HTML5標準的時候，去除了rb標籤，所以目前的標準是要省略rb標籤的唷！</p>
+</blockquote>
+<h1>不支援標音之瀏覽器的表現方法</h1>
+<p>假設今天要讓不支援標音的瀏覽器上看起來也要至少正常一點，可以將要多餘顯示的文字用rp標籤包住。這樣的話，有支援標音的瀏覽器會忽略rp標籤裡的內容，而不支援標音的瀏覽器就會顯示rp標籤裡的內容。底下看個範例：</p>
+<figure class="highlight lang-html"><figcaption><span>ruby02.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>標音<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ふ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>まれた<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>花<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>はな<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span> <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+    被<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踐<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄐㄧㄢˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄊㄚˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>的花朵
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><img src="/image/6AhZ9VLCRHGdyaViPkKQ_ruby02.png" alt="ruby02.png"><br>左邊Google Chrome可以使用標音功能，故就直接顯示其標音，rp標籤裡之內容不管；而右邊Firefox不能使用標音功能，故就把rp標籤內的內容也一併顯示出來。</p>
+<blockquote>
+<ol>
+<li>與w3schools.com裡的內容不同：rp標籤我是放在rt標籤外才能讓有標音功能的瀏覽器顯示正常，但w3schools.com內的卻放在rt標籤內。</li>
+<li>Firefox支援Ruby否？根據w3schools.com的內容是說已經支援了，但我的Firefox還是沒有。如果你的Firefox沒有標音功能，可以到<a href="https://addons.mozilla.org/zh-tw/firefox/addon/html-ruby/" target="_blank">這裡(HTML Ruby)</a>下載套件安裝一下就支援了！</li>
+</ol>
+</blockquote>
+<h1>參考資料</h1>
+<ol>
+<li>w3schools.com &gt; HTML &lt;ruby&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ruby.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ruby.asp">http://www.w3schools.com/tags/tag_ruby.asp</a></a></li>
+<li>w3schools.com &gt; HTML &lt;rp&gt; Tag：<a href="http://www.w3schools.com/tags/tag_rp.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_rp.asp">http://www.w3schools.com/tags/tag_rp.asp</a></a></li>
+<li>Re: &lt;rb&gt; as part of HTML5 ruby? from Dean Lee on 2011-12-29 (public-html-ig-zh@w3.org from December 2011)：<a href="http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html" target="_blank"><a href="http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html">http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html</a></a></li>
+<li>日文歌詞標音編輯器：<a href="http://but.lolicom.org/tool/" target="_blank"><a href="http://but.lolicom.org/tool/">http://but.lolicom.org/tool/</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/10/13/2013-10-13-html-text-transcription/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:blog.knightzone.org">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Windows/APP/">APP</a><small>1</small></li>
+  
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>1</small></li>
+  
+    <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>1</small></li>
+  
+    <li><a href="/categories/CSharp/">CSharp</a><small>1</small></li>
+  
+    <li><a href="/categories/Excel/">Excel</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>9</small></li>
+  
+    <li><a href="/categories/HTML/HTML5/">HTML5</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>3</small></li>
+  
+    <li><a href="/categories/UVa/">UVa</a><small>2</small></li>
+  
+    <li><a href="/categories/Windows/">Windows</a><small>1</small></li>
+  
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>1</small></li>
+  
+    <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
+  
+    <li><a href="/categories/小說創作/">小說創作</a><small>7</small></li>
+  
+    <li><a href="/categories/生活趣事/">生活趣事</a><small>15</small></li>
+  
+    <li><a href="/categories/製作進度/">製作進度</a><small>12</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/APP/" style="font-size: 12.00px;">APP</a><a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/HTML5/" style="font-size: 14.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 10.00px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">#APP：[索尼克資訊收集所]於Windows Store上架</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/07/2013-11-07-html-html5-language-branch/">#HTML(HTML5)：字詞分行</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/04/2013-11-04-html-embedded-multimedia/">#HTML(HTML5)：多媒體嵌入</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/01/2013-11-01-app-portable-single-cards/">#APP：[隨身單字卡]於Windows Phone Store上架</a>
+      </li>
+    
+      <li>
+        <a href="/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/">#生活趣事：[13.10.22]微軟校園巡迴講座之嘉義一日遊</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget recent_comments">
+  <h3 class="title">Recent Comment</h3>
+  <div class="entry">
+  <script type="text/javascript" src="http://knightzoneblog.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 灆洢騎士
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'knightzoneblog';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<img src="/image/smallLogoBlue.png" style="display:none;" alt="Logo" id="logoBgPNG"/>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
