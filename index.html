@@ -62,6 +62,116 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-11-28T18:00:00.000Z"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">Nov 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在開發Windows Phone APP的HTML5專案中，究竟該如何從C#執行網頁的Javascript程式呢？現在就讓我來介紹一下吧！</p>
+<h1>C#呼叫Javascript端的函式</h1>
+<p>首先在網頁中定義一個changeTitle的function，讓C#端可以利用這個function更改id為page-title的標籤內的第一個p標籤內的值。</p>
+<figure class="highlight lang-html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+            <span class="keyword">var</span> changeTitle = <span class="function"><span class="keyword">function</span> <span class="params">(text)</span> {</span>
+                document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = text;
+            }
+        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>為了示範，在這裡更改按下［上一頁］的按鈕的行為為呼叫Javascript端的changeTitle的function，並且傳入&quot;Hello World!&quot;這個字串，底下是程式碼：</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="keyword">private</span> <span class="keyword">void</span> BackApplicationBar_Click(<span class="keyword">object</span> sender, EventArgs e)
+{
+  Browser.InvokeScript(<span class="string">"changeTitle"</span>, <span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"Hello World!"</span> });
+  <span class="comment">//Browser.GoBack();</span>
+}
+</pre></td></tr></table></figure>
+
+<p><em>註：如果不需傳參數，直接使用<code>Browser.InvokeScript(&quot;changeTitle&quot;)</code>即可。</em></p>
+<p>尚未按上一頁按鈕之前：<br><img src="/image/iZpv6fRkTJ2yILO62rKB_csjs01.png" alt="csjs01.png"></p>
+<p>按下上一頁按鈕之後：<br><img src="/image/hViKSRYzSrc1WLeWZZAN_csjs02.png" alt="csjs02.png"></p>
+<h1>C#直接執行Javascript端的程式碼</h1>
+<p>依照上面的道理，其實可以利用<code>eval()</code>函式來執行Javascript端的程式碼。所以上述範例其實可以改成：</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>Browser.InvokeScript(<span class="string">"eval"</span>, 
+	<span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"document.querySelectorAll("</span><span class="preprocessor">#page-title p")[0].innerHTML = "Hello World!";" });</span>
+</pre></td></tr></table></figure>
+
+<h1>參考資料</h1>
+<ol>
+<li>Getting Started With Windows Phone 8 HTML5 Apps：<a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx" target="_blank"><a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx">http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-11-28T17:25:00.000Z"><a href="/2013/11/29/2013-11-29-apptortoise-chess-in-the-windows-store-shelves/">Nov 29 2013</a></time>
       
       
@@ -928,224 +1038,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-12T14:48:00.000Z"><a href="/2013/10/12/2013-10-12-html-unordered-ordered-and-definition-lists/">Oct 12 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/12/2013-10-12-html-unordered-ordered-and-definition-lists/">#HTML：無序、有序與定義清單</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>清單在網頁中是很常使用到的東西，故多少還是要了解一下。在HTML中有三種不太一樣的清單，分別是無序清單、有序清單與定義清單，無序清單與有序清單的用法差不多，但與定義清單的用法差距比較大，底下來個別解釋其使用的方法。</p>
-<h1>無序清單</h1>
-<figure class="highlight lang-html"><figcaption><span>unordered-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>清單<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Sonic<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Tails<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Knuckles<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Amy<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Shadow<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Silver<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/oei6c5rDR30zTXQ2OKNb_list01.png" alt="list01.png"></p>
-<p>無序清單使用<code>&lt;ul&gt;...&lt;/ul&gt;</code>將整個清單包起來，每一項使用<code>&lt;li&gt;...&lt;li&gt;</code>即可，效果就跟用Word按的項目符號及編號做出來的差不多。</p>
-<h1>有序清單</h1>
-<figure class="highlight lang-html"><figcaption><span>ordered-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>清單<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ol</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Sonic<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Tails<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Knuckles<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Amy<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Shadow<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>Silver<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">ol</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/J0fvAwtITeprP45zFWS5_list02.png" alt="list02.png"></p>
-<p>有序清單的使用與無序清單差不多，僅僅只是將ul(unordered list)標籤換成了ol(ordered list)標籤，效果就從原本的項目符號換成了數字編號。</p>
-<p>如果要改變起始的編號，可使用<code>start</code>屬性，例如起始值要改成10，就寫<code>&lt;ol start=&quot;10&quot;&gt;</code>。</p>
-<p>HTML5提供了新的屬性，可讓ol反向計算數值，利用<code>reversed</code>屬性即可，僅要寫<code>&lt;ol reversed&gt;</code>即可反向。(HTML5的功能性屬性，大多都是有寫就有效果，不用給值，沒寫就沒有效果)</p>
-<h1>定義清單</h1>
-<figure class="highlight lang-html"><figcaption><span>description-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>清單<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">dl</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Sonic<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dd</span>&gt;</span>刺蝟音速小子（日文：ソニック・ザ・ヘッジホッグ；英文：Sonic The Hedgehog）是一個電子遊戲人物，也是世嘉公司的吉祥物，誕生於1990年。他是刺蝟音速小子系列的主角，也是世界上最有名的刺蝟，擁有超過音速的奔跑速度，被稱為「世界上最快的刺蝟」。以音速小子為主人公的電玩遊戲曾在多個平台發售，總累計銷量已經超過了7000萬套。以它為主角的動畫、漫畫作品也風靡全球。其主要創作者為中裕司，大島直人以及安田廣和。<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Tails<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dd</span>&gt;</span>初登場於音速小子2，是個有兩條尾巴的小狐狸，如同音速小子小弟般的存在。可以藉由兩條尾巴旋轉飛行，其飛行速度接近音速小子。因為天生有兩條尾巴而遭到同伴排擠，在偶然間遇到音速小子後便跟隨他。對於機械有相當高的領悟力。<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/Pli6ycbqRBCM3nYpi7Sk_list03.png" alt="list03.png"></p>
-<p>與前述兩種清單不同的地方在於，整個清單用<code>&lt;dl&gt;...&lt;/dl&gt;</code>包住，每一項從原本僅有一個li標籤，換成dt和dd各一個標籤，dt表示的是欲解釋的項目，dd表示的是欲解釋的內容，因為是解釋的內容，所以dd標籤在排版上會做自動縮排。</p>
-<h1>巢狀清單用法</h1>
-<p>若要在清單內的某一項再利用清單解釋，可用以下的做法：</p>
-<figure class="highlight lang-html"><figcaption><span>nested-list.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>清單<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>
-        Team Sonic
-        <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">li</span>&gt;</span>Sonic<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">li</span>&gt;</span>Tails<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">li</span>&gt;</span>Knuckles<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span>
-        Team Dark
-        <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">li</span>&gt;</span>Shadow<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">li</span>&gt;</span>Rouge<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">li</span>&gt;</span>E-123 Omega<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/e9DpeeMqRWyGsKo6NtQZ_list04.png" alt="list04.png"></p>
-<p>上面對於每一項li標籤內又在加入了另外一個清單去做描述，而清單內的清單瀏覽器會自動在排版上去做縮排，這是很方便可以做多層巢狀清單的用法，各位也可以自己試試看如果換成用ol和dl又會發生什麼事情。</p>
-<h1>參考資料</h1>
-<ol>
-<li>w3schools.com &gt; HTML &lt;ul&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ul.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ul.asp">http://www.w3schools.com/tags/tag_ul.asp</a></a></li>
-<li>w3schools.com &gt; HTML &lt;ol&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ol.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ol.asp">http://www.w3schools.com/tags/tag_ol.asp</a></a></li>
-<li>w3schools.com &gt; HTML &lt;dl&gt; Tag：<a href="http://www.w3schools.com/tags/tag_dl.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_dl.asp">http://www.w3schools.com/tags/tag_dl.asp</a></a></li>
-<li>這樣做就對了 &gt; HTML &lt;dl/&gt;, &lt;dt/&gt; 與 &lt;dd/&gt; 的誤用：<a href="http://josephjiang.com/entry.php?id=340" target="_blank"><a href="http://josephjiang.com/entry.php?id=340">http://josephjiang.com/entry.php?id=340</a></a></li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2013/10/12/2013-10-12-html-unordered-ordered-and-definition-lists/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
 
 <nav id="pagination">
   
@@ -1169,7 +1061,7 @@
   
     <li><a href="/categories/Windows/APP/">APP</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>3</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>4</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -1181,7 +1073,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>9</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>1</small></li>
+    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>2</small></li>
   
     <li><a href="/categories/HTML/HTML5/">HTML5</a><small>3</small></li>
   
@@ -1191,7 +1083,7 @@
   
     <li><a href="/categories/Windows/">Windows</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>3</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>4</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -1209,7 +1101,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 15.71px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.43px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.57px;">HTML</a><a href="/tags/HTML5/" style="font-size: 14.29px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.86px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.43px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.43px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 12.86px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.14px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 16.25px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.25px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.75px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.50px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.25px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.25px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.75px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.50px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -1218,6 +1110,10 @@
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a>
+      </li>
     
       <li>
         <a href="/2013/11/29/2013-11-29-apptortoise-chess-in-the-windows-store-shelves/">#APP：[龜兔賽跑棋]於Windows Store上架</a>
@@ -1233,10 +1129,6 @@
     
       <li>
         <a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">#APP：[索尼克資訊收集所]於Windows Store上架</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/07/2013-11-07-html-html5-language-branch/">#HTML(HTML5)：字詞分行</a>
       </li>
     
   </ul>

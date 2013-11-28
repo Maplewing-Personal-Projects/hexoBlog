@@ -66,6 +66,116 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-11-28T18:00:00.000Z"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">Nov 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在開發Windows Phone APP的HTML5專案中，究竟該如何從C#執行網頁的Javascript程式呢？現在就讓我來介紹一下吧！</p>
+<h1>C#呼叫Javascript端的函式</h1>
+<p>首先在網頁中定義一個changeTitle的function，讓C#端可以利用這個function更改id為page-title的標籤內的第一個p標籤內的值。</p>
+<figure class="highlight lang-html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+            <span class="keyword">var</span> changeTitle = <span class="function"><span class="keyword">function</span> <span class="params">(text)</span> {</span>
+                document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = text;
+            }
+        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>為了示範，在這裡更改按下［上一頁］的按鈕的行為為呼叫Javascript端的changeTitle的function，並且傳入&quot;Hello World!&quot;這個字串，底下是程式碼：</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="keyword">private</span> <span class="keyword">void</span> BackApplicationBar_Click(<span class="keyword">object</span> sender, EventArgs e)
+{
+  Browser.InvokeScript(<span class="string">"changeTitle"</span>, <span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"Hello World!"</span> });
+  <span class="comment">//Browser.GoBack();</span>
+}
+</pre></td></tr></table></figure>
+
+<p><em>註：如果不需傳參數，直接使用<code>Browser.InvokeScript(&quot;changeTitle&quot;)</code>即可。</em></p>
+<p>尚未按上一頁按鈕之前：<br><img src="/image/iZpv6fRkTJ2yILO62rKB_csjs01.png" alt="csjs01.png"></p>
+<p>按下上一頁按鈕之後：<br><img src="/image/hViKSRYzSrc1WLeWZZAN_csjs02.png" alt="csjs02.png"></p>
+<h1>C#直接執行Javascript端的程式碼</h1>
+<p>依照上面的道理，其實可以利用<code>eval()</code>函式來執行Javascript端的程式碼。所以上述範例其實可以改成：</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>Browser.InvokeScript(<span class="string">"eval"</span>, 
+	<span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"document.querySelectorAll("</span><span class="preprocessor">#page-title p")[0].innerHTML = "Hello World!";" });</span>
+</pre></td></tr></table></figure>
+
+<h1>參考資料</h1>
+<ol>
+<li>Getting Started With Windows Phone 8 HTML5 Apps：<a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx" target="_blank"><a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx">http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-11-28T17:25:00.000Z"><a href="/2013/11/29/2013-11-29-apptortoise-chess-in-the-windows-store-shelves/">Nov 29 2013</a></time>
       
       
@@ -773,7 +883,7 @@
   
     <li><a href="/categories/Windows/APP/">APP</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>3</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>4</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -785,7 +895,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>9</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>1</small></li>
+    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>2</small></li>
   
     <li><a href="/categories/HTML/HTML5/">HTML5</a><small>3</small></li>
   
@@ -795,7 +905,7 @@
   
     <li><a href="/categories/Windows/">Windows</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>3</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>4</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -813,7 +923,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 15.71px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.43px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.57px;">HTML</a><a href="/tags/HTML5/" style="font-size: 14.29px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.86px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.43px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.43px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 12.86px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.14px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 16.25px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.25px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.75px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.50px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.25px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.25px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.75px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.50px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -822,6 +932,10 @@
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a>
+      </li>
     
       <li>
         <a href="/2013/11/29/2013-11-29-apptortoise-chess-in-the-windows-store-shelves/">#APP：[龜兔賽跑棋]於Windows Store上架</a>
@@ -837,10 +951,6 @@
     
       <li>
         <a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">#APP：[索尼克資訊收集所]於Windows Store上架</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/07/2013-11-07-html-html5-language-branch/">#HTML(HTML5)：字詞分行</a>
       </li>
     
   </ul>

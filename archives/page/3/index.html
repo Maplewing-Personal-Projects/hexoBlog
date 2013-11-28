@@ -66,6 +66,106 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-09-05T00:49:00.000Z"><a href="/2013/09/05/2013-09-05-cvar-dynamic/">Sep 5 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/05/2013-09-05-cvar-dynamic/">#CSharp(C#)：var與dynamic</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>這篇的出現頗神奇的，主要是因為剛好看到Javascript大全中提到duck-typing，突然想到其實C#也是可以玩玩duck-typing，結果就打算來寫這篇Orz…</p>
+<p>看到網路上似乎有人對於var和dynamic兩個的用法有點不了解，敝人就以自己沒用多久的經驗來告訴大家兩者的差別吧！</p>
+<h1>var: 編譯時期決定型別 (C# 3.0)</h1>
+<p>var基本上來說，並沒有跳脫強型別的規範，也就是說，用var宣告出來的變數，依然還是屬於靜態型別的變數。var僅僅是讓你在宣告變數時，若可以明確判斷該變數為何種型別的話，就可以不必在變數宣告式寫上其型別，寫上var即可。</p>
+<figure class="highlight lang-cs"><figcaption><span>varExample.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">var</span> s = <span class="string">"XD"</span>; <span class="comment">//由於可從後面指派的變數得知s為string型別，故可寫var</span>
+<span class="keyword">var</span> model = <span class="keyword">new</span> Model(); <span class="comment">//由於可從後面指派的變數得知model為Model型別，故可寫var</span>
+<span class="keyword">var</span> i; <span class="comment">//此處編譯時會出錯，因為無法確定i的型別為何。</span>
+s = <span class="number">1</span>; <span class="comment">//此處編譯時會出錯，因為s會是string型別的變數，無法儲存整數值</span>
+</pre></td></tr></table></figure>
+
+<p>var一般被稱作隱含型別，它其實會在編譯的時候，編譯器自動幫你判斷該變數為何種型別，並幫你在var處填上該型別的名稱，像上面的例子var s = “XD”在編譯的時候，會用string代替掉原本的var。</p>
+<p>舉一個簡單且常見的例子，當要對Dictionary型別去做foreach的瀏覽時，我們可直接使用var來代替掉用來當作每個單項的變數的宣告，底下範例：</p>
+<figure class="highlight lang-cs"><figcaption><span>dictionary.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>Dictionary&lt;<span class="keyword">string</span>, <span class="keyword">int</span>&gt; dict = <span class="keyword">new</span> Dictionary&lt;<span class="keyword">string</span>, <span class="keyword">int</span>&gt;();
+<span class="comment">/* 增加dict的資料 */</span>
+
+<span class="keyword">foreach</span>( <span class="keyword">var</span> pair <span class="keyword">in</span> dict ){  <span class="comment">//原本應該寫foreach(KeyValuePair&lt;string, int&gt; pair in dict)</span>
+  <span class="comment">/* 對pair做事情 */</span>
+}
+</pre></td></tr></table></figure>
+
+<h1>dynamic：執行時期決定型別 (C# 4.0)</h1>
+<p>這個dynamic就是真正的動態變數，類似於Javascript、Python、Ruby…等等這些語言的變數，一個變數的型態決定於被指派的時候，底下是個範例：</p>
+<figure class="highlight lang-cs"><figcaption><span>dynamicExample.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre>dynamic dyn; <span class="comment">//宣告一個dynamic的變數</span>
+dyn = <span class="number">2</span>; <span class="comment">//可以指派整數進去</span>
+dyn += <span class="number">3</span>; <span class="comment">//當dyn內存的是整數時，此行會對</span>
+dyn = <span class="string">"XD"</span>; <span class="comment">//可以改變裡面存的變數為string型別的值</span>
+dyn += <span class="string">"XD"</span>; <span class="comment">//當dyn內存的是字串時，此行會對</span>
+dyn += <span class="number">3</span>; <span class="comment">//當dyn內存的是字串時，此行會在執行時期發生錯誤，但編譯會過。</span>
+dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEveryBody方法可調用的話會對，但若沒有則在執行時期會錯，但編譯會過。</span>
+</pre></td></tr></table></figure>
+
+<p>由於變數可以動態的替換各種不同型態的值，編譯器會無法在編譯期找出錯誤，若要找出錯誤，只能等執行時期看看裡面的變數是否可做該運算而決定。</p>
+<p>而這個地方也說明了你可以用C#來做duck-typing的事情，底下用個簡單的範例作為收尾。</p>
+<figure class="highlight lang-cs"><figcaption><span>quack.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="keyword">void</span> Quack(dynamic duck){
+  duck.quack(); <span class="comment">//只要傳進來的值具有quack方法可調用，則就會正確執行，不管其型別為何。</span>
+}
+</pre></td></tr></table></figure>
+
+<h1>參考資料</h1>
+<ol>
+<li>MSDN &gt; var (C# 參考)：<a href="http://msdn.microsoft.com/zh-tw/library/bb383973.aspx" target="_blank"><a href="http://msdn.microsoft.com/zh-tw/library/bb383973.aspx">http://msdn.microsoft.com/zh-tw/library/bb383973.aspx</a></a></li>
+<li>MSDN &gt; dynamic (C# 參考)：<a href="http://msdn.microsoft.com/zh-tw/library/dd264741.aspx" target="_blank"><a href="http://msdn.microsoft.com/zh-tw/library/dd264741.aspx">http://msdn.microsoft.com/zh-tw/library/dd264741.aspx</a></a></li>
+<li>What&#39;s the difference between dynamic(C# 4) and var? - Stack Overflow：<a href="http://stackoverflow.com/questions/961581/whats-the-difference-between-dynamicc-4-and-var" target="_blank"><a href="http://stackoverflow.com/questions/961581/whats-the-difference-between-dynamicc-4-and-var">http://stackoverflow.com/questions/961581/whats-the-difference-between-dynamicc-4-and-var</a></a></li>
+<li>var, dynamic 差別以及如何實作像 ViewBag 一樣的物件 - Kelp Code：<a href="http://kelp.phate.org/2011/11/var-dynamic-viewbag.html" target="_blank"><a href="http://kelp.phate.org/2011/11/var-dynamic-viewbag.html">http://kelp.phate.org/2011/11/var-dynamic-viewbag.html</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/09/05/2013-09-05-cvar-dynamic/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-09-04T00:40:00.000Z"><a href="/2013/09/04/2013-09-04-css-create-animation-effects-use-the-keyframe-animation/">Sep 4 2013</a></time>
       
       
@@ -735,52 +835,6 @@ using namespace std;
 
 
   
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2009-02-22T14:02:00.000Z"><a href="/2009/02/22/2009-02-22--life-interesting-090222-italy-p/">Feb 22 2009</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2009/02/22/2009-02-22--life-interesting-090222-italy-p/">#生活趣事：[09.02.22]－義大利麵=P</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>由於之前文章都寫的很短，今天來寫長一點好了=P</p>
-<p>依照慣例，禮拜日一樣是去全科班上課，早上是化學和國文，化學從一些「原子,化合物…」等等名詞開始下手，國文則把經部講完了XD</p>
-<p>中午和阿復(不知道這樣叫O不OK耶XD)去站前地下入口處的美食館的義大利麵店吃，由於有優惠，所以才去的XD。叫了麵後，店員就拿了一個像是牌子的東西給你，等到你可以領餐了，那個牌子就會開始發光&amp;震動，好高科技呀@@</p>
-<p>麵不錯吃，只可惜飲料不能換湯，湯是酥皮濃湯耶！</p>
-<p>下午兩節英文，第一節考了98學測的英文，精神不好，沒看題目就開始選答案XD，最後對出來真是慘烈…(就算精神好，一樣會很慘烈吧Orz)</p>
-<p>又聽了一堂的講解，就離開了。</p>
-<p>回到家又開始玩東方口袋戰爭，莫名其妙的把十個條件都破了，靈烏的攻擊力太屌了Orz，不愧是靈烏XD</p>
-<p>今天差不多就如此～明天見了=P</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9696501" target="_blank">http://www.wretch.cc/blog/fafnar123/9696501</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2009/02/22/2009-02-22--life-interesting-090222-italy-p/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -807,7 +861,7 @@ using namespace std;
   
     <li><a href="/categories/Windows/APP/">APP</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>3</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>4</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -819,7 +873,7 @@ using namespace std;
   
     <li><a href="/categories/HTML/">HTML</a><small>9</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>1</small></li>
+    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>2</small></li>
   
     <li><a href="/categories/HTML/HTML5/">HTML5</a><small>3</small></li>
   
@@ -829,7 +883,7 @@ using namespace std;
   
     <li><a href="/categories/Windows/">Windows</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>3</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>4</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -847,7 +901,7 @@ using namespace std;
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 15.71px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.43px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.57px;">HTML</a><a href="/tags/HTML5/" style="font-size: 14.29px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.86px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.43px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.43px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 12.86px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.14px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 16.25px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.25px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.75px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.50px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.25px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.25px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.75px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.50px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -856,6 +910,10 @@ using namespace std;
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a>
+      </li>
     
       <li>
         <a href="/2013/11/29/2013-11-29-apptortoise-chess-in-the-windows-store-shelves/">#APP：[龜兔賽跑棋]於Windows Store上架</a>
@@ -871,10 +929,6 @@ using namespace std;
     
       <li>
         <a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">#APP：[索尼克資訊收集所]於Windows Store上架</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/07/2013-11-07-html-html5-language-branch/">#HTML(HTML5)：字詞分行</a>
       </li>
     
   </ul>
