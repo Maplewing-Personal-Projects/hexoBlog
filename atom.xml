@@ -4,7 +4,7 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-11-28T18:21:12.809Z</updated>
+  <updated>2013-11-28T18:43:33.596Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
@@ -12,11 +12,101 @@
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
+    <title type="html"><![CDATA[#Windows Phone：在HTML5專案中，如何從Javascript傳送字串到C#的APP端]]></title>
+    <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/"/>
+    <id>http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/</id>
+    <published>2013-11-28T18:30:00.000Z</published>
+    <updated>2013-11-28T18:42:26.000Z</updated>
+    <content type="html"><![CDATA[<p>在開發Windows Phone APP的HTML5專案中，究竟該如何從Javascript傳給APP的C#程式碼中呢？現在就讓我來介紹一下吧！</p>
+<h1>使Javascript能與APP的C#程式碼溝通</h1>
+<p>首先先對嵌入至HTML5專案中的瀏覽器加上當觸發ScriptNotify事件時處理的函式，Javascript可藉此觸發ScriptNotify事件將字串傳給APP使用。在此範例裡，設定當Javascript傳字串過來時，就使用<code>MessageBox.Show</code>將字串顯示出來。</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="keyword">private</span> <span class="keyword">void</span> Browser_Loaded(<span class="keyword">object</span> sender, RoutedEventArgs e)
+{
+  Browser.IsScriptEnabled = <span class="keyword">true</span>;
+  Browser.ScriptNotify += HTML_Script_Launched;
+  <span class="comment">// 在此加入您的 URL</span>
+  Browser.Navigate(<span class="keyword">new</span> Uri(MainUri, UriKind.Relative));
+}
+
+<span class="keyword">private</span> <span class="keyword">void</span> HTML_Script_Launched(<span class="keyword">object</span> sender, NotifyEventArgs e)
+{
+  MessageBox.Show(e.Value); 
+}
+</pre></td></tr></table></figure>
+
+<p><em>註：亦可直接從xaml中增加。<code>&lt;phone:WebBrowser x:Name=&quot;Browser&quot; ScriptNotify=&quot;HTML_Script_Launched&quot; /&gt;</code></em></p>
+<p>接著只要在Javascript端，呼叫<code>window.external.notify</code>函式並傳值即可。</p>
+<figure class="highlight lang-html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre>  <span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      window.external.notify(<span class="string">"Hello World!"</span>);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>這樣就可以了！底下是結果：<br><img src="/image/NfBodyjSjmv1DMhZNuFp_csjs03.png" alt="csjs03.png"></p>
+<h1>參考資料</h1>
+<ol>
+<li>Getting Started With Windows Phone 8 HTML5 Apps：<a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx" target="_blank"><a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx">http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx</a></a></li>
+</ol>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/tags/APP/" term="APP"/>
+    <category scheme="http://blog.knightzone.org/tags/HTML5/" term="HTML5"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/APP/" term="APP"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/APP/HTML5/" term="HTML5"/>
+  </entry>
+  <entry>
     <title type="html"><![CDATA[#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式]]></title>
     <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/"/>
     <id>http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/</id>
     <published>2013-11-28T18:00:00.000Z</published>
-    <updated>2013-11-28T18:18:51.000Z</updated>
+    <updated>2013-11-28T18:38:33.000Z</updated>
     <content type="html"><![CDATA[<p>在開發Windows Phone APP的HTML5專案中，究竟該如何從C#執行網頁的Javascript程式呢？現在就讓我來介紹一下吧！</p>
 <h1>C#呼叫Javascript端的函式</h1>
 <p>首先在網頁中定義一個changeTitle的function，讓C#端可以利用這個function更改id為page-title的標籤內的第一個p標籤內的值。</p>
@@ -43,24 +133,24 @@
 21
 </pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;<span class="title">html</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-            <span class="keyword">var</span> changeTitle = <span class="function"><span class="keyword">function</span> <span class="params">(text)</span> {</span>
-                document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = text;
-            }
-        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      <span class="keyword">var</span> changeTitle = <span class="function"><span class="keyword">function</span> <span class="params">(text)</span> {</span>
+          document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = text;
+      }
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </pre></td></tr></table></figure>
 
@@ -85,7 +175,7 @@
 <figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>Browser.InvokeScript(<span class="string">"eval"</span>, 
-	<span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"document.querySelectorAll("</span><span class="preprocessor">#page-title p")[0].innerHTML = "Hello World!";" });</span>
+  <span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"document.querySelectorAll("</span><span class="preprocessor">#page-title p")[0].innerHTML = "Hello World!";" });</span>
 </pre></td></tr></table></figure>
 
 <h1>參考資料</h1>
@@ -1716,110 +1806,6 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 <li>html教學 &gt; 第03章。常用標籤：<a href="http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp" target="_blank"><a href="http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp">http://m7.dfps.tp.edu.tw/chen/main5/ahtml/03.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;div&gt; and &lt;span&gt;：<a href="http://www.w3schools.com/html/html_blocks.asp" target="_blank"><a href="http://www.w3schools.com/html/html_blocks.asp">http://www.w3schools.com/html/html_blocks.asp</a></a></li>
 <li>w3schools.com &gt; HTML &lt;pre&gt; tag：<a href="http://www.w3schools.com/tags/tag_pre.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_pre.asp">http://www.w3schools.com/tags/tag_pre.asp</a></a></li>
-</ol>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/HTML/" term="HTML"/>
-    <category scheme="http://blog.knightzone.org/categories/HTML/" term="HTML"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#HTML：基本語法結構]]></title>
-    <link href="http://blog.knightzone.org/2013/09/06/2013-09-06-html-basic-grammatical-structures/"/>
-    <id>http://blog.knightzone.org/2013/09/06/2013-09-06-html-basic-grammatical-structures/</id>
-    <published>2013-09-06T07:33:00.000Z</published>
-    <updated>2013-10-15T15:11:40.000Z</updated>
-    <content type="html"><![CDATA[<p>由於開學之後會有教學Web技術的讀書會，故我現在就一邊整理HTML+CSS的資料，一邊PO上Logdown這裡讓大家看看。</p>
-<p>談到HTML語法，我們先來看一個簡單的HTML範例：</p>
-<figure class="highlight lang-html"><figcaption><span>firstWebsite.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>這裡是標題的部分<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    這裡是內容的部分。 <span class="comment">&lt;!-- 此為註解 --&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/NXRkjm7lSPingeD2QxDC_html1-1.png" alt="html1-1.png"><br>底下我們開始對這個範例進行講解。</p>
-<h1>HTML版本宣告</h1>
-<p>每份HTML文件的第一行通常會放置該HTML是使用哪個版本的宣告，如今HTML5已漸漸成為主流，故我們會用<code>&lt;!DOCTYPE html&gt;</code>這行來進行版本宣告，若你有看過HTML4.01的版本宣告，你一定會知道以前的版本宣告有多麼冗長，它是長這樣的：<code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code>，目前您已經可以盡量使用HTML5的版本宣告，現代的瀏覽器都支援它。</p>
-<h1>標籤(tag)與元素(element)</h1>
-<p>HTML文件是以一堆標籤形成的元素所組合而成的，標籤即是使用小於符號、標籤名稱與大於符號所組合而成的，而元素則是由開始標籤、標籤屬性以及標籤所包之內容與結束標籤所組合而成，底下是一個HTML元素的格式：</p>
-<figure class="highlight lang-html"><figcaption><span>format.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">標籤名</span> 屬性<span class="attribute">1</span>=<span class="value">'值'</span> 屬性<span class="attribute">2</span>=<span class="value">'值'</span> <span class="attribute">....</span>多個屬性以此類推&gt;</span> 元素內容 <span class="tag">&lt;/<span class="title">標籤名</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>最前面的即是開始標籤，而最後面在標籤名前加上斜線的即為結束標籤。</p>
-<p>若元素並無元素內容時，即可簡寫為下列格式：</p>
-<figure class="highlight lang-html"><figcaption><span>single.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">標籤名</span> 屬性<span class="attribute">1</span>=<span class="value">'值'</span> 屬性<span class="attribute">2</span>=<span class="value">'值'</span>  <span class="attribute">....</span>多個屬性以此類推 /&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>即類似於將結束標籤開頭的斜線放置於開始標籤的尾部即可。</p>
-<h1>html、head、body標籤</h1>
-<p>每一份html文件的第一個最底部的標籤必定是html標籤，而html標籤的內容通常又會分成兩個標籤，一個是head標籤，另外一個是body標籤。</p>
-<figure class="highlight lang-html"><figcaption><span>structure.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    ...
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    ...
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>head標籤內放置的是此HTML文件的整體資訊，像是head內一定會放的title標籤即是設定該網頁的標題。</p>
-<figure class="highlight lang-html"><figcaption><span>head.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>...
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">title</span>&gt;</span>這裡是標題的部分<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-...
-</pre></td></tr></table></figure>
-
-<p><img src="/image/BMw2wcZ1QkqNDM6wADvw_html1-2.png" alt="html1-2.png"></p>
-<p>body標籤內則是放置網頁的內容，打在這裡面的內容都會呈現在網頁上。</p>
-<figure class="highlight lang-html"><figcaption><span>body.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>...
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-  這裡是內容的部分。
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-...
-</pre></td></tr></table></figure>
-
-<p><img src="/image/xXR4CuvHSUS9OvcCW4GD_html1-3.png" alt="html1-3.png"></p>
-<h1>註解</h1>
-<p>你可以利用<code>&lt;!-- 註解文字 --&gt;</code>放置註解，註解文字並不會顯示在網頁上，僅提供你在開發網頁的時候能夠方便了解該段程式碼的含意為何。</p>
-<h1>參考資料</h1>
-<ol>
-<li>HTML基本語法：<a href="http://kaihang.tripod.com/computer/html/html.html" target="_blank"><a href="http://kaihang.tripod.com/computer/html/html.html">http://kaihang.tripod.com/computer/html/html.html</a></a></li>
-<li>w3school.com &gt; HTML &lt;html&gt; tag：<a href="http://www.w3schools.com/tags/tag_html.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_html.asp">http://www.w3schools.com/tags/tag_html.asp</a></a></li>
-<li>程式設計教學誌 &gt; HTML 4.01：<a href="http://pydoing.blogspot.tw/2010/11/html-401-overview.html" target="_blank"><a href="http://pydoing.blogspot.tw/2010/11/html-401-overview.html">http://pydoing.blogspot.tw/2010/11/html-401-overview.html</a></a></li>
 </ol>
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/HTML/" term="HTML"/>

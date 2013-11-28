@@ -66,6 +66,117 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-11-28T18:30:00.000Z"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/">Nov 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/">#Windows Phone：在HTML5專案中，如何從Javascript傳送字串到C#的APP端</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在開發Windows Phone APP的HTML5專案中，究竟該如何從Javascript傳給APP的C#程式碼中呢？現在就讓我來介紹一下吧！</p>
+<h1>使Javascript能與APP的C#程式碼溝通</h1>
+<p>首先先對嵌入至HTML5專案中的瀏覽器加上當觸發ScriptNotify事件時處理的函式，Javascript可藉此觸發ScriptNotify事件將字串傳給APP使用。在此範例裡，設定當Javascript傳字串過來時，就使用<code>MessageBox.Show</code>將字串顯示出來。</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="keyword">private</span> <span class="keyword">void</span> Browser_Loaded(<span class="keyword">object</span> sender, RoutedEventArgs e)
+{
+  Browser.IsScriptEnabled = <span class="keyword">true</span>;
+  Browser.ScriptNotify += HTML_Script_Launched;
+  <span class="comment">// 在此加入您的 URL</span>
+  Browser.Navigate(<span class="keyword">new</span> Uri(MainUri, UriKind.Relative));
+}
+
+<span class="keyword">private</span> <span class="keyword">void</span> HTML_Script_Launched(<span class="keyword">object</span> sender, NotifyEventArgs e)
+{
+  MessageBox.Show(e.Value); 
+}
+</pre></td></tr></table></figure>
+
+<p><em>註：亦可直接從xaml中增加。<code>&lt;phone:WebBrowser x:Name=&quot;Browser&quot; ScriptNotify=&quot;HTML_Script_Launched&quot; /&gt;</code></em></p>
+<p>接著只要在Javascript端，呼叫<code>window.external.notify</code>函式並傳值即可。</p>
+<figure class="highlight lang-html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre>  <span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      window.external.notify(<span class="string">"Hello World!"</span>);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>這樣就可以了！底下是結果：<br><img src="/image/NfBodyjSjmv1DMhZNuFp_csjs03.png" alt="csjs03.png"></p>
+<h1>參考資料</h1>
+<ol>
+<li>Getting Started With Windows Phone 8 HTML5 Apps：<a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx" target="_blank"><a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx">http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-11-28T18:00:00.000Z"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">Nov 29 2013</a></time>
       
       
@@ -102,24 +213,24 @@
 21
 </pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;<span class="title">html</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-            <span class="keyword">var</span> changeTitle = <span class="function"><span class="keyword">function</span> <span class="params">(text)</span> {</span>
-                document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = text;
-            }
-        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      <span class="keyword">var</span> changeTitle = <span class="function"><span class="keyword">function</span> <span class="params">(text)</span> {</span>
+          document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = text;
+      }
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </pre></td></tr></table></figure>
 
@@ -144,7 +255,7 @@
 <figure class="highlight lang-cs"><figcaption><span>MainPage.cs</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>Browser.InvokeScript(<span class="string">"eval"</span>, 
-	<span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"document.querySelectorAll("</span><span class="preprocessor">#page-title p")[0].innerHTML = "Hello World!";" });</span>
+  <span class="keyword">new</span> <span class="keyword">string</span>[] { <span class="string">"document.querySelectorAll("</span><span class="preprocessor">#page-title p")[0].innerHTML = "Hello World!";" });</span>
 </pre></td></tr></table></figure>
 
 <h1>參考資料</h1>
@@ -922,126 +1033,6 @@
 
 
   
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-13T14:20:00.000Z"><a href="/2013/10/13/2013-10-13-html-text-transcription/">Oct 13 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/13/2013-10-13-html-text-transcription/">#HTML(HTML5)：文字標音</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>本來是沒特別想寫這篇，不過想想這功能在最近已經被廣泛支援了，故就想說一定要好好來介紹一下！</p>
-<p>大家在打入中文、日文的時候，有時候應該會想加入標音吧！正好以前IE有個標籤叫做ruby標籤可以做到這樣的事情，而在HTML5終於把ruby標籤做為標準加入了！</p>
-<h1>標音</h1>
-<p>底下一樣先用一個範例來解釋：</p>
-<figure class="highlight lang-html"><figcaption><span>ruby01.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>標音<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ふ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>まれた<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>花<span class="tag">&lt;<span class="title">rt</span>&gt;</span>はな<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span> <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
-    被<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踐<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄐㄧㄢˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄊㄚˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>的花朵
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/v34wkTDHS9mM83j3oOgw_ruby01.png" alt="ruby01.png"><br>上面的排版有點亂，不過為了不要讓文字中間出現空白，只好擠成一行了，底下列一下通用式用法的解說：</p>
-<figure class="highlight lang-html"><figcaption><span>rubyusage.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">ruby</span>&gt;</span>
-  [欲加上標音的字詞1] <span class="tag">&lt;<span class="title">rt</span>&gt;</span>[標音1]<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>
-  [欲加上標音的字詞2] <span class="tag">&lt;<span class="title">rt</span>&gt;</span>[標音2]<span class="tag">&lt;/<span class="title">rt</span>&gt;</span>
-  ...
-<span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>大體上就是如此，整個標音群組用ruby標籤包住，打上要標音的詞彙後，加上rt標籤去做標音，就可以達到標音的效果了！</p>
-<blockquote>
-<p>rb標籤：早期的寫法會把[欲加上標音的字詞]包在<code>&lt;rb&gt;...&lt;/rb&gt;</code>內，但是收錄進HTML5標準的時候，去除了rb標籤，所以目前的標準是要省略rb標籤的唷！</p>
-</blockquote>
-<h1>不支援標音之瀏覽器的表現方法</h1>
-<p>假設今天要讓不支援標音的瀏覽器上看起來也要至少正常一點，可以將要多餘顯示的文字用rp標籤包住。這樣的話，有支援標音的瀏覽器會忽略rp標籤裡的內容，而不支援標音的瀏覽器就會顯示rp標籤裡的內容。底下看個範例：</p>
-<figure class="highlight lang-html"><figcaption><span>ruby02.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>標音<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ふ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>まれた<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>花<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>はな<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span> <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
-    被<span class="tag">&lt;<span class="title">ruby</span>&gt;</span>踐<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄐㄧㄢˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span>踏<span class="tag">&lt;<span class="title">rp</span>&gt;</span>（<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;<span class="title">rt</span>&gt;</span>ㄊㄚˋ<span class="tag">&lt;/<span class="title">rt</span>&gt;</span><span class="tag">&lt;<span class="title">rp</span>&gt;</span>）<span class="tag">&lt;/<span class="title">rp</span>&gt;</span><span class="tag">&lt;/<span class="title">ruby</span>&gt;</span>的花朵
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/6AhZ9VLCRHGdyaViPkKQ_ruby02.png" alt="ruby02.png"><br>左邊Google Chrome可以使用標音功能，故就直接顯示其標音，rp標籤裡之內容不管；而右邊Firefox不能使用標音功能，故就把rp標籤內的內容也一併顯示出來。</p>
-<blockquote>
-<ol>
-<li>與w3schools.com裡的內容不同：rp標籤我是放在rt標籤外才能讓有標音功能的瀏覽器顯示正常，但w3schools.com內的卻放在rt標籤內。</li>
-<li>Firefox支援Ruby否？根據w3schools.com的內容是說已經支援了，但我的Firefox還是沒有。如果你的Firefox沒有標音功能，可以到<a href="https://addons.mozilla.org/zh-tw/firefox/addon/html-ruby/" target="_blank">這裡(HTML Ruby)</a>下載套件安裝一下就支援了！</li>
-</ol>
-</blockquote>
-<h1>參考資料</h1>
-<ol>
-<li>w3schools.com &gt; HTML &lt;ruby&gt; Tag：<a href="http://www.w3schools.com/tags/tag_ruby.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_ruby.asp">http://www.w3schools.com/tags/tag_ruby.asp</a></a></li>
-<li>w3schools.com &gt; HTML &lt;rp&gt; Tag：<a href="http://www.w3schools.com/tags/tag_rp.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_rp.asp">http://www.w3schools.com/tags/tag_rp.asp</a></a></li>
-<li>Re: &lt;rb&gt; as part of HTML5 ruby? from Dean Lee on 2011-12-29 (public-html-ig-zh@w3.org from December 2011)：<a href="http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html" target="_blank"><a href="http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html">http://lists.w3.org/Archives/Public/public-html-ig-zh/2011Dec/0021.html</a></a></li>
-<li>日文歌詞標音編輯器：<a href="http://but.lolicom.org/tool/" target="_blank"><a href="http://but.lolicom.org/tool/">http://but.lolicom.org/tool/</a></a></li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2013/10/13/2013-10-13-html-text-transcription/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -1066,7 +1057,7 @@
   
     <li><a href="/categories/Windows/APP/">APP</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>4</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>5</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -1078,9 +1069,9 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>9</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>2</small></li>
-  
     <li><a href="/categories/HTML/HTML5/">HTML5</a><small>3</small></li>
+  
+    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>3</small></li>
   
     <li><a href="/categories/Javascript/">Javascript</a><small>3</small></li>
   
@@ -1088,7 +1079,7 @@
   
     <li><a href="/categories/Windows/">Windows</a><small>2</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>4</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>5</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -1106,7 +1097,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 16.25px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.25px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.75px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.50px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.25px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.25px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.75px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.50px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 17.14px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.43px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.57px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.71px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.86px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.43px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.43px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 14.29px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.14px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -1115,6 +1106,10 @@
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/">#Windows Phone：在HTML5專案中，如何從Javascript傳送字串到C#的APP端</a>
+      </li>
     
       <li>
         <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a>
@@ -1130,10 +1125,6 @@
     
       <li>
         <a href="/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/">#Windows Phone：如何在Windows Phone App使用HTML5專案開發</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">#APP：[索尼克資訊收集所]於Windows Store上架</a>
       </li>
     
   </ul>
