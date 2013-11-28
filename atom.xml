@@ -4,13 +4,34 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-11-28T19:20:59.043Z</updated>
+  <updated>2013-11-28T19:49:04.759Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#Windows：從Windows 8升級至Windows 8 Pro]]></title>
+    <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-upgrade-to-windows-8-windows-8-pro/"/>
+    <id>http://blog.knightzone.org/2013/11/29/2013-11-29-windows-upgrade-to-windows-8-windows-8-pro/</id>
+    <published>2013-11-28T19:36:00.000Z</published>
+    <updated>2013-11-28T19:48:23.000Z</updated>
+    <content type="html"><![CDATA[<p>因為要使用Hyper-V，結果發現自己的Windows 8並不是Pro版，因此就打算來利用手邊的序號來進行升級，本來想說是不是要重灌，結果發現只要打序號進去後更新就OK了！底下附圖為過程：</p>
+<p>從右邊點選電腦資訊：<br><img src="/image/0kqNzw49R2OVNMazbPV4_windows8Pro001.png" alt="windows8Pro001.png"></p>
+<p>點選紅圈圈住的地方：<br><img src="/image/PaPmj57Qw2jLZujNCHFq_Windows8Pro002.png" alt="Windows8Pro002.png"></p>
+<p>選擇已經持有序號了：<br><img src="/image/5kNNhqnRNePMp5gTlxMh_Windows8Pro003.png" alt="Windows8Pro003.png"></p>
+<p>輸入自己手邊的序號：<br><img src="/image/q7WXpramT7WPMIjid1Xn_Windows8Pro004(Check" alt="Windows8Pro004(Check).png">.png)</p>
+<p>認證好後就同意吧！<br><img src="/image/3DGpww1fTc6AKBo5UzeQ_Windows8Pro005.png" alt="Windows8Pro005.png"></p>
+<p>開始升級等待中：<br><img src="/image/ZMra8StRSuTLSLKZ1sZg_Windows8Pro006.png" alt="Windows8Pro006.png"></p>
+<p>更新完畢！<br><img src="/image/m4Rs0Hr3TCmL1wqjDe01_Windows8Pro007.png" alt="Windows8Pro007.png"></p>
+<p>此時就會看到已經升級到Windows 8 Pro了！<br><img src="/image/7hP2AXLWQMGVyqFXP9XO_Windows8Pro008.png" alt="Windows8Pro008.png"></p>
+<p>這時就可以增加一些Pro才有的功能，例如：Hyper-V。<br><img src="/image/Ekky0eNZRb7Hnag6U5ye_Windows8Pro009.png" alt="Windows8Pro009.png"></p>
+<p>升級流程大概就是如此，簡單吧！！</p>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/Windows/" term="Windows"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows/" term="Windows"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#Windows：如何免費從Windows 8 Pro升級至Windows 8.1 Pro]]></title>
     <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-how-do-i-upgrade-to-windows-81/"/>
@@ -1745,30 +1766,5 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/HTML/" term="HTML"/>
     <category scheme="http://blog.knightzone.org/categories/HTML/" term="HTML"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#Excel：將Excel試算表文件轉圖片]]></title>
-    <link href="http://blog.knightzone.org/2013/09/09/2013-09-09-excel-the-excel-trial-and-error-file-transfer-pictures/"/>
-    <id>http://blog.knightzone.org/2013/09/09/2013-09-09-excel-the-excel-trial-and-error-file-transfer-pictures/</id>
-    <published>2013-09-09T11:45:00.000Z</published>
-    <updated>2013-10-15T15:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>基於昨天瑪莉羊問我該怎麼將課表的Excel檔轉成圖片，又剛好我要把成績單的Excel檔也要轉成圖片，所以我就查了一下開怎麼做，底下列出如何將試算表轉成圖片。</p>
-<h1>轉換步驟</h1>
-<ol>
-<li><p>首先先開啟Excel檔案，並將要轉成圖片的範圍框起來。<br><img src="/image/shNDc1b2SKCrx6rY6ut4_excel1.png" alt="excel1.png"></p>
-</li>
-<li><p>再來對該範圍按下Ctrl+C或是點擊滑鼠右鍵選擇複製。<br><img src="/image/Rh8XEqqCS72Oyupr1yX7_excel2.png" alt="excel2.png"></p>
-</li>
-<li><p>最後在小畫家(或是其他繪圖軟體)裡面按下Ctrl+V貼上後儲存成圖片即可。<br><img src="/image/qRo1YIK2TUajq4ycFdBc_excel3.png" alt="excel3.png"></p>
-</li>
-</ol>
-<h1>參考資料</h1>
-<ol>
-<li>How to Save an Excel Spreadsheet As an Image or Picture | eHow：<a href="http://www.ehow.com/how_5968604_save-excel-spreadsheet-image-picture.html" target="_blank"><a href="http://www.ehow.com/how_5968604_save-excel-spreadsheet-image-picture.html">http://www.ehow.com/how_5968604_save-excel-spreadsheet-image-picture.html</a></a></li>
-<li>Excel: Save a worksheet as an image file | CyberText Newsletter：<a href="http://cybertext.wordpress.com/2011/06/29/excel-save-a-worksheet-as-an-image-file/" target="_blank"><a href="http://cybertext.wordpress.com/2011/06/29/excel-save-a-worksheet-as-an-image-file/">http://cybertext.wordpress.com/2011/06/29/excel-save-a-worksheet-as-an-image-file/</a></a></li>
-</ol>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/Excel/" term="Excel"/>
-    <category scheme="http://blog.knightzone.org/categories/Excel/" term="Excel"/>
   </entry>
 </feed>
