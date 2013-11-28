@@ -62,6 +62,150 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-11-28T18:57:00.000Z"><a href="/2013/11/29/2013-11-29-monogame-windows-8-app-project-judge-snap-view/">Nov 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/29/2013-11-29-monogame-windows-8-app-project-judge-snap-view/">#Monogame：在Windows 8 APP專案中，判斷Snap View的狀態</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>目前XNA已經被微軟暫停維護的情況下，大家使用的替代方案則是Monogame，而Monogame也是目前唯一可讓你移植XNA遊戲到Windows 8平台上的方法，但究竟該怎麼在Monogame底下判斷目前Windows 8的Snap View狀態呢？底下就來好好說明一下。</p>
+<h1>GameState：用於判斷目前Snap View的狀態</h1>
+<p>在Windows 8底下，APP有三種顯示方式：全螢幕、佔1/4的Snap View以及佔3/4的Snap View，你可以在底下增加此GameState Class並在MainGame初始化的時候順便呼叫<code>GameState.Initialize</code>，去初始化GameState。</p>
+<figure class="highlight lang-cs"><figcaption><span>GameState.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre></td><td class="code"><pre><span class="keyword">using</span> Windows.UI.Core;
+
+<span class="keyword">namespace</span> MainGame
+{
+  <span class="keyword">public</span> <span class="keyword">enum</span> WindowState { Full = <span class="number">0</span>, Snap1Quarter = <span class="number">1</span>, Snap3Quarter = <span class="number">2</span> };
+  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> GameState
+  {
+    <span class="keyword">public</span> <span class="keyword">static</span> WindowState _windowState;
+    <span class="keyword">public</span> <span class="keyword">static</span> CoreWindow _window;
+    <span class="keyword">public</span> <span class="keyword">static</span> Rect _windowsBounds;
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> Initialize()
+    {
+      _window = CoreWindow.GetForCurrentThread();
+      _windowsBounds = _window.Bounds;
+      _windowState = WindowState.Full;
+      _window.SizeChanged += _window_SizeChanged;
+    }
+
+    <span class="keyword">static</span> <span class="keyword">void</span> _window_SizeChanged(CoreWindow sender, WindowSizeChangedEventArgs args)
+    {
+      <span class="keyword">if</span> (args.Size.Width == _windowsBounds.Width)
+      {
+        _windowState = WindowState.Full;
+      }
+      <span class="keyword">else</span> <span class="keyword">if</span> (args.Size.Width &lt;= <span class="number">320.00</span>)
+      {
+        _windowState = WindowState.Snap1Quarter;
+      }
+      <span class="keyword">else</span>
+      {
+        _windowState = WindowState.Snap3Quarter;
+      }
+
+      _windowsBounds.Height = args.Size.Height;
+      _windowsBounds.Width = args.Size.Width;
+    }
+  }
+}
+</pre></td></tr></table></figure>
+
+<p>此時，即可使用<code>GameState._windowState</code>來做判斷，如果是WindowState.Full即是全螢幕，而WindowState.Snap1Quarter是佔1/4的Snap View，最後WindowState.Snap3Quarter則表示是佔3/4的Snap View。</p>
+<p>接著在Draw的時候進行判斷即可：</p>
+<figure class="highlight lang-cs"><figcaption><span>MainGame.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> Draw(GameTime gameTime)
+{
+  GraphicsDevice.Clear(Color.Gray);
+  
+  <span class="comment">// TODO: Add your drawing code here</span>
+  <span class="keyword">switch</span>(GameState._windowState){
+    <span class="comment">// 判斷並繪製</span>
+  }
+}
+</pre></td></tr></table></figure>
+
+<h1>參考資料</h1>
+<ol>
+<li>Windows 8, XNA and MonoGame - Part 3, Code Migration and Windows 8 Feature Support：<a href="http://solutions.devx.com/ms/msdn/windows-client/windows-8-xna-and-monogame-part-3-code-migration-and-windows-8-feature-support.html" target="_blank"><a href="http://solutions.devx.com/ms/msdn/windows-client/windows-8-xna-and-monogame-part-3-code-migration-and-windows-8-feature-support.html">http://solutions.devx.com/ms/msdn/windows-client/windows-8-xna-and-monogame-part-3-code-migration-and-windows-8-feature-support.html</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/29/2013-11-29-monogame-windows-8-app-project-judge-snap-view/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-11-28T18:30:00.000Z"><a href="/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/">Nov 29 2013</a></time>
       
       
@@ -968,67 +1112,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      
-        <img src="/image/Photo001.jpg">
-      
-        <img src="/image/Photo002.jpg">
-      
-        <img src="/image/Photo003.jpg">
-      
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-22T15:17:00.000Z"><a href="/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/">Oct 22 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/">#生活趣事：[13.10.22]微軟校園巡迴講座之嘉義一日遊</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>由於翊筑的請託，我接下了禮拜二在嘉義的兩場微軟校園巡迴講座的工作，一場在吳鳳科大，一場在南華大學，兩場分別是當機動組兼負責人以及技術講師。由於原本這禮拜我只有禮拜三的師大場而已，應著這樣出去玩的機會，南華場將成為我第一場演講的場次，心裡不免有點緊張，原本想說第一場在自己學校裡演講應該不會出什麼包，但沒想到現在卻變成是在別的學校，真的是讓我有點擔心。</p>
-<p>前一天晚上，我將鬧鐘設在了5:30、5:40、5:50、6:00、6:30，以避免我會沒聽到鬧鐘而睡遲了，設完鬧鐘準備完東西，我就早早就寢了。隔日早上醒來後，洗了個澡就背著大包小包的道具前往了台北車站，買了高鐵票搭上了7:30前往嘉義的高鐵。</p>
-<p>到了嘉義大概已經9點左右了，在高鐵站的一樓買了個摩斯漢堡當早餐，就坐上了計程車前往吳鳳科大，路上司機還以為我是吳鳳科大的學生，跟我聊天，他還說他台北住20年了，他很熟台北。他愷愷而談地講了很多台北的路名之分布與今昔之地標後，我個人就認為司機真的是蠻厲害的，說熟台北真的不是隨口說說的而已。</p>
-<p>到了吳鳳科大門口，就與Rick和Annping會合，中途換了MSP的衣服，之後到了教室準備準備就開始了早上的演講。由於我是機動組的，所以就拿著Rick的相機到處狂拍，感覺好似有點妨礙到他們演講了呢，真不好意思！XD</p>
-<p>中午品妤開車來接我們，先送了Annping去民雄車站坐火車後，我們就往一家叫做噴水雞肉飯的餐廳去，這家的雞片飯真的爆好吃！！推薦大家可以去吃，真的很棒！！（這麼好吃的雞肉飯，要是下次吃不到該怎麼辦Q_Q）</p>
-<p>吃完飯後，就往南華大學去。到了以後，品妤就先帶著我和Rick在南華大學繞繞，讓我印象最深刻的大概就是教授們住的小木屋吧！真的超特別，居然是蓋小木屋，而不只是蓋個普通的民房給教授們住，這小木屋給人的感覺會讓人有一種來到度假村的錯覺。繞完後，我們就到了教室外等，一直等到了3點進了教室開始演講。</p>
-<p>演講過程說順利也算順利，說不順利倒是真的有出了一點狀況。記得在進教室前，我說：演講最怕遇到的狀況有PowerPoint當掉、Visual Studio當掉……等等，結果這句話就這樣一語成讖，在我用Visual Studio去示範開發Windows 8 App的時候，Visual Studio當掉了，一時也真的是慌了，幸好趕緊叫出工作管理員把它強制關掉，又再度重開Visual Studio，早知道進去前就不要說這種不吉利的話了Q_Q…</p>
-<p>結束完後，我們在校門口拍了照、打了卡，就離開南華大學前往了民雄火車站，並各自分道揚鑣回家去了。在火車上，我閒來無事就拿出了《Javascript：優良部分》來看，結果看著看著就在火車上將它看完了，這大概也是我第一次看完O&#39;relly的書吧！XD&quot;</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
 
 <nav id="pagination">
   
@@ -1050,7 +1133,7 @@
   <h3 class="title">Categories</h3>
   <ul class="entry">
   
-    <li><a href="/categories/Windows/APP/">APP</a><small>2</small></li>
+    <li><a href="/categories/Windows/APP/">APP</a><small>3</small></li>
   
     <li><a href="/categories/Windows Phone/APP/">APP</a><small>5</small></li>
   
@@ -1070,9 +1153,11 @@
   
     <li><a href="/categories/Javascript/">Javascript</a><small>3</small></li>
   
+    <li><a href="/categories/Windows/APP/Monogame/">Monogame</a><small>1</small></li>
+  
     <li><a href="/categories/UVa/">UVa</a><small>2</small></li>
   
-    <li><a href="/categories/Windows/">Windows</a><small>2</small></li>
+    <li><a href="/categories/Windows/">Windows</a><small>3</small></li>
   
     <li><a href="/categories/Windows Phone/">Windows Phone</a><small>5</small></li>
   
@@ -1092,7 +1177,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 17.14px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.43px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.57px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.71px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.86px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.43px;">UVa</a><a href="/tags/Windows/" style="font-size: 11.43px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 14.29px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.14px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 17.50px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.25px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.75px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.50px;">Javascript</a><a href="/tags/Monogame/" style="font-size: 10.00px;">Monogame</a><a href="/tags/UVa/" style="font-size: 11.25px;">UVa</a><a href="/tags/Windows/" style="font-size: 12.50px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.75px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.25px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -1101,6 +1186,10 @@
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-monogame-windows-8-app-project-judge-snap-view/">#Monogame：在Windows 8 APP專案中，判斷Snap View的狀態</a>
+      </li>
     
       <li>
         <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/">#Windows Phone：在HTML5專案中，如何從Javascript傳送字串到C#的APP端</a>
@@ -1116,10 +1205,6 @@
     
       <li>
         <a href="/2013/11/29/2013-11-29-appportable-single-card-version18-update/">#APP：[隨身單字卡]1.8版更新</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/">#Windows Phone：如何在Windows Phone App使用HTML5專案開發</a>
       </li>
     
   </ul>
