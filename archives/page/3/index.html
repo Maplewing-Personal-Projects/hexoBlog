@@ -66,6 +66,61 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-09-03T11:50:00.000Z"><a href="/2013/09/03/2013-09-03-javascriptcross-domain-ajax-using-a-php-web-page-information-to-the-jsonp/">Sep 3 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/03/2013-09-03-javascriptcross-domain-ajax-using-a-php-web-page-information-to-the-jsonp/">#Javascript：Cross Domain AJAX－使用PHP將網頁資訊轉JSONP</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>其實在使用<a href="http://knightzone.logdown.com/posts/98927-javascriptcross-domain-ajax-using-yql" target="_blank">上篇</a>使用YQL來進行Cross Domain AJAX之前，我是先使用別人寫好的PHP網頁將要抓取之網站資訊轉成JSONP格式回來。</p>
+<h1>ba-simple-proxy.php</h1>
+<p>此頁別人寫好的PHP連結在此：<a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html" target="_blank">ba-simple-proxy.php</a></p>
+<p>簡單來說，這PHP就是當作一個代理網頁，給它網址它就會抓取該網址所指的網頁內容，並用JSONP的格式回傳回來。</p>
+<p>使用前先將該頁PHP內的 $enable_jsop = false; 從false改為true，然後上傳到PHP伺服器，接著使用AJAX抓取資料的js部分寫上：</p>
+<figure class="highlight lang-js"><figcaption><span>xdomainajax.js</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>$.getJSON( <span class="comment">/* ba-simple-proxy.php所在地 + "?callback=?&url=" + 欲抓資料之網頁所在的網址 */</span> , <span class="keyword">function</span>(data){
+  <span class="comment">/* data.contents即是該網頁內容 */</span>
+});
+</pre></td></tr></table></figure>
+
+<p>這樣就可以進行Cross Domain AJAX了！</p>
+<h1>參考資料</h1>
+<ol>
+<li>Cross Domain AJAX 抓網頁撈過界以及如何整合兩個部落格的標籤：<a href="http://user.frdm.info/ckhung/b/js/xdomain.php" target="_blank"><a href="http://user.frdm.info/ckhung/b/js/xdomain.php">http://user.frdm.info/ckhung/b/js/xdomain.php</a></a></li>
+<li>Design2U » Cross Domain Ajax 跨網域抓取資料(JSONP)：<a href="http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp" target="_blank"><a href="http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp">http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp</a></a></li>
+<li>SIMPLE PHP PROXY: GET EXTERNAL HTML, JSON AND MORE!：<a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html" target="_blank"><a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html">http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/09/03/2013-09-03-javascriptcross-domain-ajax-using-a-php-web-page-information-to-the-jsonp/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-09-02T17:13:00.000Z"><a href="/2013/09/03/2013-09-03-javascriptcross-domain-ajax-using-yql/">Sep 3 2013</a></time>
       
       
@@ -595,46 +650,6 @@ using namespace std;
 
 
   
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2009-02-20T15:24:00.000Z"><a href="/2009/02/20/2009-02-20--life-interesting-090220-heitaliya/">Feb 20 2009</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2009/02/20/2009-02-20--life-interesting-090220-heitaliya/">#生活趣事：[09.02.20]－黑塔利亞</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>今天，和阿尼雅聊了一下天，火柴就密我了，給我看了「黑塔利亞」，超有創意的XD</p>
-<p>各位可以去搜尋看看XD，簡稱又叫APH。最近好像有漫畫的代理商，期待可以去買一本XD</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.wretch.cc/blog/fafnar123/9694177" target="_blank">http://www.wretch.cc/blog/fafnar123/9694177</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2009/02/20/2009-02-20--life-interesting-090220-heitaliya/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -661,7 +676,7 @@ using namespace std;
   
     <li><a href="/categories/Windows/APP/">APP</a><small>1</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>2</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>3</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -683,7 +698,7 @@ using namespace std;
   
     <li><a href="/categories/Windows/">Windows</a><small>1</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>2</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>3</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -701,7 +716,7 @@ using namespace std;
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 13.33px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.33px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.67px;">UVa</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 11.67px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.67px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 15.00px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.33px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.67px;">UVa</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.33px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.67px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -710,6 +725,10 @@ using namespace std;
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-appportable-single-card-version18-update/">#APP：[隨身單字卡]1.8版更新</a>
+      </li>
     
       <li>
         <a href="/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/">#Windows Phone：如何在Windows Phone App使用HTML5專案開發</a>
@@ -725,10 +744,6 @@ using namespace std;
     
       <li>
         <a href="/2013/11/04/2013-11-04-html-embedded-multimedia/">#HTML(HTML5)：多媒體嵌入</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/01/2013-11-01-app-portable-single-cards/">#APP：[隨身單字卡]於Windows Phone Store上架</a>
       </li>
     
   </ul>

@@ -4,13 +4,57 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-11-28T16:59:18.348Z</updated>
+  <updated>2013-11-28T17:20:09.129Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#APP：[隨身單字卡]1.8版更新]]></title>
+    <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-appportable-single-card-version18-update/"/>
+    <id>http://blog.knightzone.org/2013/11/29/2013-11-29-appportable-single-card-version18-update/</id>
+    <published>2013-11-28T17:04:00.000Z</published>
+    <updated>2013-11-28T17:18:41.000Z</updated>
+    <content type="html"><![CDATA[<p>隨身單字卡歷經了眾多更新，到了今日的模樣花了不少時間呀！</p>
+<p>APP連結：<a href="http://www.windowsphone.com/zh-tw/store/app/%E9%9A%A8%E8%BA%AB%E5%96%AE%E5%AD%97%E5%8D%A1/b83bc17f-53a3-49d5-bae0-b41ef5a57cf7" target="_blank"><a href="http://www.windowsphone.com/zh-tw/store/app/%E9%9A%A8%E8%BA%AB%E5%96%AE%E5%AD%97%E5%8D%A1/b83bc17f-53a3-49d5-bae0-b41ef5a57cf7">http://www.windowsphone.com/zh-tw/store/app/%E9%9A%A8%E8%BA%AB%E5%96%AE%E5%AD%97%E5%8D%A1/b83bc17f-53a3-49d5-bae0-b41ef5a57cf7</a></a></p>
+<h1>新增功能部分</h1>
+<ol>
+<li>新增編輯分類、單字功能。</li>
+<li>可使用拖曳方式更換分類與單字順序。</li>
+<li>可切換單字清單之單字顯示方式(以單字或是其解釋做顯示)。</li>
+<li>新增標音功能，可使用 (單字)[上標音] 來為單字標上標音，詳情請進入APP點選上面標題可看見範例。</li>
+<li>新增匯入、匯出檔案。</li>
+<li>可展開單字列表成串列單字卡。</li>
+</ol>
+<h1>更動部分</h1>
+<ol>
+<li>背景更換。</li>
+<li>UI更動：隱藏按鈕、返回按鈕、編輯與刪除按鈕。</li>
+<li>轉場動畫變快。</li>
+</ol>
+<h1>APP截圖</h1>
+<p><img src="/image/4akZbRIORpSsrespw4yB_Vocabulary01.png" alt="Vocabulary01.png"></p>
+<p><img src="/image/66gakioLRhqN9M06wose_Vocabulary02.png" alt="Vocabulary02.png"></p>
+<p><img src="/image/N7Skube8Rq6gRMs248Ad_Vocabulary03.png" alt="Vocabulary03.png"></p>
+<p><img src="/image/LMQXnpOAQCuOy7FYVrnW_Vocabulary04.png" alt="Vocabulary04.png"></p>
+<p><img src="/image/eY9AHRLTPaxc8fnV25n2_Vocabulary05.png" alt="Vocabulary05.png"></p>
+<p><img src="/image/cYsMtHv6TmK2xwUVeAA1_Vocabulary06.png" alt="Vocabulary06.png"></p>
+<ul>
+<li>版本號：1.8</li>
+<li>製作：新罪楓翼☆灆洢騎士</li>
+<li>網站：<a href="http://www.knightzone.org" target="_blank">http://www.knightzone.org</a></li>
+<li>原始碼：<a href="https://github.com/sinmaplewing/Knightzone-Portable-Vocabulary-Card" target="_blank">https://github.com/sinmaplewing/Knightzone-Portable-Vocabulary-Card</a></li>
+<li>授權：CC BY-SA 3.0 TW</li>
+<li>圖示使用：Metro Studio</li>
+</ul>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/tags/APP/" term="APP"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/APP/" term="APP"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#Windows Phone：如何在Windows Phone App使用HTML5專案開發]]></title>
     <link href="http://blog.knightzone.org/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/"/>
@@ -1888,37 +1932,5 @@ dyn.HelloEveryBody(); <span class="comment">//當dyn內存的值具有HelloEvery
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/CSS/" term="CSS"/>
     <category scheme="http://blog.knightzone.org/categories/CSS/" term="CSS"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#Javascript：Cross Domain AJAX－使用PHP將網頁資訊轉JSONP]]></title>
-    <link href="http://blog.knightzone.org/2013/09/03/2013-09-03-javascriptcross-domain-ajax-using-a-php-web-page-information-to-the-jsonp/"/>
-    <id>http://blog.knightzone.org/2013/09/03/2013-09-03-javascriptcross-domain-ajax-using-a-php-web-page-information-to-the-jsonp/</id>
-    <published>2013-09-03T11:50:00.000Z</published>
-    <updated>2013-10-15T15:10:33.000Z</updated>
-    <content type="html"><![CDATA[<p>其實在使用<a href="http://knightzone.logdown.com/posts/98927-javascriptcross-domain-ajax-using-yql" target="_blank">上篇</a>使用YQL來進行Cross Domain AJAX之前，我是先使用別人寫好的PHP網頁將要抓取之網站資訊轉成JSONP格式回來。</p>
-<h1>ba-simple-proxy.php</h1>
-<p>此頁別人寫好的PHP連結在此：<a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html" target="_blank">ba-simple-proxy.php</a></p>
-<p>簡單來說，這PHP就是當作一個代理網頁，給它網址它就會抓取該網址所指的網頁內容，並用JSONP的格式回傳回來。</p>
-<p>使用前先將該頁PHP內的 $enable_jsop = false; 從false改為true，然後上傳到PHP伺服器，接著使用AJAX抓取資料的js部分寫上：</p>
-<figure class="highlight lang-js"><figcaption><span>xdomainajax.js</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>$.getJSON( <span class="comment">/* ba-simple-proxy.php所在地 + "?callback=?&url=" + 欲抓資料之網頁所在的網址 */</span> , <span class="keyword">function</span>(data){
-  <span class="comment">/* data.contents即是該網頁內容 */</span>
-});
-</pre></td></tr></table></figure>
-
-<p>這樣就可以進行Cross Domain AJAX了！</p>
-<h1>參考資料</h1>
-<ol>
-<li>Cross Domain AJAX 抓網頁撈過界以及如何整合兩個部落格的標籤：<a href="http://user.frdm.info/ckhung/b/js/xdomain.php" target="_blank"><a href="http://user.frdm.info/ckhung/b/js/xdomain.php">http://user.frdm.info/ckhung/b/js/xdomain.php</a></a></li>
-<li>Design2U » Cross Domain Ajax 跨網域抓取資料(JSONP)：<a href="http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp" target="_blank"><a href="http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp">http://design2u.me/blog/936/cross-domain-ajax-cross-domain-data-has-been-retrieved-jsonp</a></a></li>
-<li>SIMPLE PHP PROXY: GET EXTERNAL HTML, JSON AND MORE!：<a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html" target="_blank"><a href="http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html">http://benalman.com/code/projects/php-simple-proxy/docs/files/ba-simple-proxy-php.html</a></a></li>
-</ol>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/Javascript/" term="Javascript"/>
-    <category scheme="http://blog.knightzone.org/tags/Ajax/" term="Ajax"/>
-    <category scheme="http://blog.knightzone.org/categories/Javascript/" term="Javascript"/>
-    <category scheme="http://blog.knightzone.org/categories/Javascript/Ajax/" term="Ajax"/>
   </entry>
 </feed>
