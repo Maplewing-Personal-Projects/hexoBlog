@@ -66,6 +66,113 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-11-28T15:54:00.000Z"><a href="/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/">Nov 28 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/">#Windows Phone：如何在Windows Phone App使用HTML5專案開發</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>這篇主要來介紹一下Windows Phone App的HTML5專案，打開Visual Studio並選擇Visual C#類別中的Windows Phone，即可找到Windows Phone HTML5應用程式的專案，如下圖所示：<br><img src="/image/YaAWp6bTsanGHuAfZtHu_WP8HTML01.png" alt="WP8HTML01.png"></p>
+<p>新增專案後，你就會看到如下的畫面：<br><img src="/image/BNqJvhdOSnuwBl044QQf_WP8HTML02.png" alt="WP8HTML02.png"></p>
+<p>可以很明顯地發現到其實Windows Phone的HTML5專案其實只是放個瀏覽器在裡面，並且去瀏覽專案中Html資料夾中的網頁而已，藉此你可以透過HTML+CSS+Javascript去撰寫APP。</p>
+<p>在首頁的地方寫了簡單的程式碼：</p>
+<figure class="highlight lang-html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"/html/css/phone.css"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Windows Phone<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+      window.addEventListener(<span class="string">"load"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+          document.querySelectorAll(<span class="string">"#page-title p"</span>)[<span class="number">0</span>].innerHTML = <span class="string">"Hello World!"</span>;
+      });
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>我的應用程式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page-title"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>頁面標題<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>簡單來說，就是在網頁載入後，將id為page-title裡的第一個p標籤裡的內容換成Hello World!。結果如下圖所示：<br><img src="/image/gDEKBIQRmWYMAiKOfQhQ_WP8HTML03.png" alt="WP8HTML03.png"></p>
+<p>接著下來你就可以依照做網站的方式來開發APP了！</p>
+<h1>如果Javascript沒有作用…</h1>
+<p>我剛開始使用HTML5專案時，發現Javascript怎樣都沒有作用。如果遇到相同情形，可以在MainPage.xaml.cs中的Browser_Loaded函式內加上<code>Browser.IsScriptEnabled = true;</code>這行程式碼即可。</p>
+<figure class="highlight lang-cs"><figcaption><span>MainPage.xaml.cs</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="keyword">private</span> <span class="keyword">void</span> Browser_Loaded(<span class="keyword">object</span> sender, RoutedEventArgs e)
+{
+  Browser.IsScriptEnabled = <span class="keyword">true</span>;
+  
+  <span class="comment">// 在此加入您的 URL</span>
+  Browser.Navigate(<span class="keyword">new</span> Uri(MainUri, UriKind.Relative));
+}
+</pre></td></tr></table></figure>
+
+<h1>參考資料</h1>
+<ol>
+<li>Getting Started With Windows Phone 8 HTML5 Apps：<a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx" target="_blank"><a href="http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx">http://blogs.msdn.com/b/matthiasshapiro/archive/2013/02/15/getting-started-with-windows-phone-8-html5-apps.aspx</a></a></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-11-07T13:48:00.000Z"><a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">Nov 7 2013</a></time>
       
       
@@ -182,7 +289,7 @@
   
     <li><a href="/categories/Windows/APP/">APP</a><small>1</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>1</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>2</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -194,6 +301,8 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>9</small></li>
   
+    <li><a href="/categories/Windows Phone/APP/HTML5/">HTML5</a><small>1</small></li>
+  
     <li><a href="/categories/HTML/HTML5/">HTML5</a><small>3</small></li>
   
     <li><a href="/categories/Javascript/">Javascript</a><small>3</small></li>
@@ -202,7 +311,7 @@
   
     <li><a href="/categories/Windows/">Windows</a><small>1</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>1</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>2</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -220,7 +329,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 12.00px;">APP</a><a href="/tags/Ajax/" style="font-size: 12.00px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.00px;">HTML</a><a href="/tags/HTML5/" style="font-size: 14.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 14.00px;">Javascript</a><a href="/tags/UVa/" style="font-size: 12.00px;">UVa</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 10.00px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.00px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 13.33px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.33px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/UVa/" style="font-size: 11.67px;">UVa</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 11.67px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.67px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -229,6 +338,10 @@
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/28/2013-11-28-windows-phone-how-to-use-windows-phone-app-an-html5-project-javascript/">#Windows Phone：如何在Windows Phone App使用HTML5專案開發</a>
+      </li>
     
       <li>
         <a href="/2013/11/07/2013-11-07-appsonic-information-collection-for-windows-store-shelves/">#APP：[索尼克資訊收集所]於Windows Store上架</a>
@@ -244,10 +357,6 @@
     
       <li>
         <a href="/2013/11/01/2013-11-01-app-portable-single-cards/">#APP：[隨身單字卡]於Windows Phone Store上架</a>
-      </li>
-    
-      <li>
-        <a href="/2013/10/22/2013-10-22--life-interesting-131022-microsoft-campus-lecture-tour-of-chiayi-day-trips/">#生活趣事：[13.10.22]微軟校園巡迴講座之嘉義一日遊</a>
       </li>
     
   </ul>
