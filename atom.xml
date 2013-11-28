@@ -4,13 +4,33 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-11-28T19:09:28.378Z</updated>
+  <updated>2013-11-28T19:20:59.043Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#Windows：如何免費從Windows 8 Pro升級至Windows 8.1 Pro]]></title>
+    <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-how-do-i-upgrade-to-windows-81/"/>
+    <id>http://blog.knightzone.org/2013/11/29/2013-11-29-windows-how-do-i-upgrade-to-windows-81/</id>
+    <published>2013-11-28T19:12:00.000Z</published>
+    <updated>2013-11-28T19:20:02.000Z</updated>
+    <content type="html"><![CDATA[<p>目前Windows 8.1已經釋出了，多了更多不錯的特色，希望大家趕快也跟著Windows 8.1吧！</p>
+<p>基本上升級的方式跟你去市集下載APP類似，先進去市集就會看到首頁最左邊就有Windows 8.1的下載連結。<br><img src="/image/K0GyEWRKRHKJjEJOLLri_002.png" alt="002.png"></p>
+<p>點下去之後會看到類似於一般APP的介紹頁，在此頁點下安裝。<br><img src="/image/lHNxu3RFTsqmbKChURj5_003.png" alt="003.png"></p>
+<p>接著就如同下載APP一樣，開始跑進度條。<br><img src="/image/V52ZH1D4TFKNf30A3r43_004.png" alt="004.png"></p>
+<p>跑完後就會重新開機，然後會設定非常久，就耐心等待一下吧！</p>
+<p>再度啟動進去Windows 8.1後，會需要設定一下帳戶，設定完後就可以開心使用Windows 8.1，是不是很簡單呢？</p>
+<h1>參考資料</h1>
+<ol>
+<li>[教學]Windows 8 Pro 免費升級 Windows 8.1 Pro：<a href="http://software.intel.com/zh-cn/blogs/2013/10/19/windows-8-pro-windows-81-pro" target="_blank"><a href="http://software.intel.com/zh-cn/blogs/2013/10/19/windows-8-pro-windows-81-pro">http://software.intel.com/zh-cn/blogs/2013/10/19/windows-8-pro-windows-81-pro</a></a></li>
+</ol>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/Windows/" term="Windows"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows/" term="Windows"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#Monogame：在Windows 8 APP專案中，判斷Snap View的狀態]]></title>
     <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-monogame-windows-8-app-project-judge-snap-view/"/>
@@ -1750,74 +1770,5 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/Excel/" term="Excel"/>
     <category scheme="http://blog.knightzone.org/categories/Excel/" term="Excel"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#HTML：設定網頁編碼]]></title>
-    <link href="http://blog.knightzone.org/2013/09/08/2013-09-08-html-set-the-page-encoding/"/>
-    <id>http://blog.knightzone.org/2013/09/08/2013-09-08-html-set-the-page-encoding/</id>
-    <published>2013-09-08T08:46:00.000Z</published>
-    <updated>2013-10-15T15:12:18.000Z</updated>
-    <content type="html"><![CDATA[<p>電腦裡面只能儲存0與1，並且透過二進位的方式用0與1儲存了數字，透過數字與文字的對應，電腦可以利用儲存數字的方式去儲存文字，並在顯示的時候透過對應表去找出該數字代表的文字為何，這樣的對應儲存模式就被稱為編碼。這世界上有很多語言，故編碼也有很多種，若使用的編碼不對，會導致網頁上出現我們有時候去瀏覽國外網站的時候常常會出現的亂碼現象，如下圖所示：<br><img src="/image/zHKS5sZoRK2oecYqNALa_html3-1.png" alt="html3-1.png"></p>
-<p>因此我們必須要確定我們製作出來的網站是用什麼編碼方式儲存的，並且要試著從網頁裡去設定其網頁編碼，讓瀏覽器可以用正確的編碼方式去瀏覽該網站。</p>
-<h1>常見編碼</h1>
-<p>各國都有不同的編碼，底下試著列出一些常見的編碼：</p>
-<table>
-<thead>
-<tr>
-<th>語言</th>
-<th>常見編碼名稱</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 繁體中文</td>
-<td>Big5</td>
-</tr>
-<tr>
-<td> 簡體中文</td>
-<td>GBK </td>
-</tr>
-<tr>
-<td>   日文</td>
-<td>Shift-JIS</td>
-</tr>
-<tr>
-<td>   韓文</td>
-<td>EUC-KR</td>
-</tr>
-</tbody>
-</table>
-<p>由上表可知，每個語言都有其不同的當地的編碼方式，那麼如果要顯示所有國家語言的網站該怎麼辦？</p>
-<p>不管你是否要做一個純粹單一語言的網站或是要做多語言的網站，我都會建議你使用Unicode萬國碼的 <strong>UTF-8</strong> 的編碼方式去儲存網站，這個編碼不僅支援多個國家的語言，有些繁體中文的罕見字其實用Big5是沒辦法表示的，但是用萬國碼卻是OK的！</p>
-<h1>如何儲存UTF-8格式的網頁</h1>
-<p>如果使用的是記事本來編輯網頁，可在儲存檔案的時候，點擊底下的編碼的選項，選擇UTF-8即可，如下圖所示：<br><img src="/image/KiIKvWqDQLSzRSWF14BJ_html3-2.png" alt="html3-2.png"></p>
-<p>如果是使用Notepad++來編輯網頁，可在上面工具列的［編碼］裡面選擇［轉換至UTF-8碼格式(檔首無BOM)］即可，如下圖所示：<br><img src="/image/9Ycmyz0iRtC7VjIzDqnH_html3-3.png" alt="html3-3.png"></p>
-<h1>用meta標籤來設定該網頁的編碼</h1>
-<p>meta標籤在HTML文件中，是用來設定該文件的meta資料，除了可以用來設定編碼外，還可以設定很多其他跟網頁有關的資料，不過在這裡我只先提該如何設定網頁的編碼。</p>
-<p>你可以在head元素內加上<code>&lt;meta charset=&quot;編碼名稱&quot; /&gt;</code>即可設定網頁的編碼，如果你要設定其為UTF-8的編碼，可如底下範例所示：</p>
-<figure class="highlight lang-html"><figcaption><span>UTF-8.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre>...
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span>
-  <span class="tag">&lt;<span class="title">title</span>&gt;</span>標題<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-...
-</pre></td></tr></table></figure>
-
-<p>在HTML4.01的時候，是使用<code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</code>這麼冗長的敘述，但是現在HTML5，你可以使用上述如此簡短的敘述即可。</p>
-<h1>參考資料</h1>
-<ol>
-<li>MOZILLA DEVELOPER NETWORK &gt; 應該避免的過時語法：<a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid" target="_blank"><a href="https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid">https://developer.mozilla.org/zh-TW/docs/Web_%E9%96%8B%E7%99%BC/Historical_artifacts_to_avoid</a></a></li>
-<li>html5 - &lt;meta charset=&#39;utf-8&#39;&gt; vs &lt;meta http-equiv=&#39;Content-Type&#39;&gt; - Stack Overflow：<a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type" target="_blank"><a href="http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type">http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type</a></a></li>
-<li>w3schools.com &gt; HTML &lt;meta&gt; Tag：<a href="http://www.w3schools.com/tags/tag_meta.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_meta.asp">http://www.w3schools.com/tags/tag_meta.asp</a></a></li>
-</ol>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/HTML/" term="HTML"/>
-    <category scheme="http://blog.knightzone.org/categories/HTML/" term="HTML"/>
   </entry>
 </feed>
