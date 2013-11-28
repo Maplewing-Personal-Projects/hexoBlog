@@ -4,13 +4,34 @@
   <subtitle><![CDATA[SINMAPLEWING☆LANYIKNIGHT]]></subtitle>
   <link href="http://blog.knightzone.org/atom.xml" rel="self"/>
   <link href="http://blog.knightzone.org"/>
-  <updated>2013-11-28T19:49:04.759Z</updated>
+  <updated>2013-11-28T20:01:41.341Z</updated>
   <id>http://blog.knightzone.org/</id>
   <author>
     <name><![CDATA[灆洢騎士]]></name>
     <email><![CDATA[sinmaplewing@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[#Windows Phone：安裝Windows Phone SDK 8.0流程]]></title>
+    <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-installation-process-windows-phone-sdk-8/"/>
+    <id>http://blog.knightzone.org/2013/11/29/2013-11-29-windows-phone-installation-process-windows-phone-sdk-8/</id>
+    <published>2013-11-28T19:50:00.000Z</published>
+    <updated>2013-11-28T20:00:34.000Z</updated>
+    <content type="html"><![CDATA[<p>為了開發Windows Phone APP，除了需要安裝Visual Studio 2012外，還必須安裝Windows Phone SDK 8.0，底下利用圖文的方式來說明整個流程。</p>
+<p>首先選擇開啟新專案：<br><img src="/image/rbqc4ATviRoddYjPzAmw_%E5%9C%96%E7%89%87%201.png" alt="圖片 1.png"></p>
+<p>選擇C#類別中的Windows Phone，選擇安裝Windows Phone SDK 8.0：<br><img src="/image/24f69FpRtKOc8tcnnCAS_%E5%9C%96%E7%89%87%202.png" alt="圖片 2.png"></p>
+<p>點下確認後，就會看到下載Windows Phone SDK 8.0的連結：<br><img src="/image/fcFmPnMERxu6FpeG5ZQw_%E5%9C%96%E7%89%87%203.png" alt="圖片 3.png"><br><img src="/image/9L4H3oQQZKpsy11B1dbE_%E5%9C%96%E7%89%87%204.png" alt="圖片 4.png"></p>
+<p>接著選擇要下載的項目：<br><img src="/image/KKlu3KmASmWkeAdk1tkO_%E5%9C%96%E7%89%87%205.png" alt="圖片 5.png"></p>
+<p>然後會推薦你使用下載器：<br><img src="/image/Co4PN9EXTECCrF1LGRDq_%E5%9C%96%E7%89%87%206.png" alt="圖片 6.png"></p>
+<p>下載好後，使用下載器下載主安裝程式：<br><img src="/image/b1KCvdgDR0ymyd06AN8u_%E5%9C%96%E7%89%87%207.png" alt="圖片 7.png"><br><img src="/image/Kxxx9kUpQVe2Fg4nymBC_%E5%9C%96%E7%89%87%208.png" alt="圖片 8.png"><br><img src="/image/Idwio9jlQ8yYuoKUUSzJ_%E5%9C%96%E7%89%87%209.png" alt="圖片 9.png"><br><img src="/image/vX1SVldVTnysyh0OsgVF_%E5%9C%96%E7%89%87%2010.png" alt="圖片 10.png"></p>
+<p>下載好後，開始進行安裝吧！<br><img src="/image/daiKAU9UTjaqjVSxKDfi_%E5%9C%96%E7%89%87%2011.png" alt="圖片 11.png"><br><img src="/image/ehHGVh0SOCQH7Xhzot4k_%E5%9C%96%E7%89%87%2012.png" alt="圖片 12.png"><br><img src="/image/Kd7lhQjzQn2J1e6joV4r_%E5%9C%96%E7%89%87%2013.png" alt="圖片 13.png"><br><img src="/image/mLZcs8tSgeHUsC4NwG7g_%E5%9C%96%E7%89%87%2014.png" alt="圖片 14.png"></p>
+<p>完成後就可以開始開發Windows Phone 8的程式了！</p>
+]]></content>
+    <category scheme="http://blog.knightzone.org/tags/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/tags/APP/" term="APP"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/" term="Windows Phone"/>
+    <category scheme="http://blog.knightzone.org/categories/Windows Phone/APP/" term="APP"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[#Windows：從Windows 8升級至Windows 8 Pro]]></title>
     <link href="http://blog.knightzone.org/2013/11/29/2013-11-29-windows-upgrade-to-windows-8-windows-8-pro/"/>
@@ -1658,113 +1679,5 @@ obj1.f.call(obj2); <span class="comment">//利用call指派f的this為指向obj2
 ]]></content>
     <category scheme="http://blog.knightzone.org/tags/生活趣事/" term="生活趣事"/>
     <category scheme="http://blog.knightzone.org/categories/生活趣事/" term="生活趣事"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[#HTML：圖片與超連結]]></title>
-    <link href="http://blog.knightzone.org/2013/09/10/2013-09-10-html-picture-with-hyperlink/"/>
-    <id>http://blog.knightzone.org/2013/09/10/2013-09-10-html-picture-with-hyperlink/</id>
-    <published>2013-09-10T12:12:00.000Z</published>
-    <updated>2013-10-15T15:12:49.000Z</updated>
-    <content type="html"><![CDATA[<p>該如何在網頁內放置圖片以及超連結，我照慣例先使用一個範例讓你看，再來解釋這個範例的意義。</p>
-<figure class="highlight lang-html"><figcaption><span>pictureHyperlinkExample.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>圖片與超連結範例<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">id</span>=<span class="value">"top"</span>&gt;</span>圖片與超連結<span class="tag">&lt;/<span class="title">h1</span>&gt;</span> <span class="comment">&lt;!-- 設定h1的id為top --&gt;</span>
-    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://www.knightzone.org/image/thumbs/32.jpg"</span> <span class="attribute">alt</span>=<span class="value">"全身圖"</span> /&gt;</span> <span class="comment">&lt;!-- 放置圖片 --&gt;</span>
-    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.google.com"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>往Google<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="comment">&lt;!-- 連結並換新分頁 --&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>好幾個段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#top"</span>&gt;</span>回Top<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="comment">&lt;!-- 連結至id為top的地方 --&gt;</span>
-  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p><img src="/image/GyeO6tYCTP6KqSzrKSCi_html4-1.png" alt="html4-1.png"></p>
-<h1>img標籤：放置圖片</h1>
-<p>如果要在網頁中放置圖片，可使用img標籤，它具有兩個屬性必須設定，一個為src屬性，是放你的圖片的路徑；另外一個則是alt屬性，是放你的圖片的說明文字，也有可能會被用於圖片連結不到時的替代文字。</p>
-<figure class="highlight lang-html"><figcaption><span>img.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"圖片所在路徑"</span> <span class="attribute">alt</span>=<span class="value">"說明文字"</span> /&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>當要改變圖片的大小，可使用CSS語法，或是使用width(寬度)與height(高度)屬性，此兩個屬性的值在HTML5中必為數值，單位是像素點(pixel)，而若在HTML4.01裡還可以使用%數。建議在你每個img標籤上都盡量加上這兩個屬性，這樣在網頁載入時若連結不到該圖片，還是會保留一塊相同大小的方塊，可避免排版亂掉。</p>
-<figure class="highlight lang-html"><figcaption><span>imgwh.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"圖片所在路徑"</span> <span class="attribute">alt</span>=<span class="value">"說明文字"</span> <span class="attribute">width</span>=<span class="value">"圖片寬度"</span> <span class="attribute">height</span>=<span class="value">"圖片高度"</span>/&gt;</span>
-</pre></td></tr></table></figure>
-
-<h1>a標籤：放置超連結</h1>
-<p>若要放置超連結，可使用a標籤，它有href屬性可以設定該連結要往那兒去，當使用者點擊時瀏覽器會跳至該頁面。</p>
-<figure class="highlight lang-html"><figcaption><span>a.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>如果不希望連結蓋掉目前的網頁，而是希望開新分頁去顯示連結的網頁，則可加上target屬性，並給予值為<code>_blank</code>。</p>
-<figure class="highlight lang-html"><figcaption><span>newpage.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>超連結不一定要連到其他的網頁，如果這個網頁過長時，要上上下下滑動很麻煩時，可指定將瀏覽器跳到某個HTML元素位置上，每個HTML元素都可以設定id屬性去給予元素一個id名稱，這樣a標籤就可以連結到該元素上。a標籤僅需要在href屬性的值前方加上#，後面再加上要連結到的元素的id屬性名稱即可。以前HTML4.01會使用a標籤的name屬性去設立錨點，讓超連結可以連結該地方，不過到了HTML5後就刪除name屬性了，一律改使用任何HTML元素的id屬性來設定。</p>
-<figure class="highlight lang-html"><figcaption><span>id.html</span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">id</span>=<span class="value">"id名稱"</span>&gt;</span>標題<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-...
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#id名稱"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>當然你可以將上面連結到其他網頁以及某個HTML元素位置上的方法結合起來，變成連結到該頁的某個HTML元素上。</p>
-<figure class="highlight lang-html"><figcaption><span>otherpageId.html</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"網頁所在路徑#id名稱"</span>&gt;</span>連結文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<h1>相對路徑與絕對路徑</h1>
-<p>以上不論是img標籤的src屬性或是a標籤的href屬性皆是放置一個檔案的路徑位置，路徑分成兩種：一種是相對路徑，另外一種則是絕對路徑。</p>
-<h2>相對路徑</h2>
-<p>相對路徑是指從你所在的位置該如何走到欲連結到的檔案的位置的路徑表示，底下用幾張我以前的ppt來解說。</p>
-<p>假設該網頁名稱為second6.html，若要連結到與網頁在同資料夾的圖片，則直接打上該名字即可。<br><img src="/image/wpLKVi59SlecwcHkgmR2_html4-2.png" alt="html4-2.png"></p>
-<p>若要連結到位於跟網頁同資料夾的picture資料夾內的圖片，則打上picture，後面再加上斜線分隔，再打上圖片名稱。如果資料夾非常多層則是一樣的道理，可以寫成<code>同層資料夾/內層資料夾1/內層資料夾2/...以此類推/圖片名稱</code>。<br><img src="/image/hxoYB90RyVoypWLiGwRQ_html4-3.png" alt="html4-3.png"></p>
-<p>若要連結的圖片在網頁所在的資料夾的上一層，則使用..去表示。<br><img src="/image/kQiNSVBnTKm0EWe0YSSr_html4-4.png" alt="html4-4.png"></p>
-<h2>絕對路徑</h2>
-<p>絕對路徑通常是為了連結外部的資料，不在本網站內的資料去使用，因為不是本站的資料，所以無法使用相對路徑去連結到，只能使用絕對路徑去連結。若使用相對路徑，則網頁搬到不同的地方會連結到的位置會不同，端看該網頁的位置在何處；但若使用絕對路徑，則網頁不管搬到不同的地方則連結到的地方會是相同的。若你的資料會跟你的網站一起搬動，建議使用相對路徑；若不會，則使用絕對路徑。</p>
-<p>若是使用絕對路徑，則開頭會先寫明協定名稱，接著是IP位置、Domain Name或是電腦內的絕對路徑，例如要連結到Google就寫<code>&lt;a href=&quot;http://www.google.com&gt;Google連結&lt;/a&gt;</code>，如果要瀏覽網頁者連到他自己電腦的圖片則使用<code>&lt;img src=&quot;file:///C:/myphoto.jpeg&quot; /&gt;</code>(當然我不建議連到本機端這種用法)。</p>
-<h1>參考資料</h1>
-<ol>
-<li>w3schools.com &gt; HTML &lt;a&gt; Tag：<a href="http://www.w3schools.com/tags/tag_a.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_a.asp</a></a></li>
-<li>w3schools.com &gt; HTML &lt;img&gt; Tag：<a href="http://www.w3schools.com/tags/tag_img.asp" target="_blank"><a href="http://www.w3schools.com/tags/tag_img.asp">http://www.w3schools.com/tags/tag_img.asp</a></a></li>
-<li>html5 - HTML Anchors with &#39;name&#39; or &#39;id&#39;? - Stack Overflow：<a href="http://stackoverflow.com/questions/484719/html-anchors-with-name-or-id" target="_blank"><a href="http://stackoverflow.com/questions/484719/html-anchors-with-name-or-id">http://stackoverflow.com/questions/484719/html-anchors-with-name-or-id</a></a></li>
-</ol>
-]]></content>
-    <category scheme="http://blog.knightzone.org/tags/HTML/" term="HTML"/>
-    <category scheme="http://blog.knightzone.org/categories/HTML/" term="HTML"/>
   </entry>
 </feed>

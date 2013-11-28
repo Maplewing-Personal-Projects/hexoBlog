@@ -62,6 +62,104 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2011-11-24T16:21:00.000Z"><a href="/2011/11/25/2011-11-25-uva272-tex-quotes/">Nov 25 2011</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2011/11/25/2011-11-25-uva272-tex-quotes/">#UVa：272 – TEX Quotes</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1>解法指引</h1>
+<p>照著題目要求，更換雙引號即可。</p>
+<h1>程式碼(C++：0.016)</h1>
+<figure class="highlight lang-C++"><figcaption><span>272.cpp</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="code"><pre>/<span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">*/</span>
+/* UVa <span class="number">272</span> TEX Quotes                                  <span class="variable">*/</span>
+/* Author: LanyiKnight [at] knightzone.org             <span class="variable">*/</span>
+/* Version: <span class="number">2011</span>/<span class="number">11</span>/<span class="number">24</span>                                 <span class="variable">*/</span>
+/<span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">**</span><span class="variable">*/</span>
+<span class="comment">#include&lt;iostream&gt;</span>
+<span class="comment">#include&lt;cstdio&gt;</span>
+using namespace std;
+ 
+<span class="keyword">int</span> main(){
+  string <span class="keyword">s</span>;
+  bool leftorright = <span class="number">0</span>;
+  <span class="keyword">while</span>( getline( cin, <span class="keyword">s</span> ) )
+  {
+    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="keyword">s</span>.<span class="keyword">length</span>() ; i++ )
+      <span class="keyword">if</span>( <span class="keyword">s</span>[i] == <span class="string">'"'</span> ){
+        <span class="keyword">if</span>( leftorright )
+          <span class="keyword">printf</span>( <span class="string">"''"</span> );
+        <span class="keyword">else</span>
+          <span class="keyword">printf</span>( <span class="string">"``"</span> );
+        leftorright ^= <span class="number">1</span>;
+      }
+      <span class="keyword">else</span>{
+        <span class="keyword">printf</span>( <span class="string">"<span class="variable">%c</span>"</span>, <span class="keyword">s</span>[i] );
+      }
+    <span class="keyword">printf</span>( <span class="string">"\n"</span> );
+  }
+  <span class="keyword">return</span> <span class="number">0</span>;
+}
+</pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="http://blog.knightzone.org/2011/11/25/2011-11-25-uva272-tex-quotes/#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2010-10-03T14:06:00.000Z"><a href="/2010/10/03/2010-10-03--life-interesting-9-2710-3-started-a-busy-college-student-living/">Oct 3 2010</a></time>
       
       
@@ -468,94 +566,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2008-11-16T12:55:00.000Z"><a href="/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/">Nov 16 2008</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/">#小說創作：學園探險社(2) – 101 The Blocks Problem</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>今天是一年一度的「社團友誼促進競賽」。</p>
-<p>簡單來說，這個由學生會舉辦的競賽的目的就是為了要促進各社團間的交流。比賽項目每次都不一定，雖然可能會遇到某社團佔優勢的狀況，不過各個社團還是全部都會各派一位代表來參加這個比賽，畢竟這比賽的目的並不是為了獲勝嘛！不過第一名卻還是能有一百萬這個蠻驚人的金額。</p>
-<p>「所以，我們打算派你代表社團。」美由小姐如此的對我說道。</p>
-<p>「等一等，為什麼這種麻煩事情都要找我做？」我馬上問道。</p>
-<p>「話不用我多說吧！去就對了。」看她情緒好像快要爆發似的，我還是乖乖閉嘴好了。</p>
-<p>「真麻煩呀……」當然是用她聽不到的音量小聲的說。</p>
-<p>「話說回來，最近都沒什麼看到社長大人了，怎麼了嗎？」</p>
-<p>「他去探索了南方未知領域，至少要好幾個禮拜才會回來。」</p>
-<p>「原來如此。」</p>
-<p>看來似乎沒什麼好說了，我趕緊離開社辦前往比賽場地。</p>
-<hr>
-<p>如往常一般，比賽的場地在學生會大樓前廣場。</p>
-<p>「早呀～好久都沒看到你了。」一位與我同是高二的男生來跟我打招呼。</p>
-<p>「早呀！」</p>
-<p>這位男生的名字叫騰久，一年級時跟我同班，不過等升上二年級就沒了，他是「生存物體研究社」的成員，也是這次他們社團的代表。</p>
-<p>「今次還是如往常一樣，來賭吧！」</p>
-<p>這是我與他比賽的慣例，賭自己的成績一定比對方高，賭的金額大概都是伍佰塊，有的時候他贏，有的時候我贏，機率一半一半吧！</p>
-<p>「OK！」我這樣回應。</p>
-<p>此時台上站著一位女生，是比我大一歲的學姊，也是學生會會長－宮香。</p>
-<p>「我們這次要比的是『搬移盒子』，這個遊戲的目的就是要照著評審的規定搬移盒子，並且要比對方快，評審會先說總共有幾堆，每一堆剛開始只有一個與其堆編號相同編號的盒子，編號從零號開始數起。共有四種搬移的方法：第一種為move a onto b，即是將a號盒子搬到b號盒子，而a,b上面原本的盒子就得回歸與它編號相同的那一堆上。第二種為move a over b，即是將a號盒子搬到b號盒子所在的那堆的最上面，而a號盒子上面的盒子全部得要回歸與它編號相同的那一堆上。第三種為pile a onto b，即是將a號盒子包含堆在它上面的盒子一起搬到b號盒子上，而b號盒子上的盒子都得回歸與它編號相同的那一堆上。第四種pile a over b，即時將a號盒子包含堆在它上面的盒子一起搬到b號盒子所在的那堆的最上面。差不多是如此，請各位就比賽位置預備。」</p>
-<p>在會長講完一長串的規則後，每個人都開始尋找自己的比賽場地。等差不多了後，比賽就在會長的宣布後開始。</p>
-<hr>
-<p>就這樣，我輕而易舉的進了決賽，不知道是不是因為我是探險社的，所以動作比其他人快了好幾倍，就連自己也嚇了一跳。不過最令我驚訝的是，決賽的對手就是騰久。</p>
-<p>「真沒想到你會進決賽呢。」</p>
-<p>「你說這句話真是太傷人了，你知不知道你正在傷害一顆純真少年的心呀！」有夠噁心的回應，不過這不是重點。</p>
-<p>「看你剛剛明明都沒有在動，為什麼能進入決賽呢？」</p>
-<p>「哼哼，我其實是有在動的，動的是我的腦。」</p>
-<p>「腦？」</p>
-<p>「沒錯，我先在腦中跑出了結果，之後再直接結果排出來就好了。」</p>
-<p>「原來如此，不過這應該很辛苦才對，真厲害呀。」</p>
-<p>「不用太誇我，我自己也知道。」真的不該誇他，現在他擺著一副驕傲的姿態真讓我不爽。</p>
-<p>「你們談好了嗎？我們就開始了喔！」身為決賽的裁判－宮香會長如此說道。</p>
-<p>「抱歉，可以開始了。」我回應道。</p>
-<p>「好，我規定的堆數是十堆，動作就寫在這張紙上。」宮香拿著兩張紙分發給我們。</p>
-<p>上面寫著：<br>　　move 9 onto 1<br>　　move 8 over 1<br>　　move 7 over 1<br>　　move 6 over 1<br>　　pile 8 over 6<br>　　pile 8 over 5<br>　　move 2 over 1<br>　　move 4 over 9 </p>
-<p>我很快速的開始排起來，而騰久一點動靜也沒有。等我快要完成的時候……</p>
-<p>「我完成了。」</p>
-<p>「什麼！？」我吃驚地說。</p>
-<p>就在我專注於盒子的時候，不知是什麼哪個時刻騰久就已經開始排了起來。我還是趕緊地也將它完成了。</p>
-<p>「我也完成了。」雖然講這句話已經遲了對方一點時間，但我還是不放棄一絲希望。</p>
-<p>「騰久，看來你排錯了。」</p>
-<p>「！？」</p>
-<p>就是因為發現我和他的答案不一樣，所以我才會覺得有一絲希望。</p>
-<p>「沒錯，騰久同學。你真的拼錯了，正確答案是……」</p>
-<p>宮香會長說著，便指向背後的螢幕，上面是這樣寫著的：<br>　　0: 0<br>　　1: 1 9 2 4<br>　　2:<br>　　3: 3<br>　　4:<br>　　5: 5 8 7 6<br>　　6:<br>　　7:<br>　　8:<br>　　9: </p>
-<p>但是騰久的是如此：<br>　　0: 0<br>　　1:<br>　　2:<br>　　3: 3<br>　　4: 4 1 9 2<br>　　5: 5 8 7 6<br>　　6:<br>　　7:<br>　　8:<br>　　9: </p>
-<p>看來他看錯了最後一道命令吧！</p>
-<p>「可惡，我看錯了最後一道命令。」騰久氣餒的說，但馬上又恢復精神笑著對我說：「下次絕對不會再輸給你，等著吧！」</p>
-<p>「恭喜，今次獲勝的社團是：『學園探險社』。」</p>
-<p>就在騰久說完，宮香已經上了台宣布了結果。聽到她的宣布，我也趕緊上了台接受頒獎。不僅從騰久那邊拿到了伍佰塊，還拿到了一百萬元，真開心。不過我想一百萬元會被副社拿去吧。</p>
-<blockquote>
-<p>原始文章位址：<a href="http://www.knightzone.org/wordpress/archives/1500" target="_blank">http://www.knightzone.org/wordpress/archives/1500</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="http://blog.knightzone.org/2008/11/16/2008-11-16--novels-garden-adventures-2-101-the-blocks-problem/#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
 
 <nav id="pagination">
   
@@ -581,7 +591,7 @@
   
     <li><a href="/categories/Windows/APP/">APP</a><small>3</small></li>
   
-    <li><a href="/categories/Windows Phone/APP/">APP</a><small>5</small></li>
+    <li><a href="/categories/Windows Phone/APP/">APP</a><small>6</small></li>
   
     <li><a href="/categories/Javascript/Ajax/">Ajax</a><small>2</small></li>
   
@@ -605,7 +615,7 @@
   
     <li><a href="/categories/Windows/">Windows</a><small>5</small></li>
   
-    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>5</small></li>
+    <li><a href="/categories/Windows Phone/">Windows Phone</a><small>6</small></li>
   
     <li><a href="/categories/動漫心得/">動漫心得</a><small>1</small></li>
   
@@ -623,7 +633,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/APP/" style="font-size: 17.50px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.25px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.75px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.50px;">Javascript</a><a href="/tags/Monogame/" style="font-size: 10.00px;">Monogame</a><a href="/tags/UVa/" style="font-size: 11.25px;">UVa</a><a href="/tags/Windows/" style="font-size: 13.75px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 13.75px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 16.25px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
+    <a href="/tags/APP/" style="font-size: 18.57px;">APP</a><a href="/tags/Ajax/" style="font-size: 11.43px;">Ajax</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSharp/" style="font-size: 10.00px;">CSharp</a><a href="/tags/Excel/" style="font-size: 10.00px;">Excel</a><a href="/tags/HTML/" style="font-size: 18.57px;">HTML</a><a href="/tags/HTML5/" style="font-size: 15.71px;">HTML5</a><a href="/tags/Javascript/" style="font-size: 12.86px;">Javascript</a><a href="/tags/Monogame/" style="font-size: 10.00px;">Monogame</a><a href="/tags/UVa/" style="font-size: 11.43px;">UVa</a><a href="/tags/Windows/" style="font-size: 14.29px;">Windows</a><a href="/tags/Windows Phone/" style="font-size: 15.71px;">Windows Phone</a><a href="/tags/動漫心得/" style="font-size: 10.00px;">動漫心得</a><a href="/tags/小說創作/" style="font-size: 17.14px;">小說創作</a><a href="/tags/生活趣事/" style="font-size: 20.00px;">生活趣事</a><a href="/tags/製作進度/" style="font-size: 20.00px;">製作進度</a>
   </div>
 </div>
 
@@ -632,6 +642,10 @@
 <div class="widget tag">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/29/2013-11-29-windows-phone-installation-process-windows-phone-sdk-8/">#Windows Phone：安裝Windows Phone SDK 8.0流程</a>
+      </li>
     
       <li>
         <a href="/2013/11/29/2013-11-29-windows-upgrade-to-windows-8-windows-8-pro/">#Windows：從Windows 8升級至Windows 8 Pro</a>
@@ -647,10 +661,6 @@
     
       <li>
         <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-passed-from-the-browsers-javascript-string-into-a-c-app-end/">#Windows Phone：在HTML5專案中，如何從Javascript傳送字串到C#的APP端</a>
-      </li>
-    
-      <li>
-        <a href="/2013/11/29/2013-11-29-windows-phone-html5-project-how-to-call-or-to-increase-the-web-pages-javascript-from-c-programs/">#Windows Phone：在HTML5專案中，如何從C#執行網頁的Javascript程式</a>
       </li>
     
   </ul>
